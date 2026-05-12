@@ -7,3 +7,9 @@ dist/
 .DS_Store
 resume-page*.png
 .chrome-profile*/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
