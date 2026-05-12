@@ -39,7 +39,7 @@ export function Hero() {
             <img
               src="/images/profile.jpg"
               alt="Ziyang Zhou"
-              className="h-full w-full object-cover grayscale transition duration-500 hover:grayscale-0"
+              className="h-full w-full object-cover"
             />
           </div>
           <div className="mt-5">
