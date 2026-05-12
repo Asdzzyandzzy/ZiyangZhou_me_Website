@@ -1,0 +1,9 @@
+.next/
+node_modules/
+out/
+dist/
+.env*
+.vercel/
+.DS_Store
+resume-page*.png
+.chrome-profile*/
