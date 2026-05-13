@@ -148,67 +148,75 @@ export const projects: Project[] = [
     }
   },
   {
-    slug: "astock-big-trade-analysis",
-    featured: true,
-    title: {
-      en: "A-Share Big Trade Analyzer",
-      zh: "A 股大单交易分析工具"
-    },
-    subtitle: {
-      en: "A Streamlit data tool for filtering, aggregating, and visualizing tick-level A-share trades.",
-      zh: "基于 Streamlit 的 A 股逐笔交易筛选、聚合与可视化工具。"
-    },
-    period: {
-      en: "Aug 2025",
-      zh: "2025 年 8 月"
-    },
-    category: {
-      en: "Data Product",
-      zh: "数据产品"
-    },
-    techStack: ["Python", "Streamlit", "AKShare", "Pandas", "Visualization"],
-    repo: "https://github.com/Asdzzyandzzy/AStock-Trade-Analysis",
-    summary: {
-      en: "A Streamlit-based application for real-time analysis of A-share tick-level trade data, with large-order filtering and visual summaries.",
-      zh: "一个基于 Streamlit 的 A 股逐笔交易数据分析应用，支持大单筛选和可视化总结。"
-    },
-    motivation: {
-      en: "Financial data is noisy and hard to inspect manually. This tool focuses on turning raw tick data into structured views that help users quickly compare trade amount, price levels, and buy/sell behavior.",
-      zh: "金融逐笔数据噪声大、人工查看效率低。这个工具旨在把原始 tick 数据转化为结构化视图，帮助用户快速比较成交金额、价格区间和买卖行为。"
-    },
-    features: {
-      en: [
-        "Fetch tick-by-tick transaction data with AKShare.",
-        "Filter trades by custom amount ranges and classify large orders.",
-        "Generate pivot tables, weighted average prices, charts, and CSV exports."
-      ],
-      zh: [
-        "通过 AKShare 获取逐笔交易数据。",
-        "按自定义金额区间筛选交易，并对大单进行分层统计。",
-        "生成透视表、加权平均价格、图表和 CSV 导出。"
-      ]
-    },
-    contribution: {
-      en: [
-        "Designed the data flow from API retrieval to filtering, aggregation, visualization, and export.",
-        "Built an interactive Streamlit interface for exploring market microstructure data."
-      ],
-      zh: [
-        "设计从 API 获取、筛选、聚合、可视化到导出的完整数据流程。",
-        "搭建 Streamlit 交互界面，用于探索市场微观交易数据。"
-      ]
-    },
-    learnings: {
-      en: [
-        "Practiced building data tools that are both analytical and usable.",
-        "Learned how to translate market questions into filters, bins, and visual summaries."
-      ],
-      zh: [
-        "练习构建兼具分析能力和可用性的金融数据工具。",
-        "学习如何把市场问题转化为筛选条件、分层区间和可视化摘要。"
-      ]
-    }
+  slug: "astock-trade-analysis",
+  featured: true,
+  title: {
+    en: "A-Share Research Dashboard",
+    zh: "A 股个人投研 Dashboard"
   },
+  subtitle: {
+    en: "A Streamlit-based dashboard for A-share research, bringing together market data, technical indicators, fundamentals, sentiment, signals, scoring, and risk analysis in one place.",
+    zh: "一个基于 Streamlit 的 A 股投研 Dashboard，将行情、技术指标、基本面、市场情绪、交易信号、评分体系和风险分析整合到同一个平台。"
+  },
+  period: {
+    en: "Aug 2025 - Present",
+    zh: "2025 年 8 月 - 至今"
+  },
+  category: {
+    en: "Financial Data Product",
+    zh: "金融数据产品"
+  },
+  techStack: ["Python", "Streamlit", "AKShare", "Plotly", "Pandas"],
+  repo: "https://github.com/Asdzzyandzzy/AStock-Trade-Analysis",
+  summary: {
+    en: "A personal A-share research platform built with AKShare, Streamlit, and Plotly. The project combines quotes, technical indicators, fundamentals, fund flow, sentiment signals, scoring models, and volatility-based risk analysis into a structured research workflow.",
+    zh: "一个基于 AKShare、Streamlit 和 Plotly 搭建的 A 股个人投研平台，将行情、技术指标、基本面、资金流向、情绪信号、评分模型以及基于历史波动率的风险分析整合成一套结构化研究流程。"
+  },
+  motivation: {
+    en: "The project was created to support a more organized research and review process instead of chasing short-term market predictions. It helps turn scattered market information into a clearer workflow for observation, comparison, and further analysis.",
+    zh: "这个项目的目标不是预测短期暴涨，而是建立一套更系统的学习、研究和复盘流程，帮助把分散的市场信息整理成更清晰的观察、对比和分析框架。"
+  },
+  features: {
+    en: [
+      "Supports common A-share code formats including 600519, 000001, sh600519, and sz000001.",
+      "Provides market overview data such as major indices, sector performance, latest price, turnover, market cap, and trading volume.",
+      "Includes K-line charts, volume analysis, MA5/10/20/60, EMA, MACD, RSI, BOLL, and KDJ indicators.",
+      "Offers risk-related statistics including support and resistance levels, stage highs and lows, annualized volatility, return distribution, and maximum drawdown.",
+      "Combines fundamentals, fund flow, Dragon Tiger List activity, technical signals, and a four-dimensional research scoring system."
+    ],
+    zh: [
+      "支持 600519、000001、sh600519、sz000001 等常见 A 股代码格式。",
+      "展示大盘指数、行业热度、最新价、成交额、市值、成交量等市场数据。",
+      "提供 K 线图、成交量分析、MA5/10/20/60、EMA、MACD、RSI、BOLL、KDJ 等技术指标。",
+      "包含支撑位、压力位、阶段高低点、年化波动率、收益率分布、最大回撤等风险统计。",
+      "整合基本面、资金流向、龙虎榜观察、技术信号以及趋势/动量/风险/基本面四维评分体系。"
+    ]
+  },
+  contribution: {
+    en: [
+      "Designed a modular project structure with separate layers for data access, analysis, UI components, formatting, and logging.",
+      "Wrapped AKShare APIs with caching, data cleaning, and exception handling to improve stability when individual data sources fail.",
+      "Built interactive research and visualization interfaces with Streamlit and Plotly for market analysis and risk observation."
+    ],
+    zh: [
+      "设计模块化项目结构，将数据获取、分析逻辑、UI 组件、格式化和日志功能拆分维护。",
+      "对 AKShare 接口进行了缓存、字段清洗和异常处理封装，提升数据源异常情况下的稳定性。",
+      "基于 Streamlit 和 Plotly 构建交互式投研与可视化界面，用于市场分析和风险观察。"
+    ]
+  },
+  learnings: {
+    en: [
+      "Learned how to design a maintainable financial data application instead of relying on isolated scripts.",
+      "Practiced breaking down investment research problems into reusable data, analysis, signal, and scoring modules.",
+      "Developed a stronger understanding of risk disclosure and the difference between research tools and investment advice."
+    ],
+    zh: [
+      "学习如何从可维护性的角度设计金融数据应用，而不是依赖零散脚本。",
+      "练习将投研问题拆分为可复用的数据、分析、信号和评分模块。",
+      "进一步强化了对风险披露的理解，明确研究工具与投资建议之间的边界。"
+    ]
+  }
+},
   {
     slug: "kaggle-fertilizer-competition",
     featured: true,
