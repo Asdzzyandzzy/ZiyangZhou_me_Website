@@ -12,8 +12,8 @@ export const translations = {
     },
     actions: {
       viewAbout: "View About",
-      viewExperience: "View Experience",
-      viewProjects: "View Projects",
+      viewExperience: "View More Experience",
+      viewProjects: "View More Projects",
       viewResume: "View Resume",
       viewWriting: "View Writing",
       contactMe: "Contact Me",
@@ -85,8 +85,8 @@ export const translations = {
     },
     actions: {
       viewAbout: "查看关于我",
-      viewExperience: "查看经历",
-      viewProjects: "查看项目",
+      viewExperience: "查看更多经历",
+      viewProjects: "查看更多项目",
       viewResume: "查看简历",
       viewWriting: "查看文章",
       contactMe: "联系我",
