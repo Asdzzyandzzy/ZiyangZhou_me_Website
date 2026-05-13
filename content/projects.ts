@@ -167,7 +167,7 @@ export const projects: Project[] = [
       zh: "数据产品"
     },
     techStack: ["Python", "Streamlit", "AKShare", "Pandas", "Visualization"],
-    repo: "https://github.com/Asdzzyandzzy/AStock-BigTrade-Analysis",
+    repo: "https://github.com/Asdzzyandzzy/AStock-Trade-Analysis",
     summary: {
       en: "A Streamlit-based application for real-time analysis of A-share tick-level trade data, with large-order filtering and visual summaries.",
       zh: "一个基于 Streamlit 的 A 股逐笔交易数据分析应用，支持大单筛选和可视化总结。"
