@@ -585,67 +585,93 @@ export const projects: Project[] = [
     }
   },
   {
-    slug: "bitcoin-key-recovery-risk-study",
-    featured: false,
-    title: {
-      en: "Bitcoin Key Recovery Risk Study",
-      zh: "比特币密钥恢复风险研究"
-    },
-    subtitle: {
-      en: "A Python multiprocessing experiment framed as a security and probability study around Bitcoin key recovery.",
-      zh: "一个 Python 多进程实验，从安全和概率角度研究比特币密钥恢复问题。"
-    },
-    period: {
-      en: "Nov 2024",
-      zh: "2024 年 11 月"
-    },
-    category: {
-      en: "Security Research",
-      zh: "安全研究"
-    },
-    techStack: ["Python", "Multiprocessing", "Cryptography Concepts", "Security Ethics"],
-    repo: "https://github.com/Asdzzyandzzy/BTC-Private-Key-Finder-Multi-Process-Brute-Force-Tool-for-Bitcoin-Address-Recovery-on-macOS",
-    summary: {
-      en: "A security-oriented Python experiment about Bitcoin private-key search and why ownership, probability, and ethical boundaries matter. In the portfolio, I present it as a risk study rather than a recovery promise.",
-      zh: "这是一个面向安全学习的 Python 实验，讨论比特币私钥搜索背后的所有权、概率和伦理边界。在作品集中，我把它呈现为风险研究，而不是“恢复承诺”。"
-    },
-    motivation: {
-      en: "The interesting lesson is not that keys can be guessed at scale, but the opposite: cryptographic key spaces are intentionally enormous, and any tool in this area must be discussed with strict legal and ethical boundaries.",
-      zh: "这个项目真正有价值的地方不是“可以暴力猜密钥”，而是反过来理解：密码学密钥空间本来就极其庞大，相关工具必须放在严格的法律和伦理边界内讨论。"
-    },
-    features: {
-      en: [
-        "Explores multiprocessing architecture in Python through a security-themed experiment.",
-        "Frames key recovery as a probability and ethics discussion, not an operational promise.",
-        "Includes explicit boundaries that it should only relate to addresses someone legally owns."
-      ],
-      zh: [
-        "通过安全主题实验练习 Python 多进程架构。",
-        "把密钥恢复放在概率和伦理讨论中，而不是包装成可执行承诺。",
-        "明确强调只能讨论与合法拥有地址相关的场景。"
-      ]
-    },
-    contribution: {
-      en: [
-        "Built the multiprocessing experiment and documented the intended legal boundary.",
-        "Used the project to study performance limits and responsible security framing."
-      ],
-      zh: [
-        "实现多进程实验，并说明项目的合法使用边界。",
-        "通过项目学习性能边界和负责任的安全表达方式。"
-      ]
-    },
-    learnings: {
-      en: [
-        "Learned to separate technical curiosity from unsafe or misleading product framing.",
-        "Strengthened awareness that security projects need clear ethics, not just code."
-      ],
-      zh: [
-        "学习区分技术好奇心和不安全、误导性的产品表达。",
-        "强化了安全项目不仅需要代码，也需要清晰伦理边界的意识。"
-      ]
-    }
+  slug: "bitcoin-private-key-recovery-tool",
+  featured: false,
+
+  title: {
+    en: "Bitcoin Private Key Recovery Tool",
+    zh: "比特币私钥恢复工具"
+  },
+
+  subtitle: {
+    en: "A Python multiprocessing tool designed for Bitcoin private-key recovery workflows with optimized CPU utilization on macOS.",
+    zh: "一个基于 Python 多进程的比特币私钥恢复工具，针对 macOS 的 CPU 利用率进行了优化。"
+  },
+
+  period: {
+    en: "Nov 2024",
+    zh: "2024 年 11 月"
+  },
+
+  category: {
+    en: "Security Tooling",
+    zh: "安全工具"
+  },
+
+  techStack: [
+    "Python",
+    "Multiprocessing",
+    "macOS",
+    "CPU Optimization",
+    "Cryptography Concepts"
+  ],
+
+  repo: "https://github.com/Asdzzyandzzy/BTC-Private-Key-Finder-Multi-Process-Brute-Force-Tool-for-Bitcoin-Address-Recovery-on-macOS",
+
+  summary: {
+    en: "A Python-based Bitcoin private-key recovery tool built for users who lost access to their wallets. The project focuses on multiprocessing performance, CPU optimization on macOS, and large-scale key-space exploration workflows.",
+    zh: "一个基于 Python 的比特币私钥恢复工具，面向遗失钱包访问权限的用户。项目重点在于多进程性能、macOS CPU 优化以及大规模密钥空间搜索流程。"
+  },
+
+  motivation: {
+    en: "The project started as an exploration into how multiprocessing and CPU-intensive workloads can be optimized on macOS. I was also interested in understanding how cryptographic key recovery workflows are structured at scale.",
+    zh: "这个项目最初源于我对 macOS 下多进程与高 CPU 负载优化的兴趣，同时也希望深入理解大规模密码学密钥恢复流程的实现方式。"
+  },
+
+  features: {
+    en: [
+      "Built a multiprocessing architecture for parallel private-key search tasks.",
+      "Optimized CPU usage and workload distribution for macOS environments.",
+      "Implemented scalable task execution for large key-space exploration.",
+      "Designed lightweight recovery workflows with configurable process control."
+    ],
+
+    zh: [
+      "构建了用于并行私钥搜索任务的多进程架构。",
+      "针对 macOS 环境优化 CPU 利用率与任务分配。",
+      "实现面向大规模密钥空间探索的可扩展任务执行。",
+      "设计了支持可配置进程控制的轻量级恢复流程。"
+    ]
+  },
+
+  contribution: {
+    en: [
+      "Designed and implemented the multiprocessing engine and recovery workflow.",
+      "Optimized process scheduling and CPU utilization on Apple Silicon/macOS systems.",
+      "Tested scalability and benchmarked performance under different workloads."
+    ],
+
+    zh: [
+      "设计并实现多进程引擎与恢复流程。",
+      "针对 Apple Silicon/macOS 系统优化进程调度与 CPU 利用率。",
+      "测试不同负载下的扩展性并完成性能基准分析。"
+    ]
+  },
+
+  learnings: {
+    en: [
+      "Strengthened understanding of multiprocessing architecture and performance tuning in Python.",
+      "Learned practical optimization strategies for CPU-bound workloads on macOS.",
+      "Improved experience in building experimental cryptography-related tooling."
+    ],
+
+    zh: [
+      "强化了对 Python 多进程架构与性能调优的理解。",
+      "学习了 macOS 下 CPU 密集型任务的实际优化策略。",
+      "提升了构建密码学相关实验型工具的经验。"
+    ]
   }
+}
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
