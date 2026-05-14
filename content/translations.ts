@@ -1,4 +1,3 @@
-// 这里集中管理网站固定文案。以后要修改中英文按钮、标题、说明文字，优先改这个文件。
 export const translations = {
   en: {
     nav: {
@@ -23,10 +22,10 @@ export const translations = {
       readCaseStudy: "Read case study"
     },
     home: {
-      eyebrow: "Ziyang Zhou · Personal Portfolio",
-      headline: "Building practical software across machine learning, data, and product ideas.",
+      eyebrow: "Ziyang Zhou · Statistics, Machine Learning, and AI",
+      headline: "Exploring machine learning through data, models, and applied research projects.",
       subhead:
-        "I am a UBC statistics student exploring software engineering, machine learning, data analysis, and product-minded tools.",
+        "I am a Statistics student at the University of British Columbia with a strong interest in machine learning and AI. This site collects my projects in modeling, data analysis, financial data systems, and software tools as part of my preparation for graduate study.",
       aboutTitle: "About",
       experienceTitle: "Experience",
       projectsTitle: "Featured Projects",
@@ -59,7 +58,7 @@ export const translations = {
     },
     writing: {
       description:
-        "Notes on machine learning, software, data tools, and product thinking will live here soon."
+        "Notes on machine learning, AI, software, data tools, and product thinking will live here soon."
     },
     resume: {
       description:
@@ -67,7 +66,7 @@ export const translations = {
     },
     contact: {
       intro:
-        "I am open to software, data, machine learning, and product-oriented opportunities. The best way to reach me is email."
+        "I am open to machine learning, AI, data, software, and product-oriented opportunities. The best way to reach me is email."
     },
     footer: {
       line: "Designed and built as a modular personal portfolio for Ziyangzhou.me."
@@ -96,10 +95,10 @@ export const translations = {
       readCaseStudy: "查看项目详情"
     },
     home: {
-      eyebrow: "周梓洋 · 个人作品集",
-      headline: "用软件、机器学习和数据分析，把想法做成可用的产品。",
+      eyebrow: "周梓洋 · 统计学、机器学习与 AI",
+      headline: "通过数据、模型和应用研究项目探索机器学习。",
       subhead:
-        "我是 UBC 统计学本科生，关注软件工程、机器学习、数据分析和产品化工具。",
+        "我是英属哥伦比亚大学统计学本科生，对机器学习和 AI 有持续兴趣。这个网站整理了我在建模、数据分析、金融数据系统和软件工具方面的项目，也是我准备申请研究生项目过程中的作品展示。",
       aboutTitle: "关于我",
       experienceTitle: "经历",
       projectsTitle: "精选项目",
@@ -131,17 +130,17 @@ export const translations = {
       highlights: "亮点"
     },
     writing: {
-      description: "这里会逐步整理机器学习、软件开发、数据工具和产品思考相关笔记。"
+      description: "这里会逐步整理机器学习、AI、软件开发、数据工具和产品思考相关笔记。"
     },
     resume: {
       description: "你可以在线查看或下载中文简历。以后增加英文版时，不需要改页面逻辑。"
     },
     contact: {
       intro:
-        "我对软件、数据、机器学习和产品方向的机会保持开放。最推荐通过邮箱联系我。"
+        "我对机器学习、AI、数据、软件和产品方向的机会保持开放。最推荐通过邮箱联系我。"
     },
     footer: {
-      line: "为 Ziyangzhou.me 设计和搭建的模块化个人品牌网站。"
+      line: "为 Ziyangzhou.me 设计和搭建的模块化个人作品集网站。"
     }
   }
 } as const;
