@@ -17,26 +17,145 @@ export type Project = {
   learnings: LocalizedList;
 };
 
-// 这里管理所有项目。以后新增项目：
-// 1. 复制一个对象；
-// 2. 改 slug（会自动生成 /projects/你的-slug）；
-// 3. 填写中英文标题、简介、技术栈和 GitHub 链接；
-// 4. featured: true 会出现在首页精选项目里。
 export const projects: Project[] = [
+  {
+    slug: "ziyangzhou-me-website",
+    featured: true,
+    title: {
+      en: "ZiyangZhou.me Personal Website",
+      zh: "ZiyangZhou.me 个人网站"
+    },
+    subtitle: {
+      en: "A bilingual personal website built with Next.js, TypeScript, Tailwind CSS, and Cloudflare Pages.",
+      zh: "使用 Next.js、TypeScript、Tailwind CSS 和 Cloudflare Pages 构建的中英双语个人网站。"
+    },
+    period: {
+      en: "May 2026 - Present",
+      zh: "2026 年 5 月 - 至今"
+    },
+    category: {
+      en: "Personal Site",
+      zh: "个人网站"
+    },
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "App Router", "Cloudflare"],
+    repo: "https://github.com/Asdzzyandzzy/ZiyangZhou_me_Website",
+    summary: {
+      en: "This site is both my portfolio and a small product system: projects, writing, experience, resume, contact, and language switching are separated into reusable content and components.",
+      zh: "这个网站既是我的作品集，也是一个小型内容产品：项目、文章、经历、简历、联系页面和语言切换都拆成了可维护的内容与组件。"
+    },
+    motivation: {
+      en: "I wanted a home base that feels more personal than a resume PDF and more structured than a link list. The site gives each project room to explain the problem, my role, and what I learned.",
+      zh: "我希望有一个比简历 PDF 更立体、比链接列表更有结构的个人主页。每个项目都能讲清楚问题、我的工作和学到的东西。"
+    },
+    features: {
+      en: [
+        "Supports English by default with a Chinese language switch stored locally.",
+        "Uses content files for projects, experience, profile copy, and fixed translations.",
+        "Exports static pages for Cloudflare deployment, including individual project detail pages."
+      ],
+      zh: [
+        "默认英文展示，并支持中文切换，语言选择会保存在本地。",
+        "将项目、经历、个人介绍和固定文案拆分到内容文件中维护。",
+        "支持静态导出并部署到 Cloudflare，包括每个项目的详情页。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Designed the information structure and implemented the site with the Next.js App Router.",
+        "Built reusable components for navigation, hero, project cards, detail pages, and language switching."
+      ],
+      zh: [
+        "设计网站信息结构，并使用 Next.js App Router 实现页面。",
+        "搭建导航、Hero、项目卡片、项目详情页和语言切换等可复用组件。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned how to keep a personal site maintainable as project content grows.",
+        "Practiced designing bilingual content so it reads naturally in both languages."
+      ],
+      zh: [
+        "学习如何让个人网站在项目数量增加后依然好维护。",
+        "练习写中英文都自然的作品集内容，而不是逐字翻译。"
+      ]
+    }
+  },
+  {
+    slug: "predicting-f1-pit-stops",
+    featured: true,
+    title: {
+      en: "Predicting F1 Pit Stops",
+      zh: "F1 进站策略预测"
+    },
+    subtitle: {
+      en: "An early-stage motorsport analytics project exploring how race context can inform pit stop timing.",
+      zh: "一个早期赛车数据分析项目，探索如何用比赛上下文判断 F1 进站时机。"
+    },
+    period: {
+      en: "May 2026 - Present",
+      zh: "2026 年 5 月 - 至今"
+    },
+    category: {
+      en: "Sports Analytics",
+      zh: "体育数据分析"
+    },
+    techStack: ["Python", "Data Analysis", "Feature Engineering", "Machine Learning"],
+    repo: "https://github.com/Asdzzyandzzy/Predicting-F1-Pit-Stops",
+    summary: {
+      en: "A motorsport analytics project focused on the question every F1 race quietly revolves around: when is the right moment to pit? The work frames pit stop timing as a data problem shaped by laps, tire life, gaps, safety cars, and race position.",
+      zh: "这是一个围绕 F1 进站策略的数据分析项目：什么时候进站才合适？项目把圈数、轮胎寿命、时间差、安全车和排名位置等因素组织成可分析的问题。"
+    },
+    motivation: {
+      en: "Pit strategy is a nice intersection of data and judgment. I wanted to practice building features from event-like sports data while keeping the result understandable to people who actually watch races.",
+      zh: "进站策略很适合练习数据分析，因为它既有模型空间，也有人的判断。我想用这个项目练习从赛事事件数据里构造特征，同时让结果能被真正看比赛的人读懂。"
+    },
+    features: {
+      en: [
+        "Frames pit stop timing as a prediction and decision-support problem.",
+        "Plans features around tire age, lap context, position, race gaps, and strategy windows.",
+        "Leaves room for both model evaluation and race-by-race explanation."
+      ],
+      zh: [
+        "把进站时机转化为预测和决策辅助问题。",
+        "围绕轮胎年龄、圈数上下文、排名、时间差和策略窗口设计特征。",
+        "兼顾模型评估和单场比赛层面的可解释分析。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Set up the project direction and repository for an interpretable racing analytics workflow.",
+        "Outlined a feature-driven approach instead of treating the model as a black box."
+      ],
+      zh: [
+        "确定项目方向和仓库结构，面向可解释的赛车数据分析流程。",
+        "采用以特征为中心的思路，而不是只追求黑箱预测结果。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Practicing how to turn a real-world strategy question into measurable features.",
+        "Learning to keep sports analytics grounded in race context, not just model scores."
+      ],
+      zh: [
+        "练习把真实策略问题拆成可度量的特征。",
+        "学习让体育数据分析回到比赛语境，而不只是看模型分数。"
+      ]
+    }
+  },
   {
     slug: "sleep-app",
     featured: true,
     title: {
       en: "Sleep Tracking App",
-      zh: "睡眠追踪 App"
+      zh: "睡眠记录 App"
     },
     subtitle: {
-      en: "A Java application for sleep goals, logs, and trend insights.",
-      zh: "用于记录睡眠、设定目标并分析趋势的 Java 应用。"
+      en: "A Java application for recording sleep, setting goals, and reviewing habits over time.",
+      zh: "一个用 Java 编写的睡眠记录应用，用来记录作息、设定目标并回看习惯变化。"
     },
     period: {
-      en: "Jan 2024 - May 2024",
-      zh: "2024 年 1 月 - 5 月"
+      en: "May 2026",
+      zh: "2026 年 5 月"
     },
     category: {
       en: "Application Development",
@@ -45,43 +164,43 @@ export const projects: Project[] = [
     techStack: ["Java", "OOP", "Data Modeling", "User Stories"],
     repo: "https://github.com/Asdzzyandzzy/sleep-app",
     summary: {
-      en: "A personal application designed to help users track sleep, set targets, and understand sleep patterns through structured logs and statistics.",
-      zh: "一个帮助用户记录睡眠、设置目标，并通过结构化日志和统计信息理解睡眠规律的个人应用。"
+      en: "A small but complete Java app built around a simple personal problem: sleep is easier to improve when it is recorded consistently and reviewed honestly.",
+      zh: "这是一个小而完整的 Java 应用，围绕一个真实个人问题展开：睡眠只有被持续记录、诚实复盘，才更容易改善。"
     },
     motivation: {
-      en: "The project started from a personal need: building a clearer routine and understanding sleep patterns through a tool that is simple enough to use consistently.",
-      zh: "项目来自真实个人需求：希望通过一个简单、可持续使用的工具建立更清晰的作息，并理解自己的睡眠模式。"
+      en: "The project started from the wish to make routines visible. Instead of overcomplicating health tracking, it focuses on the core loop of logging, comparing, and noticing patterns.",
+      zh: "项目动机是让作息变得可见。它没有把健康追踪做得很复杂，而是聚焦记录、对比和发现规律这个核心循环。"
     },
     features: {
       en: [
-        "Record daily sleep sessions and aggregate them over time.",
-        "Set sleep goals and compare actual sleep against targets.",
-        "View statistics that summarize sleep quality, patterns, and improvement areas."
+        "Records daily sleep sessions in a structured format.",
+        "Compares actual sleep against personal targets.",
+        "Summarizes habits so users can notice patterns rather than rely on memory."
       ],
       zh: [
-        "记录每日睡眠并按时间累计。",
-        "设定睡眠目标，并将实际睡眠与目标进行对比。",
-        "生成睡眠规律、异常和改进空间相关统计信息。"
+        "用结构化方式记录每天的睡眠情况。",
+        "将实际睡眠与个人目标进行对比。",
+        "汇总睡眠习惯，让用户依靠数据而不是记忆来复盘。"
       ]
     },
     contribution: {
       en: [
-        "Designed user stories and translated them into Java classes and application behavior.",
-        "Implemented the core data model and interaction flow for sleep logging and statistics."
+        "Translated user stories into Java classes and application behavior.",
+        "Designed the core data model for logs, goals, and summary statistics."
       ],
       zh: [
-        "设计用户故事，并将需求转化为 Java 类和应用行为。",
-        "实现睡眠记录、数据模型和统计分析的核心交互流程。"
+        "把用户故事转化为 Java 类和具体应用行为。",
+        "设计睡眠记录、目标和统计汇总的核心数据模型。"
       ]
     },
     learnings: {
       en: [
-        "Practiced object-oriented design and product thinking in a small but complete application.",
-        "Learned how to turn a personal problem into maintainable software behavior."
+        "Practiced object-oriented design through a complete personal-use application.",
+        "Learned how product decisions show up even in small class design choices."
       ],
       zh: [
-        "在一个完整的小型应用中练习面向对象设计和产品思维。",
-        "学习如何把个人问题转化为可维护的软件行为。"
+        "通过一个完整的个人应用练习面向对象设计。",
+        "理解了产品思考也会体现在很小的类设计选择里。"
       ]
     }
   },
@@ -93,130 +212,192 @@ export const projects: Project[] = [
       zh: "机器学习项目合集"
     },
     subtitle: {
-      en: "A collection of ML experiments covering NLP, topic modeling, and tuning.",
-      zh: "涵盖 NLP、主题建模和模型调参的机器学习实践合集。"
+      en: "A notebook collection covering NLP, topic modeling, embeddings, tuning, and applied ML practice.",
+      zh: "一个机器学习 Notebook 合集，涵盖 NLP、主题建模、词向量、调参和应用建模练习。"
     },
     period: {
-      en: "Jan 2026 - Apr 2026",
-      zh: "2026 年 1 月 - 4 月"
+      en: "May 2026",
+      zh: "2026 年 5 月"
     },
     category: {
       en: "Machine Learning",
       zh: "机器学习"
     },
-    techStack: ["Python", "Scikit-learn", "NLP", "TF-IDF", "LDA", "GloVe"],
+    techStack: ["Python", "Jupyter Notebook", "Scikit-learn", "NLP", "LDA", "GloVe"],
     repo: "https://github.com/Asdzzyandzzy/machine-learning-projects",
     summary: {
-      en: "A learning and practice repository for machine learning techniques, including NLP, semantic analysis, topic modeling, and hyperparameter tuning.",
-      zh: "一个机器学习学习与实践仓库，包括 NLP、语义分析、主题建模和超参数调优等内容。"
+      en: "A hands-on machine learning repository where I used notebooks to work through the full rhythm of applied ML: cleaning data, building features, training models, tuning parameters, and interpreting results.",
+      zh: "这是一个以 Notebook 为主的机器学习练习仓库，完整走过数据清洗、特征构建、模型训练、参数调优和结果解释的应用 ML 流程。"
     },
     motivation: {
-      en: "The goal was to build hands-on intuition for how models behave on structured and unstructured data, rather than only studying algorithms conceptually.",
-      zh: "目标是通过实践理解模型在结构化和非结构化数据上的表现，而不只是停留在算法概念层面。"
+      en: "The goal was to move beyond reading about algorithms and actually feel where models succeed, fail, and become hard to explain.",
+      zh: "项目目标不是只停留在理解算法概念，而是亲手感受模型什么时候有效、什么时候失效，以及什么时候变得难以解释。"
     },
     features: {
       en: [
-        "Vectorized large text datasets using TF-IDF and word embeddings.",
-        "Applied LDA topic modeling for extracting themes and keywords.",
-        "Visualized topic distributions and semantic relationships."
+        "Uses TF-IDF, embeddings, and classic ML workflows on text-heavy datasets.",
+        "Explores topic modeling and semantic relationships through interpretable notebooks.",
+        "Documents experiments in a way that is easy to rerun and compare."
       ],
       zh: [
-        "使用 TF-IDF 和词向量对大规模文本进行向量化。",
-        "使用 LDA 进行主题建模、主题提取和关键词识别。",
-        "可视化主题分布和词向量语义关系。"
+        "在文本数据上使用 TF-IDF、词向量和经典机器学习流程。",
+        "通过可解释的 Notebook 探索主题建模和语义关系。",
+        "用便于复现和对比的方式组织实验。"
       ]
     },
     contribution: {
       en: [
-        "Implemented preprocessing, modeling, evaluation, and visualization workflows in Python.",
-        "Explored word analogy tasks and compared model outputs for interpretability."
+        "Implemented preprocessing, modeling, evaluation, and visualization workflows.",
+        "Compared model behavior across different feature representations."
       ],
       zh: [
-        "使用 Python 完成文本预处理、建模、评估和可视化流程。",
-        "实现词语类比推理任务，并比较模型输出以提升可解释性。"
+        "实现数据预处理、建模、评估和可视化流程。",
+        "比较不同特征表示方式下的模型表现。"
       ]
     },
     learnings: {
       en: [
         "Strengthened practical understanding of NLP pipelines and unsupervised learning.",
-        "Learned how preprocessing choices influence downstream model quality."
+        "Learned how preprocessing decisions can matter as much as model choice."
       ],
       zh: [
         "加深了对 NLP Pipeline 和无监督学习的实践理解。",
-        "理解了数据预处理选择对后续模型效果的影响。"
+        "理解了预处理选择有时和模型选择一样重要。"
       ]
     }
   },
   {
-  slug: "astock-trade-analysis",
-  featured: true,
-  title: {
-    en: "A-Share Research Dashboard",
-    zh: "A 股个人投研 Dashboard"
+    slug: "astock-trade-analysis",
+    featured: true,
+    title: {
+      en: "A-Share Research Dashboard",
+      zh: "A 股个人投研 Dashboard"
+    },
+    subtitle: {
+      en: "A Streamlit dashboard for A-share research, combining market data, indicators, fundamentals, sentiment, signals, scoring, and risk ranges.",
+      zh: "基于 Streamlit 的 A 股投研 Dashboard，整合行情、技术指标、基本面、资金情绪、技术信号、综合评分和风险区间。"
+    },
+    period: {
+      en: "Aug 2025 - Present",
+      zh: "2025 年 8 月 - 至今"
+    },
+    category: {
+      en: "Financial Data Product",
+      zh: "金融数据产品"
+    },
+    techStack: ["Python", "Streamlit", "AKShare", "Plotly", "Pandas"],
+    repo: "https://github.com/Asdzzyandzzy/AStock-Trade-Analysis",
+    summary: {
+      en: "A personal A-share investment research platform built with AKShare, Streamlit, and Plotly. It organizes quotes, technical indicators, fundamentals, fund flow, sentiment signals, scoring, and cautious volatility-based risk estimates into a maintainable dashboard.",
+      zh: "一个基于 AKShare、Streamlit 和 Plotly 构建的 A 股个人投研平台，把行情、技术指标、基本面、资金流向、情绪信号、综合评分和基于历史波动率的谨慎风险区间组织成可维护的 Dashboard。"
+    },
+    motivation: {
+      en: "The goal is not to build a toy that claims to predict price spikes, but to create a structured research workflow for learning, review, and decision support.",
+      zh: "项目目标不是做“预测股价暴涨”的玩具，而是搭建一个用于学习、研究和个人复盘的结构化投研流程。"
+    },
+    features: {
+      en: [
+        "Supports common A-share code formats such as 600519, 000001, sh600519, and sz000001.",
+        "Displays market overview, major indices, industry heat, price, turnover, market cap, and volume metrics.",
+        "Provides K-line charts, volume, MA5/10/20/60, EMA, MACD, RSI, BOLL, and KDJ indicators.",
+        "Includes risk statistics such as support and resistance, volatility, return distribution, and maximum drawdown.",
+        "Combines fundamentals, fund flow, Dragon Tiger List observations, technical signals, and a four-part research score."
+      ],
+      zh: [
+        "兼容 600519、000001、sh600519、sz000001 等常见 A 股代码格式。",
+        "展示首页概览、主要指数、行业热度、最新价、成交额、市值、换手率等指标。",
+        "提供 K 线、成交量、MA5/10/20/60、EMA、MACD、RSI、BOLL、KDJ 等技术指标。",
+        "包含支撑位、压力位、波动率、收益率分布和最大回撤等风险统计。",
+        "整合基本面、资金流向、龙虎榜观察、技术信号和四维综合评分。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Designed a modular architecture separating data access, analysis, UI, formatting, and logging.",
+        "Wrapped AKShare interfaces with caching, field cleaning, and exception handling.",
+        "Built interactive Streamlit and Plotly views for research, review, and cautious risk estimation."
+      ],
+      zh: [
+        "设计模块化架构，将数据层、分析层、UI 层、格式化和日志拆分维护。",
+        "统一封装 AKShare 接口，加入缓存、字段清洗和异常处理。",
+        "使用 Streamlit 和 Plotly 构建交互式投研界面，支持复盘和谨慎风险区间估计。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned how to design a financial data product around maintainability.",
+        "Practiced separating research questions into reusable data, analysis, signal, and scoring modules.",
+        "Strengthened risk disclosure: the project is for research and review, not investment advice."
+      ],
+      zh: [
+        "学习如何围绕可维护性设计金融数据产品。",
+        "练习把金融研究问题拆成可复用的数据、分析、信号和评分模块。",
+        "强化风险披露意识：项目用于学习、研究和复盘，不构成投资建议。"
+      ]
+    }
   },
-  subtitle: {
-    en: "A Streamlit-based dashboard for A-share research, bringing together market data, technical indicators, fundamentals, sentiment, signals, scoring, and risk analysis in one place.",
-    zh: "一个基于 Streamlit 的 A 股投研 Dashboard，将行情、技术指标、基本面、市场情绪、交易信号、评分体系和风险分析整合到同一个平台。"
+  {
+    slug: "astock-analysis-toolkit",
+    featured: false,
+    title: {
+      en: "A-Share Analysis Toolkit",
+      zh: "A 股分析工具集合"
+    },
+    subtitle: {
+      en: "A Python toolkit collecting early experiments for Chinese A-share analysis.",
+      zh: "一个 Python 工具集合，用来沉淀早期的中国 A 股分析实验。"
+    },
+    period: {
+      en: "Aug 2025",
+      zh: "2025 年 8 月"
+    },
+    category: {
+      en: "Financial Analysis",
+      zh: "金融分析"
+    },
+    techStack: ["Python", "Pandas", "Financial Data", "Data Analysis"],
+    repo: "https://github.com/Asdzzyandzzy/AStock_Analysis",
+    summary: {
+      en: "This repository collects early A-share analysis scripts and ideas. It is closer to a working notebook bench than a polished app, and it shows the path from small experiments toward the later dashboard project.",
+      zh: "这个仓库收集了早期 A 股分析脚本和想法。它更像一个实验工作台，而不是完整产品，也展示了从零散实验走向后续 Dashboard 项目的过程。"
+    },
+    motivation: {
+      en: "Before building a larger dashboard, I needed a place to test what data is available, what can be cleaned reliably, and which analysis views are actually useful.",
+      zh: "在做更完整的 Dashboard 之前，我需要一个地方测试哪些数据可用、哪些字段能稳定清洗，以及哪些分析视角真的有用。"
+    },
+    features: {
+      en: [
+        "Collects Python scripts for A-share data exploration.",
+        "Experiments with reusable analysis patterns before productizing them.",
+        "Serves as a bridge between quick research ideas and a structured dashboard."
+      ],
+      zh: [
+        "收集用于 A 股数据探索的 Python 脚本。",
+        "在产品化之前实验可复用的分析模式。",
+        "作为快速研究想法和结构化 Dashboard 之间的过渡。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Explored data retrieval, cleaning, and analysis routines for Chinese market data.",
+        "Used the repository to decide which ideas deserved a more maintainable implementation."
+      ],
+      zh: [
+        "探索中国市场数据的获取、清洗和分析流程。",
+        "通过这个仓库判断哪些想法值得做成更可维护的实现。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned that exploratory scripts are useful, but only up to the point where structure becomes necessary.",
+        "Built intuition for which financial data problems need better error handling and modular design."
+      ],
+      zh: [
+        "理解了探索性脚本很有用，但复杂度上来后必须引入结构。",
+        "积累了金融数据项目中哪些地方需要异常处理和模块化设计的直觉。"
+      ]
+    }
   },
-  period: {
-    en: "Aug 2025 - Present",
-    zh: "2025 年 8 月 - 至今"
-  },
-  category: {
-    en: "Financial Data Product",
-    zh: "金融数据产品"
-  },
-  techStack: ["Python", "Streamlit", "AKShare", "Plotly", "Pandas"],
-  repo: "https://github.com/Asdzzyandzzy/AStock-Trade-Analysis",
-  summary: {
-    en: "A personal A-share research platform built with AKShare, Streamlit, and Plotly. The project combines quotes, technical indicators, fundamentals, fund flow, sentiment signals, scoring models, and volatility-based risk analysis into a structured research workflow.",
-    zh: "一个基于 AKShare、Streamlit 和 Plotly 搭建的 A 股个人投研平台，将行情、技术指标、基本面、资金流向、情绪信号、评分模型以及基于历史波动率的风险分析整合成一套结构化研究流程。"
-  },
-  motivation: {
-    en: "The project was created to support a more organized research and review process instead of chasing short-term market predictions. It helps turn scattered market information into a clearer workflow for observation, comparison, and further analysis.",
-    zh: "这个项目的目标不是预测短期暴涨，而是建立一套更系统的学习、研究和复盘流程，帮助把分散的市场信息整理成更清晰的观察、对比和分析框架。"
-  },
-  features: {
-    en: [
-      "Supports common A-share code formats including 600519, 000001, sh600519, and sz000001.",
-      "Provides market overview data such as major indices, sector performance, latest price, turnover, market cap, and trading volume.",
-      "Includes K-line charts, volume analysis, MA5/10/20/60, EMA, MACD, RSI, BOLL, and KDJ indicators.",
-      "Offers risk-related statistics including support and resistance levels, stage highs and lows, annualized volatility, return distribution, and maximum drawdown.",
-      "Combines fundamentals, fund flow, Dragon Tiger List activity, technical signals, and a four-dimensional research scoring system."
-    ],
-    zh: [
-      "支持 600519、000001、sh600519、sz000001 等常见 A 股代码格式。",
-      "展示大盘指数、行业热度、最新价、成交额、市值、成交量等市场数据。",
-      "提供 K 线图、成交量分析、MA5/10/20/60、EMA、MACD、RSI、BOLL、KDJ 等技术指标。",
-      "包含支撑位、压力位、阶段高低点、年化波动率、收益率分布、最大回撤等风险统计。",
-      "整合基本面、资金流向、龙虎榜观察、技术信号以及趋势/动量/风险/基本面四维评分体系。"
-    ]
-  },
-  contribution: {
-    en: [
-      "Designed a modular project structure with separate layers for data access, analysis, UI components, formatting, and logging.",
-      "Wrapped AKShare APIs with caching, data cleaning, and exception handling to improve stability when individual data sources fail.",
-      "Built interactive research and visualization interfaces with Streamlit and Plotly for market analysis and risk observation."
-    ],
-    zh: [
-      "设计模块化项目结构，将数据获取、分析逻辑、UI 组件、格式化和日志功能拆分维护。",
-      "对 AKShare 接口进行了缓存、字段清洗和异常处理封装，提升数据源异常情况下的稳定性。",
-      "基于 Streamlit 和 Plotly 构建交互式投研与可视化界面，用于市场分析和风险观察。"
-    ]
-  },
-  learnings: {
-    en: [
-      "Learned how to design a maintainable financial data application instead of relying on isolated scripts.",
-      "Practiced breaking down investment research problems into reusable data, analysis, signal, and scoring modules.",
-      "Developed a stronger understanding of risk disclosure and the difference between research tools and investment advice."
-    ],
-    zh: [
-      "学习如何从可维护性的角度设计金融数据应用，而不是依赖零散脚本。",
-      "练习将投研问题拆分为可复用的数据、分析、信号和评分模块。",
-      "进一步强化了对风险披露的理解，明确研究工具与投资建议之间的边界。"
-    ]
-  }
-},
   {
     slug: "kaggle-fertilizer-competition",
     featured: true,
@@ -225,8 +406,8 @@ export const projects: Project[] = [
       zh: "Kaggle 肥料预测竞赛"
     },
     subtitle: {
-      en: "A Kaggle modeling project focused on feature engineering and predictive performance.",
-      zh: "聚焦特征工程和预测效果的 Kaggle 建模项目。"
+      en: "A Kaggle modeling project focused on feature engineering, model comparison, and submission workflow.",
+      zh: "一个 Kaggle 建模项目，重点练习特征工程、模型比较和提交流程。"
     },
     period: {
       en: "Jun 2025",
@@ -239,191 +420,230 @@ export const projects: Project[] = [
     techStack: ["Python", "Pandas", "Scikit-learn", "Feature Engineering"],
     repo: "https://github.com/Asdzzyandzzy/Kaggle_FertilizerCompetition",
     summary: {
-      en: "A machine learning competition project using structured data workflows for preprocessing, feature engineering, model selection, and submission preparation.",
-      zh: "一个机器学习竞赛项目，使用结构化数据流程完成预处理、特征工程、模型选择和提交准备。"
+      en: "A compact competition project where I practiced building a clean modeling loop: inspect the data, prepare features, compare models, generate predictions, and keep the submission process reproducible.",
+      zh: "这是一个紧凑的竞赛项目，用来练习完整建模循环：理解数据、准备特征、比较模型、生成预测，并让提交过程可复现。"
     },
     motivation: {
-      en: "Kaggle projects provide a compact way to practice real-world modeling decisions under measurable evaluation metrics.",
-      zh: "Kaggle 项目能在明确指标下训练真实建模决策，是练习机器学习流程的有效方式。"
+      en: "Kaggle is useful because the feedback is concrete. This project helped me practice making modeling decisions under a metric instead of relying on vague impressions.",
+      zh: "Kaggle 的好处是反馈很具体。这个项目帮助我在明确指标下做建模决策，而不是只凭感觉判断效果。"
     },
     features: {
       en: [
         "Prepared structured competition data for modeling.",
         "Experimented with features and model choices.",
-        "Organized code for repeatable training and prediction."
+        "Organized code for repeatable prediction and submission."
       ],
       zh: [
         "整理竞赛结构化数据用于建模。",
         "尝试不同特征和模型选择。",
-        "组织可重复训练和预测的代码流程。"
+        "组织可重复运行的预测与提交流程。"
       ]
     },
     contribution: {
       en: [
         "Handled preprocessing, feature construction, and model experimentation.",
-        "Used the project to strengthen end-to-end machine learning workflow discipline."
+        "Used the project to strengthen end-to-end competition workflow discipline."
       ],
       zh: [
         "完成数据预处理、特征构建和模型实验。",
-        "通过项目强化端到端机器学习流程意识。"
+        "通过项目强化端到端竞赛建模流程。"
       ]
     },
     learnings: {
       en: [
-        "Improved comfort with structured ML competitions and evaluation-driven iteration.",
-        "Learned to balance model complexity with maintainable experiment flow."
+        "Improved comfort with evaluation-driven iteration.",
+        "Learned to balance model complexity with a workflow that stays easy to rerun."
       ],
       zh: [
-        "提升了结构化机器学习竞赛和基于评估指标迭代的熟练度。",
-        "学习在模型复杂度和实验可维护性之间取得平衡。"
+        "提升了基于评估指标迭代模型的熟练度。",
+        "学习在模型复杂度和可复现实验流程之间取得平衡。"
       ]
     }
   },
   {
-    slug: "avocado-price-forecasting",
+    slug: "english-letter-recognition",
     featured: false,
     title: {
-      en: "Avocado Price Forecasting",
-      zh: "牛油果价格时间序列预测"
+      en: "English Letter Recognition Model",
+      zh: "英文字符识别模型"
     },
     subtitle: {
-      en: "A time-series forecasting project using lag features and Random Forest regression.",
-      zh: "使用滞后特征和 Random Forest 回归完成的时间序列预测项目。"
+      en: "A Python computer-vision project for recognizing English letters from image data.",
+      zh: "一个 Python 计算机视觉项目，用于从图像数据中识别英文字符。"
     },
     period: {
-      en: "Jan 2026 - Mar 2026",
-      zh: "2026 年 1 月 - 3 月"
+      en: "May 2025",
+      zh: "2025 年 5 月"
     },
     category: {
-      en: "Forecasting",
-      zh: "时间序列预测"
+      en: "Computer Vision",
+      zh: "计算机视觉"
     },
-    techStack: ["Python", "Pandas", "RandomForestRegressor", "Time Series"],
+    techStack: ["Python", "Computer Vision", "Machine Learning", "Image Classification"],
+    repo: "https://github.com/Asdzzyandzzy/Large-scale-model-for-English-letter-recognition",
     summary: {
-      en: "Built a forecasting model on 2015-2018 multi-region avocado sales data, using lag and calendar features while avoiding data leakage.",
-      zh: "基于 2015-2018 年多地区牛油果销售数据构建预测模型，使用滞后特征和时间特征，并避免数据泄露。"
+      en: "A letter-recognition project that uses image classification as a practical way to learn the full computer-vision workflow: preparing image data, training a model, and checking where recognition succeeds or fails.",
+      zh: "这是一个英文字符识别项目，通过图像分类练习完整计算机视觉流程：准备图像数据、训练模型，并观察识别在哪些情况下成功或失败。"
     },
     motivation: {
-      en: "The project explored how historical price and calendar patterns can support practical forecasting.",
-      zh: "项目探索历史价格和日历特征如何支持实际预测任务。"
+      en: "Letter recognition is simple enough to understand quickly but still rich enough to expose the real problems of image data, model capacity, and evaluation.",
+      zh: "字符识别足够直观，适合快速理解；同时又能暴露图像数据、模型容量和评估方式中的真实问题。"
     },
     features: {
       en: [
-        "Created lag features and month/week time features.",
-        "Used time-aware splits to avoid leakage.",
-        "Reached a test R² of 0.787, outperforming baseline forecasts."
+        "Works with image data for English letter recognition.",
+        "Focuses on classification workflow and model evaluation.",
+        "Provides a concrete computer-vision practice case beyond tabular data."
       ],
       zh: [
-        "构建 Lag Features 与 month/week 等时间特征。",
-        "使用时间序列切分避免数据泄露。",
-        "测试集 R² 达到 0.787，显著优于基线预测模型。"
+        "处理英文字符识别所需的图像数据。",
+        "重点练习分类流程和模型评估。",
+        "提供一个区别于表格数据的计算机视觉实践案例。"
       ]
     },
     contribution: {
-      en: ["Designed the feature pipeline and evaluated forecasting performance."],
-      zh: ["设计特征工程流程并评估预测效果。"]
+      en: [
+        "Built the recognition workflow and organized the model experiment around image classification.",
+        "Used the project to connect ML concepts with visual input data."
+      ],
+      zh: [
+        "搭建字符识别流程，并围绕图像分类组织模型实验。",
+        "通过项目把机器学习概念和视觉输入数据联系起来。"
+      ]
     },
     learnings: {
-      en: ["Learned how data leakage can distort time-series model performance."],
-      zh: ["理解了数据泄露对时间序列模型评估的影响。"]
+      en: [
+        "Learned how image data changes the assumptions of a modeling pipeline.",
+        "Practiced evaluating classification behavior beyond a single accuracy number."
+      ],
+      zh: [
+        "学习图像数据如何改变建模流程中的假设。",
+        "练习不只用单一准确率来理解分类模型表现。"
+      ]
     }
   },
   {
-    slug: "airbnb-price-prediction",
+    slug: "cpsc221-labs",
     featured: false,
     title: {
-      en: "Airbnb Price Prediction",
-      zh: "Airbnb 房源价格预测"
+      en: "CPSC 221 Labs",
+      zh: "CPSC 221 课程实验"
     },
     subtitle: {
-      en: "A supervised learning project on 40k+ New York Airbnb listings.",
-      zh: "基于 4 万多条纽约 Airbnb 房源数据的监督学习项目。"
+      en: "A C++ lab repository from UBC CPSC 221, focused on data structures and algorithmic implementation.",
+      zh: "UBC CPSC 221 的 C++ 实验仓库，重点练习数据结构和算法实现。"
     },
     period: {
-      en: "Jan 2026 - Feb 2026",
-      zh: "2026 年 1 月 - 2 月"
+      en: "Mar 2025",
+      zh: "2025 年 3 月"
     },
     category: {
-      en: "Predictive Modeling",
-      zh: "预测建模"
+      en: "Computer Science Coursework",
+      zh: "计算机科学课程"
     },
-    techStack: ["Python", "Scikit-learn Pipeline", "Random Forest", "GridSearchCV"],
+    techStack: ["C++", "Data Structures", "Algorithms", "Debugging"],
+    repo: "https://github.com/Asdzzyandzzy/CPSC221-LABS",
     summary: {
-      en: "Built a price prediction workflow using room type, geography, review count, preprocessing pipelines, and tuned tree-based models.",
-      zh: "基于房型、地理位置、评论数量等特征构建房价预测流程，使用 Pipeline 和调参后的树模型。"
+      en: "A coursework repository for CPSC 221 at the University of British Columbia. The value here is not a flashy product, but disciplined practice with C++ data structures, memory, testing, and algorithmic thinking.",
+      zh: "这是英属哥伦比亚大学 CPSC 221 的课程实验仓库。它不是一个炫技产品，而是对 C++ 数据结构、内存、测试和算法思维的扎实训练。"
     },
     motivation: {
-      en: "The project connects machine learning with an interpretable business question: what factors shape listing prices?",
-      zh: "项目将机器学习与可解释的商业问题结合：哪些因素影响房源定价？"
+      en: "The labs gave me a stronger foundation for understanding how higher-level software depends on lower-level implementation choices.",
+      zh: "这些实验帮助我更扎实地理解：高层软件能力背后，往往依赖底层实现选择。"
     },
     features: {
       en: [
-        "Cleaned 40k+ listing records and handled missing values and long-tail prices.",
-        "Compared linear regression, Gradient Boosting, and Random Forest models.",
-        "Reduced RMSE from about 248 to 216."
+        "Implements course lab exercises in C++.",
+        "Practices data structures, algorithms, memory behavior, and debugging.",
+        "Keeps coursework organized as a reference for later projects."
       ],
       zh: [
-        "清洗 4 万多条房源记录，处理缺失值和长尾价格分布。",
-        "比较线性回归、Gradient Boosting 和 Random Forest 等模型。",
-        "将 RMSE 从约 248 降低至 216。"
+        "使用 C++ 完成课程实验。",
+        "练习数据结构、算法、内存行为和调试。",
+        "将课程代码整理成后续项目可参考的基础材料。"
       ]
     },
     contribution: {
-      en: ["Implemented preprocessing, model comparison, tuning, and feature importance analysis."],
-      zh: ["实现预处理、模型对比、调参与特征重要性分析。"]
+      en: [
+        "Completed lab implementations and debugging work as part of the course.",
+        "Used the repository to reinforce code organization in C++."
+      ],
+      zh: [
+        "完成课程实验中的实现和调试工作。",
+        "通过仓库强化 C++ 代码组织能力。"
+      ]
     },
     learnings: {
-      en: ["Improved understanding of model interpretability and feature-driven product insight."],
-      zh: ["提升了对模型可解释性和特征驱动业务洞察的理解。"]
+      en: [
+        "Built stronger habits around reasoning about data structures.",
+        "Practiced reading errors and debugging at a lower level than typical scripting projects."
+      ],
+      zh: [
+        "建立了更扎实的数据结构推理习惯。",
+        "练习比脚本项目更底层的错误排查和调试。"
+      ]
     }
   },
   {
-    slug: "glass-futures-strategy",
+    slug: "bitcoin-key-recovery-risk-study",
     featured: false,
     title: {
-      en: "China Glass Futures Trading Strategy",
-      zh: "中国玻璃期货交易策略"
+      en: "Bitcoin Key Recovery Risk Study",
+      zh: "比特币密钥恢复风险研究"
     },
     subtitle: {
-      en: "A quantitative strategy exploration using Python, Pine Script, and backtesting.",
-      zh: "使用 Python、Pine Script 和回测进行的量化策略探索。"
+      en: "A Python multiprocessing experiment framed as a security and probability study around Bitcoin key recovery.",
+      zh: "一个 Python 多进程实验，从安全和概率角度研究比特币密钥恢复问题。"
     },
     period: {
-      en: "Sep 2024 - Present",
-      zh: "2024 年 9 月 - 至今"
+      en: "Nov 2024",
+      zh: "2024 年 11 月"
     },
     category: {
-      en: "Quantitative Research",
-      zh: "量化研究"
+      en: "Security Research",
+      zh: "安全研究"
     },
-    techStack: ["Python", "Pine Script", "TradingView", "Pandas", "Matplotlib"],
+    techStack: ["Python", "Multiprocessing", "Cryptography Concepts", "Security Ethics"],
+    repo: "https://github.com/Asdzzyandzzy/BTC-Private-Key-Finder-Multi-Process-Brute-Force-Tool-for-Bitcoin-Address-Recovery-on-macOS",
     summary: {
-      en: "A futures strategy project for China glass futures, combining TradingView modeling, Python analysis, and ongoing live-testing preparation.",
-      zh: "一个中国玻璃期货策略项目，结合 TradingView 建模、Python 分析，并正在准备 API 实盘检验。"
+      en: "A security-oriented Python experiment about Bitcoin private-key search and why ownership, probability, and ethical boundaries matter. In the portfolio, I present it as a risk study rather than a recovery promise.",
+      zh: "这是一个面向安全学习的 Python 实验，讨论比特币私钥搜索背后的所有权、概率和伦理边界。在作品集中，我把它呈现为风险研究，而不是“恢复承诺”。"
     },
     motivation: {
-      en: "The project explores whether systematic signals can be tested across long historical windows while controlling overfitting risk.",
-      zh: "项目探索系统化信号是否能在长期历史窗口中稳定检验，同时控制过拟合风险。"
+      en: "The interesting lesson is not that keys can be guessed at scale, but the opposite: cryptographic key spaces are intentionally enormous, and any tool in this area must be discussed with strict legal and ethical boundaries.",
+      zh: "这个项目真正有价值的地方不是“可以暴力猜密钥”，而是反过来理解：密码学密钥空间本来就极其庞大，相关工具必须放在严格的法律和伦理边界内讨论。"
     },
     features: {
       en: [
-        "Built automated strategy logic in Pine Script.",
-        "Analyzed historical performance with Python, pandas, and matplotlib.",
-        "Working on API-based live testing and multi-timeframe validation."
+        "Explores multiprocessing architecture in Python through a security-themed experiment.",
+        "Frames key recovery as a probability and ethics discussion, not an operational promise.",
+        "Includes explicit boundaries that it should only relate to addresses someone legally owns."
       ],
       zh: [
-        "使用 Pine Script 构建自动化交易模型。",
-        "使用 Python、pandas、matplotlib 分析历史表现。",
-        "正在加入 API 实盘检验和多周期测试，降低过拟合风险。"
+        "通过安全主题实验练习 Python 多进程架构。",
+        "把密钥恢复放在概率和伦理讨论中，而不是包装成可执行承诺。",
+        "明确强调只能讨论与合法拥有地址相关的场景。"
       ]
     },
     contribution: {
-      en: ["Designed strategy logic, backtesting workflow, and ongoing validation approach."],
-      zh: ["设计策略逻辑、回测流程和持续验证方案。"]
+      en: [
+        "Built the multiprocessing experiment and documented the intended legal boundary.",
+        "Used the project to study performance limits and responsible security framing."
+      ],
+      zh: [
+        "实现多进程实验，并说明项目的合法使用边界。",
+        "通过项目学习性能边界和负责任的安全表达方式。"
+      ]
     },
     learnings: {
-      en: ["Learned the importance of robustness, validation, and avoiding overfitting in financial models."],
-      zh: ["理解了金融模型中稳健性、验证流程和避免过拟合的重要性。"]
+      en: [
+        "Learned to separate technical curiosity from unsafe or misleading product framing.",
+        "Strengthened awareness that security projects need clear ethics, not just code."
+      ],
+      zh: [
+        "学习区分技术好奇心和不安全、误导性的产品表达。",
+        "强化了安全项目不仅需要代码，也需要清晰伦理边界的意识。"
+      ]
     }
   }
 ];
