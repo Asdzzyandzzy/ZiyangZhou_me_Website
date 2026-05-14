@@ -5,15 +5,14 @@ export type SkillGroup = {
   items: string[];
 };
 
-// 这里管理技能分组。新增技能时，只需要往对应 items 数组里加字符串。
 export const skillGroups: SkillGroup[] = [
   {
-    title: { en: "Programming", zh: "编程语言" },
-    items: ["Python", "JavaScript", "TypeScript", "Java", "C++", "C", "R"]
+    title: { en: "Programming & CS", zh: "编程与计算机基础" },
+    items: ["Python", "TypeScript", "JavaScript", "Java", "C++", "C", "R", "OOP", "Algorithms", "Data Structures"]
   },
   {
-    title: { en: "Data Analysis", zh: "数据分析" },
-    items: ["Pandas", "NumPy", "Matplotlib", "ggplot", "EDA", "Data Cleaning"]
+    title: { en: "Data & Visualization", zh: "数据与可视化" },
+    items: ["Pandas", "NumPy", "AKShare", "Plotly", "Matplotlib", "Jupyter Notebook", "Data Analysis", "Data Cleaning", "EDA"]
   },
   {
     title: { en: "Machine Learning", zh: "机器学习" },
@@ -22,17 +21,34 @@ export const skillGroups: SkillGroup[] = [
       "Regression",
       "Classification",
       "Random Forest",
-      "Gradient Boosting",
-      "XGBoost",
-      "GridSearchCV"
+      "IsolationForest",
+      "K-Means",
+      "Feature Engineering",
+      "Model Evaluation"
     ]
   },
   {
-    title: { en: "NLP & Unsupervised Learning", zh: "NLP 与无监督学习" },
-    items: ["TF-IDF", "LDA", "GloVe", "Topic Modeling", "K-Means", "DBSCAN"]
+    title: { en: "NLP & Computer Vision", zh: "NLP 与计算机视觉" },
+    items: ["NLP", "TF-IDF", "LDA", "GloVe", "Topic Modeling", "Computer Vision", "Image Classification"]
   },
   {
-    title: { en: "Tools & Product", zh: "工具与产品" },
-    items: ["Git", "GitHub", "Streamlit", "TradingView", "Pine Script", "OOP"]
+    title: { en: "Web & Product", zh: "Web 与产品" },
+    items: ["Next.js", "React", "Tailwind CSS", "Streamlit", "App Router", "Cloudflare", "Data Modeling", "User Stories"]
+  },
+  {
+    title: { en: "Financial Data", zh: "金融数据" },
+    items: [
+      "Intraday Tick Analysis",
+      "Order Flow",
+      "VWAP",
+      "Technical Indicators",
+      "Risk Disclosure",
+      "Sports Analytics",
+      "TradingView"
+    ]
+  },
+  {
+    title: { en: "Security & Systems", zh: "安全与系统" },
+    items: ["Multiprocessing", "CPU Optimization", "Cryptography Concepts", "Debugging", "macOS", "Git", "GitHub"]
   }
 ];

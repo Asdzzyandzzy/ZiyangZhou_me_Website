@@ -338,63 +338,73 @@ export const projects: Project[] = [
   },
   {
     slug: "astock-analysis-toolkit",
-    featured: false,
+    featured: true,
     title: {
-      en: "A-Share Analysis Toolkit",
-      zh: "A 股分析工具集合"
+      en: "A-Share Intraday Tick Analysis",
+      zh: "A 股日内逐笔分析工具"
     },
     subtitle: {
-      en: "A Python toolkit collecting early experiments for Chinese A-share analysis.",
-      zh: "一个 Python 工具集合，用来沉淀早期的中国 A 股分析实验。"
+      en: "A Python and Streamlit research app for intraday A-share tick data, large orders, order flow, behavior signals, alerts, and optional ML examples.",
+      zh: "一个基于 Python 和 Streamlit 的 A 股日内逐笔研究应用，覆盖大单、买卖流、行为信号、异常提醒和可选机器学习示例。"
     },
     period: {
-      en: "Aug 2025",
-      zh: "2025 年 8 月"
+      en: "Aug 2025 - Present",
+      zh: "2025 年 8 月 - 至今"
     },
     category: {
-      en: "Financial Analysis",
-      zh: "金融分析"
+      en: "Financial Data Research",
+      zh: "金融数据研究"
     },
-    techStack: ["Python", "Pandas", "Financial Data", "Data Analysis"],
+    techStack: ["Python", "Streamlit", "AKShare", "Plotly", "Pandas", "Scikit-learn"],
     repo: "https://github.com/Asdzzyandzzy/AStock_Analysis",
     summary: {
-      en: "This repository collects early A-share analysis scripts and ideas. It is closer to a working notebook bench than a polished app, and it shows the path from small experiments toward the later dashboard project.",
-      zh: "这个仓库收集了早期 A 股分析脚本和想法。它更像一个实验工作台，而不是完整产品，也展示了从零散实验走向后续 Dashboard 项目的过程。"
+      en: "A Streamlit-based research tool for observing intraday A-share tick behavior. It combines AKShare data fetching, field normalization, intraday indicators, large-order analysis, active buy/sell flow, estimated main-fund movement, price-level distribution, behavior signals, anomaly alerts, and optional machine learning examples.",
+      zh: "一个基于 Streamlit 的 A 股日内逐笔研究工具，整合 AKShare 数据获取、字段标准化、日内指标、大单分析、主动买卖流、主力资金估算、价格档位分布、行为信号、异常提醒和可选机器学习示例。"
     },
     motivation: {
-      en: "Before building a larger dashboard, I needed a place to test what data is available, what can be cleaned reliably, and which analysis views are actually useful.",
-      zh: "在做更完整的 Dashboard 之前，我需要一个地方测试哪些数据可用、哪些字段能稳定清洗，以及哪些分析视角真的有用。"
+      en: "The project grew from several standalone scripts into a more maintainable research application. The refactor separates data fetching, cleaning, indicators, visualization, configuration, logging, and optional ML so intraday market questions can be explored without turning the codebase into one large script.",
+      zh: "这个项目从几个独立脚本升级成了更可维护的研究应用。重构后把数据获取、字段清洗、指标计算、可视化、配置、日志和可选机器学习拆开，让日内市场问题可以被持续探索，而不是堆成一个大脚本。"
     },
     features: {
       en: [
-        "Collects Python scripts for A-share data exploration.",
-        "Experiments with reusable analysis patterns before productizing them.",
-        "Serves as a bridge between quick research ideas and a structured dashboard."
+        "Fetches A-share intraday and tick data through AKShare interfaces such as stock_zh_a_tick_tx_js and stock_intraday_em.",
+        "Normalizes changing upstream fields into a standard schema for time, price, volume, amount, and buy/sell direction.",
+        "Calculates intraday high/low, VWAP, average price, turnover, volume change, and price-level transaction distribution.",
+        "Analyzes large orders, super-large orders, active buy/sell amount, estimated main-fund net inflow, and buy/sell strength.",
+        "Detects tick-level behavior signals and alerts such as price lift, heavy sell pressure, possible accumulation/distribution, dense large-order activity, and sudden volume spikes.",
+        "Includes optional ML examples for anomaly detection, short-term direction classification, clustering, and feature explanation."
       ],
       zh: [
-        "收集用于 A 股数据探索的 Python 脚本。",
-        "在产品化之前实验可复用的分析模式。",
-        "作为快速研究想法和结构化 Dashboard 之间的过渡。"
+        "通过 AKShare 的 stock_zh_a_tick_tx_js、stock_intraday_em 等接口获取 A 股日内和逐笔数据。",
+        "将上游接口可能变化的字段统一清洗成时间、价格、成交量、成交金额、买卖方向等标准结构。",
+        "计算日内高低点、VWAP、均价、成交额、成交量变化和价格档位成交分布。",
+        "分析大单、超大单、主动买入/卖出金额、主力资金净流入估算和买卖强度对比。",
+        "识别拉升、重卖压、疑似吸筹/派发、密集大单、脉冲式放量等逐笔行为信号和异常提醒。",
+        "提供可选机器学习示例，包括异常检测、短期方向分类、交易行为聚类和特征解释。"
       ]
     },
     contribution: {
       en: [
-        "Explored data retrieval, cleaning, and analysis routines for Chinese market data.",
-        "Used the repository to decide which ideas deserved a more maintainable implementation."
+        "Refactored the project from root-level standalone scripts into a package-style structure with app.py, config.yaml, pyproject.toml, requirements.txt, and an astock_analysis module.",
+        "Built separate modules for AKShare fetchers, field cleaning, intraday indicators, tick-pattern detection, Plotly charts, logging, and optional ML workflows.",
+        "Kept legacy Streamlit and command-line entry points for compatibility while making app.py the recommended unified entry point."
       ],
       zh: [
-        "探索中国市场数据的获取、清洗和分析流程。",
-        "通过这个仓库判断哪些想法值得做成更可维护的实现。"
+        "将项目从根目录脚本重构为更清晰的包结构，包含 app.py、config.yaml、pyproject.toml、requirements.txt 和 astock_analysis 模块。",
+        "拆分 AKShare 数据获取、字段清洗、日内指标、逐笔行为信号、Plotly 图表、日志和可选 ML 工作流。",
+        "保留旧版 Streamlit 与命令行入口以兼容历史用法，同时将 app.py 作为推荐的统一入口。"
       ]
     },
     learnings: {
       en: [
-        "Learned that exploratory scripts are useful, but only up to the point where structure becomes necessary.",
-        "Built intuition for which financial data problems need better error handling and modular design."
+        "Learned how quickly financial data scripts need structure once field compatibility, caching, empty-data handling, and charts enter the project.",
+        "Practiced turning tick-level market observations into reusable indicators, rule-based alerts, and explainable ML features.",
+        "Strengthened risk-awareness: tick direction, fund-flow estimates, and behavior labels are data observations, not trading advice."
       ],
       zh: [
-        "理解了探索性脚本很有用，但复杂度上来后必须引入结构。",
-        "积累了金融数据项目中哪些地方需要异常处理和模块化设计的直觉。"
+        "理解了金融数据脚本一旦涉及字段兼容、缓存、空数据处理和图表，就需要尽早引入结构。",
+        "练习把逐笔市场观察转化为可复用指标、规则提醒和可解释的机器学习特征。",
+        "强化风险意识：逐笔方向、资金流估算和行为标签只是数据观察，不构成交易建议。"
       ]
     }
   },
