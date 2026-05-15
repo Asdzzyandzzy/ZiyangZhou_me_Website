@@ -13,11 +13,12 @@ import { experiences } from "@/content/experience";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { pickList, pickText } from "@/lib/i18n";
+import { getFeaturedProjects } from "@/lib/projectOrdering";
 
 // 首页总览：从 content 数据里读取内容，作为所有详情页的入口。
 export default function HomePage() {
   const { language, t } = useLanguage();
-  const featuredProjects = projects.filter((project) => project.featured).slice(0, 4);
+  const featuredProjects = getFeaturedProjects(projects);
   const previewExperiences = experiences.slice(0, 2);
 
   return (
