@@ -4,6 +4,7 @@ const projectPriority = [
   "astock-trade-analysis",
   "astock-analysis-toolkit",
   "machine-learning-projects",
+  "fanqie-qwen-writing-pipeline",
   "kaggle-fertilizer-competition",
   "english-letter-recognition",
   "predicting-f1-pit-stops",

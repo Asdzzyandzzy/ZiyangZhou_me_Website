@@ -267,6 +267,76 @@ export const projects: Project[] = [
     }
   },
   {
+    slug: "fanqie-qwen-writing-pipeline",
+    featured: true,
+    title: {
+      en: "Fanqie Short Story Pipeline with Local Qwen",
+      zh: "本地 Qwen 番茄短篇生成 Pipeline"
+    },
+    subtitle: {
+      en: "A local LLM writing pipeline for structured Chinese short-story generation with Qwen/Ollama, prompt orchestration, context handoff, and reproducible model settings.",
+      zh: "一个基于本地 Qwen/Ollama 的中文短篇生成 Pipeline，包含故事规划、提示词编排、上下文交接和可复现模型配置。"
+    },
+    period: {
+      en: "May 2026 - Present",
+      zh: "2026 年 5 月 - 至今"
+    },
+    category: {
+      en: "LLM Systems",
+      zh: "大语言模型系统"
+    },
+    techStack: ["Python", "Qwen", "Ollama", "Local LLM", "Prompt Engineering", "Generative AI"],
+    repo: "https://github.com/Asdzzyandzzy/Fanqie_novel_with_Qianwen",
+    summary: {
+      en: "A structured local LLM pipeline for Chinese short-story generation. Instead of relying on a single prompt, the project separates planning, prompt orchestration, target-word generation, context handoff, progress logging, and model configuration so long-form drafts are easier to inspect and reproduce.",
+      zh: "一个用于中文短篇生成的本地 LLM Pipeline。项目不是依赖单条提示词，而是把故事规划、提示词编排、目标字数生成、上下文交接、进度日志和模型配置拆开，让长文本生成过程更可检查、可复现。"
+    },
+    motivation: {
+      en: "Simple LLM writing workflows often lose continuity, shorten the story, forget relationships, or drift away from the intended emotional rhythm. I built this project to treat those failures as engineering problems: what should be planned, what should be logged, and how should context move between generation segments?",
+      zh: "简单的 LLM 写作流程很容易出现断上下文、篇幅不足、人物关系漂移或情绪节奏失控等问题。我做这个项目，是想把这些失败当作工程问题来处理：哪些内容应该提前规划，哪些信息应该被记录，上下文应该如何在生成片段之间传递。"
+    },
+    features: {
+      en: [
+        "Builds a structured story outline with title, premise, character roles, emotional arc, reversals, and beat planning.",
+        "Converts the story plan into execution prompts for a local Qwen model through an OpenAI-compatible endpoint.",
+        "Generates drafts by target word count and segment size rather than fixed chapters.",
+        "Feeds previous generated context into later segments to improve continuity.",
+        "Writes outlines, final prompts, generation logs, draft segments, merged novels, and metadata into local output folders."
+      ],
+      zh: [
+        "生成包含标题、设定、人物关系、情绪弧线、反转和节奏节点的结构化故事大纲。",
+        "将故事计划转化为面向本地 Qwen 模型的执行提示词，并通过 OpenAI-compatible 接口调用。",
+        "按目标字数和片段长度生成草稿，而不是按传统章节硬切分。",
+        "把前文生成内容回传给后续片段，改善长文本连续性。",
+        "在本地保存大纲、最终提示词、生成日志、片段草稿、合并成稿和 metadata，方便复盘。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Designed the planning-to-generation workflow and separated story presets, prompt templates, model profiles, and pipeline code.",
+        "Implemented a command-line entry point for prompt-only mode and full generation mode.",
+        "Added generation logging and local artifact structure so model behavior can be inspected after a run."
+      ],
+      zh: [
+        "设计从故事规划到文本生成的工作流，并拆分故事 preset、提示词模板、模型配置和 pipeline 代码。",
+        "实现命令行入口，支持只生成提示词和完整连续生成两种模式。",
+        "加入生成日志和本地 artifact 结构，让每次生成后的模型行为可以被检查和复盘。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned that long-form LLM generation is a systems problem as much as a prompting problem.",
+        "Practiced making local model workflows reproducible through explicit configuration and saved artifacts.",
+        "Explored how planning, context handoff, and logging can reduce the manual trial-and-error of creative generation."
+      ],
+      zh: [
+        "理解了长文本 LLM 生成不只是提示词问题，也是系统设计问题。",
+        "练习通过显式配置和保存生成产物，让本地模型工作流更可复现。",
+        "探索故事规划、上下文交接和日志如何减少创作型生成中的反复手动试错。"
+      ]
+    }
+  },
+  {
     slug: "astock-trade-analysis",
     featured: true,
     title: {

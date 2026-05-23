@@ -28,6 +28,18 @@ export const skillGroups: SkillGroup[] = [
     ]
   },
   {
+    title: { en: "LLM & Generative AI", zh: "大语言模型与生成式 AI" },
+    items: [
+      "Generative AI",
+      "Local LLM",
+      "Qwen",
+      "Ollama",
+      "Prompt Engineering",
+      "Prompt Orchestration",
+      "Context Handoff"
+    ]
+  },
+  {
     title: { en: "NLP & Computer Vision", zh: "NLP 与计算机视觉" },
     items: ["NLP", "TF-IDF", "LDA", "GloVe", "Topic Modeling", "Computer Vision", "Image Classification"]
   },
