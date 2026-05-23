@@ -32,6 +32,7 @@ export const skillGroups: SkillGroup[] = [
     items: [
       "Generative AI",
       "Local LLM",
+      "ChatGPT",
       "Qwen",
       "Ollama",
       "Prompt Engineering",
@@ -45,7 +46,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: { en: "Web & Product", zh: "Web 与产品" },
-    items: ["Next.js", "React", "Tailwind CSS", "Streamlit", "App Router", "Cloudflare", "Data Modeling", "User Stories"]
+    items: ["Next.js", "React", "Node.js", "Electron", "HTTP API", "Tailwind CSS", "Streamlit", "App Router", "Cloudflare", "Data Modeling", "User Stories"]
   },
   {
     title: { en: "Financial Data", zh: "金融数据" },
@@ -61,6 +62,6 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: { en: "Security & Systems", zh: "安全与系统" },
-    items: ["Multiprocessing", "CPU Optimization", "Cryptography Concepts", "Debugging", "macOS", "Git", "GitHub"]
+    items: ["Browser Automation", "Multiprocessing", "CPU Optimization", "Cryptography Concepts", "Debugging", "macOS", "Git", "GitHub"]
   }
 ];

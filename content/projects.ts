@@ -337,6 +337,76 @@ export const projects: Project[] = [
     }
   },
   {
+    slug: "chatgpt-local-api-creator",
+    featured: true,
+    title: {
+      en: "ChatGPT Local API Creator",
+      zh: "ChatGPT 本地 API 封装工具"
+    },
+    subtitle: {
+      en: "An Electron and Node.js tool that exposes a local HTTP API for a logged-in ChatGPT web session, with visible-browser control, chat/project navigation, and localhost-only access.",
+      zh: "一个基于 Electron 和 Node.js 的本地工具，将已登录的 ChatGPT Web 会话封装为本地 HTTP API，支持可见浏览器控制、聊天/Project 导航和仅 localhost 访问。"
+    },
+    period: {
+      en: "May 2026 - Present",
+      zh: "2026 年 5 月 - 至今"
+    },
+    category: {
+      en: "AI Tooling",
+      zh: "AI 工具系统"
+    },
+    techStack: ["JavaScript", "Electron", "Node.js", "HTTP API", "Browser Automation", "ChatGPT"],
+    repo: "https://github.com/Asdzzyandzzy/chatgpt-local-api-creator",
+    summary: {
+      en: "A local automation and API wrapper around the visible ChatGPT web app. The project opens chatgpt.com in Electron, preserves the user's local login session, and exposes a localhost-only HTTP service so local scripts can send prompts, read replies, open chats, and work with ChatGPT Projects.",
+      zh: "一个围绕可见 ChatGPT Web App 构建的本地自动化与 API 封装工具。项目通过 Electron 打开 chatgpt.com，保留用户本地登录状态，并暴露仅监听 localhost 的 HTTP 服务，让本机脚本可以发送 prompt、读取回复、打开聊天并操作 ChatGPT Projects。"
+    },
+    motivation: {
+      en: "The project explores a practical systems question: how can a web-based AI workflow be made scriptable while still keeping the real browser visible, preserving human control, and avoiding hidden login or private endpoint behavior?",
+      zh: "这个项目探索的是一个实际系统问题：如何让基于网页的 AI 工作流变得可脚本化，同时保持真实浏览器可见、保留人工控制，并避免隐藏登录或私有端点行为。"
+    },
+    features: {
+      en: [
+        "Runs a local HTTP server on 127.0.0.1 for status checks, prompt sending, last-message reading, refresh, new chat, and chat navigation.",
+        "Supports ChatGPT Projects workflows, including listing visible Projects, opening Projects, reading Project chats, and opening Project chats by URL, title, ID, or index.",
+        "Keeps the Electron browser window visible so sign-in, CAPTCHA, or other human actions are handled directly by the user.",
+        "Parses current page IDs such as chatId, projectId, and projectChatId for safer navigation and debugging.",
+        "Uses Electron security settings including disabled node integration, context isolation, sandboxing, and default web security."
+      ],
+      zh: [
+        "在 127.0.0.1 上运行本地 HTTP 服务，支持状态检查、发送 prompt、读取最后回复、刷新、新建聊天和聊天导航。",
+        "支持 ChatGPT Projects 工作流，包括读取可见 Projects、打开 Project、读取 Project 内聊天，以及通过 URL、标题、ID 或 index 打开 Project chat。",
+        "保持 Electron 浏览器窗口可见，登录、验证码或其它需要人工处理的步骤都由用户直接完成。",
+        "解析当前页面中的 chatId、projectId、projectChatId 等 ID，提升导航和调试的可靠性。",
+        "使用 Electron 安全设置，包括关闭 node integration、启用 context isolation、sandbox 和默认 Web security。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Built the Electron shell, local HTTP API, and browser-control flow around a real visible ChatGPT session.",
+        "Designed endpoints for chat operations, project navigation, project-chat discovery, diagnostics, and recovery actions such as refresh.",
+        "Documented Windows cmd, PowerShell, Node.js, and Python usage examples so the local service can be called from different workflows."
+      ],
+      zh: [
+        "围绕真实可见的 ChatGPT 会话搭建 Electron 外壳、本地 HTTP API 和浏览器控制流程。",
+        "设计聊天操作、Project 导航、Project chat 发现、诊断和刷新恢复等端点。",
+        "补充 Windows cmd、PowerShell、Node.js、Python 调用示例，让本地服务可以接入不同脚本工作流。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Practiced turning a browser-based AI workflow into a local service interface while keeping user control explicit.",
+        "Learned how fragile web automation can be when DOM structure changes, and why diagnostics and visible state matter.",
+        "Strengthened awareness of local security boundaries, session storage, and the difference between supported APIs and browser automation."
+      ],
+      zh: [
+        "练习把基于浏览器的 AI 工作流封装成本地服务接口，同时明确保留用户控制。",
+        "理解了 Web 自动化在 DOM 结构变化时的脆弱性，以及诊断信息和可见状态的重要性。",
+        "强化了对本地安全边界、会话存储，以及官方 API 与浏览器自动化差异的理解。"
+      ]
+    }
+  },
+  {
     slug: "astock-trade-analysis",
     featured: true,
     title: {

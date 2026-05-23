@@ -1,12 +1,13 @@
 import type { Project } from "@/content/projects";
 
 const projectPriority = [
-  "astock-trade-analysis",
-  "astock-analysis-toolkit",
   "machine-learning-projects",
   "fanqie-qwen-writing-pipeline",
-  "kaggle-fertilizer-competition",
+  "chatgpt-local-api-creator",
+  "astock-trade-analysis",
+  "astock-analysis-toolkit",
   "english-letter-recognition",
+  "kaggle-fertilizer-competition",
   "predicting-f1-pit-stops",
   "ziyangzhou-me-website",
   "sleep-app",
