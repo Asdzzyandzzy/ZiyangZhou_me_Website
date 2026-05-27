@@ -62,7 +62,7 @@ export const translations = {
     },
     resume: {
       description:
-        "View or download the Chinese resume. An English version can be added later without changing the page logic."
+        "View or download the bilingual English and Chinese resume."
     },
     contact: {
       intro:
@@ -133,7 +133,7 @@ export const translations = {
       description: "这里会逐步整理机器学习、AI、软件开发、数据工具和产品思考相关笔记。"
     },
     resume: {
-      description: "你可以在线查看或下载中文简历。以后增加英文版时，不需要改页面逻辑。"
+      description: "你可以在线查看或下载中英双语简历。"
     },
     contact: {
       intro:

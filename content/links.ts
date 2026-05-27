@@ -2,6 +2,6 @@
 export const links = {
   email: "zhouziyang0630@163.com",
   github: "https://github.com/Asdzzyandzzy?tab=repositories",
-  resume: "/resume/resume-cn.pdf",
+  resume: "/resume/ziyang-zhou-resume-bilingual.pdf",
   domain: "https://ziyangzhou.me"
 };
