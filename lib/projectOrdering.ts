@@ -2,18 +2,20 @@ import type { Project } from "@/content/projects";
 
 const projectPriority = [
   "tencent-ai-hr-growth-quest",
-  "machine-learning-projects",
   "fanqie-qwen-writing-pipeline",
-  "chatgpt-local-api-creator",
-  "astock-trade-analysis",
-  "astock-analysis-toolkit",
-  "english-letter-recognition",
-  "kaggle-fertilizer-competition",
-  "predicting-f1-pit-stops",
   "ziyangzhou-me-website",
-  "sleep-app",
+  "chatgpt-local-api-creator",
+  "airbnb-price-modeling",
+  "text-embeddings-topic-modeling",
+  "recipe-clustering",
+  "astock-analysis-toolkit",
+  "adult-census-preprocessing-pipeline",
   "cpsc221-labs",
-  "bitcoin-private-key-recovery-tool"
+  "sleep-app",
+  "glass-futures-trading-strategy",
+  "logistic-regression-text-classification",
+  "spotify-decision-tree-modeling",
+  "english-letter-recognition"
 ];
 
 const priorityBySlug = new Map(projectPriority.map((slug, index) => [slug, index]));
