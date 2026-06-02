@@ -616,15 +616,15 @@ export const projects: Project[] = [
     }
   },
   {
-    slug: "cpsc221-labs",
+    slug: "cpsc221-hash-tables",
     featured: true,
     title: {
-      en: "CPSC 221 Labs",
-      zh: "CPSC 221 课程实验"
+      en: "CPSC 221 Hash Tables Lab",
+      zh: "CPSC 221 哈希表实验"
     },
     subtitle: {
-      en: "A UBC CPSC 221 coursework repository focused on C++ data structures, algorithms, memory behavior, debugging, and testing.",
-      zh: "UBC CPSC 221 的 C++ 课程实验仓库，重点练习数据结构、算法、内存行为、调试和测试。"
+      en: "A C++ lab implementing separate chaining and linear probing hash tables with text-analysis exercises.",
+      zh: "一个 C++ 课程实验，实现 separate chaining 和 linear probing 哈希表，并结合文本分析练习。"
     },
     period: {
       en: "Mar 2025",
@@ -634,50 +634,248 @@ export const projects: Project[] = [
       en: "Computer Science Coursework",
       zh: "计算机科学课程"
     },
-    techStack: ["C++", "Data Structures", "Algorithms", "Debugging", "Testing"],
-    repo: "https://github.com/Asdzzyandzzy/CPSC221-LABS",
+    techStack: ["C++", "Hash Tables", "Separate Chaining", "Linear Probing", "Iterators", "Testing"],
+    repo: "https://github.com/Asdzzyandzzy/CPSC221-LABS/tree/main/lab_hash",
     summary: {
-      en: "A UBC CPSC 221 coursework repository focused on C++ data structures, algorithm implementation, memory behavior, debugging, and code organization. The value is implementation discipline rather than product polish.",
-      zh: "UBC CPSC 221 的 C++ 课程实验仓库，重点练习数据结构、算法实现、内存行为、调试和代码组织。这个项目不是产品展示，而是计算机基础能力的代码证据。"
+      en: "A UBC CPSC 221 C++ lab focused on hash-table implementation. The folder includes separate chaining, linear probing, iterators, resizing behavior, and text-analysis applications such as word counting and anagram finding.",
+      zh: "UBC CPSC 221 的 C++ 哈希表实验，目录包含 separate chaining、linear probing、iterator、扩容行为，以及 word counting 和 anagram finding 等文本分析练习。"
     },
     motivation: {
-      en: "I kept this as one coursework project because I could not reliably verify specific lab folders through the GitHub API during this update.",
-      zh: "由于本次更新中无法通过 GitHub API 稳定确认具体 lab 文件夹内容，因此保留为一个课程实验总项目。"
+      en: "The goal was to understand how collision handling, probing, iterators, and resizing affect correctness in a compact data structure.",
+      zh: "项目目标是理解冲突处理、探测、迭代器和扩容如何影响紧凑数据结构的正确性。"
     },
     features: {
       en: [
-        "Documents C++ coursework practice rather than a product workflow.",
-        "Focuses on data structures, algorithm implementation, memory behavior, debugging, and testing.",
-        "Keeps code organization visible as evidence of foundational CS practice."
+        "Implements separate chaining and linear probing hash table variants.",
+        "Uses iterator code and resizing logic to maintain table behavior.",
+        "Applies hash tables to word counting, character counting, and anagram-style text tasks."
       ],
       zh: [
-        "记录 C++ 课程实验实践，而不是产品工作流。",
-        "重点是数据结构、算法实现、内存行为、调试和测试。",
-        "将代码组织作为计算机基础训练的证据。"
+        "实现 separate chaining 和 linear probing 两类哈希表。",
+        "通过 iterator 和 resize 逻辑维护表结构行为。",
+        "将哈希表应用到词频统计、字符统计和 anagram 文本任务。"
       ]
     },
     contribution: {
       en: [
-        "Completed lab implementation and debugging work as part of UBC CPSC 221.",
-        "Practiced writing and organizing C++ code under course constraints.",
-        "Kept the description grounded in coursework rather than AI-assisted development."
+        "Completed C++ implementation work inside the provided course scaffolding.",
+        "Debugged collision handling and iterator behavior under tests.",
+        "Kept the project framed as data-structure coursework rather than product development."
       ],
       zh: [
-        "完成 UBC CPSC 221 课程实验中的实现和调试工作。",
-        "在课程约束下练习 C++ 代码编写和组织。",
-        "保持课程项目表述，不写成 AI-assisted 项目。"
+        "在课程提供的框架中完成 C++ 实现。",
+        "结合测试调试冲突处理和 iterator 行为。",
+        "将项目表述为数据结构课程实践，而不是产品开发。"
       ]
     },
     learnings: {
       en: [
-        "Built stronger habits around reasoning about data structures.",
-        "Practiced debugging at a lower level than typical scripting projects.",
-        "Improved awareness of implementation details behind higher-level software."
+        "Learned how small probing and resizing mistakes can change lookup behavior.",
+        "Practiced connecting abstract hashing concepts to concrete C++ code.",
+        "Built better habits around testing data-structure invariants."
       ],
       zh: [
-        "建立更扎实的数据结构推理习惯。",
-        "练习比脚本项目更底层的错误排查和调试。",
-        "更清楚地理解高层软件背后的实现细节。"
+        "理解很小的 probing 或 resizing 错误如何改变查找行为。",
+        "练习把抽象哈希概念落实到具体 C++ 代码。",
+        "强化了围绕数据结构不变量进行测试的习惯。"
+      ]
+    }
+  },
+  {
+    slug: "cpsc221-avl-trees",
+    featured: true,
+    title: {
+      en: "CPSC 221 AVL Trees Lab",
+      zh: "CPSC 221 AVL 树实验"
+    },
+    subtitle: {
+      en: "A C++ lab implementing a self-balancing binary search tree with rotations, insertion, removal, and tests.",
+      zh: "一个 C++ 课程实验，实现带旋转、插入、删除和测试的自平衡二叉搜索树。"
+    },
+    period: {
+      en: "Mar 2025",
+      zh: "2025 年 3 月"
+    },
+    category: {
+      en: "Computer Science Coursework",
+      zh: "计算机科学课程"
+    },
+    techStack: ["C++", "AVL Tree", "Binary Search Tree", "Rotations", "Balancing", "Catch2"],
+    repo: "https://github.com/Asdzzyandzzy/CPSC221-LABS/tree/main/lab_avl",
+    summary: {
+      en: "A UBC CPSC 221 C++ lab for AVL tree implementation. The folder contains avltree.cpp, avltree.h, tests, expected outputs, and tree-printing utilities for checking rotation and balancing behavior.",
+      zh: "UBC CPSC 221 的 C++ AVL 树实验，目录包含 avltree.cpp、avltree.h、测试、expected outputs 和树结构打印工具，用于检查旋转和平衡行为。"
+    },
+    motivation: {
+      en: "The lab made balancing rules concrete: insertions and removals must preserve both binary-search ordering and height balance.",
+      zh: "这个实验把平衡规则变得具体：插入和删除必须同时保持二叉搜索顺序和高度平衡。"
+    },
+    features: {
+      en: [
+        "Implements AVL rotations and balance-factor maintenance.",
+        "Handles insertion and removal while preserving BST ordering.",
+        "Uses tests and printed tree structures to inspect correctness."
+      ],
+      zh: [
+        "实现 AVL 旋转和 balance factor 维护。",
+        "在插入和删除时保持 BST 顺序。",
+        "通过测试和打印树结构检查正确性。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Implemented the AVL tree behavior in C++ within the course lab files.",
+        "Reasoned through single and double rotation cases.",
+        "Used expected outputs and tests to debug tree shape changes."
+      ],
+      zh: [
+        "在课程 lab 文件中实现 AVL 树行为。",
+        "推理单旋和双旋情况。",
+        "使用 expected outputs 和测试调试树形变化。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Strengthened recursive reasoning around tree operations.",
+        "Learned how local rotations preserve global search-tree invariants.",
+        "Practiced debugging algorithms where the data structure shape matters."
+      ],
+      zh: [
+        "加强了围绕树操作的递归推理。",
+        "理解局部旋转如何保持整体搜索树不变量。",
+        "练习调试结构形状本身很重要的算法。"
+      ]
+    }
+  },
+  {
+    slug: "cpsc221-heaps",
+    featured: true,
+    title: {
+      en: "CPSC 221 Heaps Lab",
+      zh: "CPSC 221 堆结构实验"
+    },
+    subtitle: {
+      en: "A C++ lab practicing array-backed heap operations, priority-queue behavior, and index arithmetic.",
+      zh: "一个 C++ 课程实验，练习数组实现的堆操作、优先队列行为和索引计算。"
+    },
+    period: {
+      en: "Mar 2025",
+      zh: "2025 年 3 月"
+    },
+    category: {
+      en: "Computer Science Coursework",
+      zh: "计算机科学课程"
+    },
+    techStack: ["C++", "Heaps", "Priority Queues", "Heapify", "Upheap", "Downheap", "Testing"],
+    repo: "https://github.com/Asdzzyandzzy/CPSC221-LABS/tree/main/lab_heaps",
+    summary: {
+      en: "A UBC CPSC 221 C++ lab focused on array-backed heap implementation and heap operation tests. The work centers on heapify, upheap/downheap behavior, priority-queue ordering, and index arithmetic.",
+      zh: "UBC CPSC 221 的 C++ 堆结构实验，重点是数组实现的 heap、heapify、upheap/downheap、优先队列顺序和索引计算。"
+    },
+    motivation: {
+      en: "The lab was useful for practicing how a tree-shaped invariant can be stored and maintained inside a compact array representation.",
+      zh: "这个实验帮助我练习如何在紧凑数组表示中存储和维护树形不变量。"
+    },
+    features: {
+      en: [
+        "Implements heap operations on an array-backed structure.",
+        "Practices heapify, upheap, downheap, and priority ordering.",
+        "Uses tests to catch indexing and invariant mistakes."
+      ],
+      zh: [
+        "在数组结构上实现堆操作。",
+        "练习 heapify、upheap、downheap 和优先级顺序。",
+        "通过测试发现索引和不变量错误。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Completed heap implementation exercises in C++.",
+        "Debugged parent/child index calculations and heap invariants.",
+        "Connected priority-queue behavior to low-level array operations."
+      ],
+      zh: [
+        "完成 C++ 堆实现练习。",
+        "调试父子节点索引计算和堆不变量。",
+        "把优先队列行为和底层数组操作联系起来。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned how off-by-one errors can break heap behavior.",
+        "Practiced reasoning about implicit tree structures.",
+        "Improved confidence with testing compact data representations."
+      ],
+      zh: [
+        "理解 off-by-one 错误如何破坏堆行为。",
+        "练习推理隐式树结构。",
+        "提升了测试紧凑数据表示的熟练度。"
+      ]
+    }
+  },
+  {
+    slug: "cpsc221-graphs-union-find",
+    featured: true,
+    title: {
+      en: "CPSC 221 Graphs and Union-Find Lab",
+      zh: "CPSC 221 图算法与并查集实验"
+    },
+    subtitle: {
+      en: "A C++ lab covering graph representation, graph tools, weighted edges, and disjoint-set structures.",
+      zh: "一个 C++ 课程实验，覆盖图表示、图工具、加权边和 disjoint-set 并查集结构。"
+    },
+    period: {
+      en: "Mar 2025",
+      zh: "2025 年 3 月"
+    },
+    category: {
+      en: "Computer Science Coursework",
+      zh: "计算机科学课程"
+    },
+    techStack: ["C++", "Graphs", "Graph Algorithms", "Union-Find", "Disjoint Sets", "Weighted Edges"],
+    repo: "https://github.com/Asdzzyandzzy/CPSC221-LABS/tree/main/lab_graphs",
+    summary: {
+      en: "A UBC CPSC 221 C++ graph lab with graph.cpp, graph_tools.cpp, edge structures, premade graph utilities, tests, and disjoint-set files. It focuses on representation, connectivity, weighted edges, and union-find reasoning.",
+      zh: "UBC CPSC 221 的 C++ 图算法实验，包含 graph.cpp、graph_tools.cpp、edge 结构、预设图工具、测试和 disjoint-set 文件，重点是图表示、连通性、加权边和并查集推理。"
+    },
+    motivation: {
+      en: "The lab helped connect graph algorithms to implementation details such as edge storage, connectivity checks, and disjoint-set updates.",
+      zh: "这个实验帮助我把图算法和边存储、连通性检查、并查集更新等实现细节联系起来。"
+    },
+    features: {
+      en: [
+        "Works with graph representation files, edge structures, and graph tools.",
+        "Uses disjoint-set data structures for connectivity-oriented reasoning.",
+        "Includes tests and demo files for checking graph behavior."
+      ],
+      zh: [
+        "处理图表示文件、edge 结构和 graph tools。",
+        "使用 disjoint-set 数据结构进行连通性相关推理。",
+        "包含测试和 demo 文件，用于检查图行为。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Completed graph and disjoint-set implementation work in C++.",
+        "Practiced debugging behavior across multiple supporting files.",
+        "Kept the description grounded in algorithms and data structures rather than product features."
+      ],
+      zh: [
+        "完成 C++ 图和 disjoint-set 相关实现工作。",
+        "练习在多个支撑文件之间调试行为。",
+        "保持算法和数据结构课程项目表述，不写成产品功能。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned how graph correctness depends on representation choices.",
+        "Practiced union-find reasoning for connectivity-style problems.",
+        "Improved ability to trace algorithm behavior across related C++ modules."
+      ],
+      zh: [
+        "理解图算法正确性与表示方式密切相关。",
+        "练习用并查集推理连通性问题。",
+        "提升了跨多个 C++ 模块追踪算法行为的能力。"
       ]
     }
   },
