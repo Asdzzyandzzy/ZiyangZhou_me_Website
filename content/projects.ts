@@ -19,6 +19,87 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "tencent-ai-hr-growth-quest",
+    featured: true,
+    title: {
+      en: "Tencent AI-HR Growth Quest",
+      zh: "腾讯 AI-HR 成长副本"
+    },
+    subtitle: {
+      en: "A Next.js demo for AI-native newcomer onboarding, turning role profiles into 30-60-90 day growth plans, mentor feedback, and HR risk views.",
+      zh: "一个面向 AI Native 组织新人培养的 Next.js Demo，将新人画像转化为 30-60-90 天成长路径、导师反馈和 HR 风险看板。"
+    },
+    period: {
+      en: "Jun 2026",
+      zh: "2026 年 6 月"
+    },
+    category: {
+      en: "AI Product Demo",
+      zh: "AI 产品 Demo"
+    },
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "CloudBase",
+      "TokenHub",
+      "Recharts"
+    ],
+    repo: "https://github.com/Asdzzyandzzy/Tencent_AI-HR_project",
+    demo: "https://tencent-ai-hr-project-d0f38a5b27-1438457315.tcloudbaseapp.com/",
+    summary: {
+      en: "Growth Quest is a Tencent AI-HR demo project for AI-native newcomer development. It connects newcomer profiles, 30-60-90 day growth paths, growth maps, mentor feedback, growth archives, and HR dashboards into a complete onboarding loop that can run with mock data or AI-generated plans.",
+      zh: "成长副本 Growth Quest 是一个腾讯 AI-HR Demo 课题项目，面向 AI Native 组织的新人成长培养场景。项目把新人画像、30-60-90 天成长路径、成长地图、导师反馈、成长档案和 HR 组织看板串成一个可演示闭环，并支持 Mock 数据与 AI 生成两种模式。"
+    },
+    motivation: {
+      en: "AI-native teams change what onboarding needs to teach: newcomers must learn the business, AI tools, human-AI collaboration, and real delivery habits at the same time. I built this project to explore how a product can make growth expectations explicit, reduce mentor dependency on personal experience, and help HR spot training risks earlier.",
+      zh: "AI Native 组织改变了新人培养的重点：新人不仅要熟悉业务，还要掌握 AI 工具、建立人机协同思维，并在真实工作场景中完成任务。我做这个项目，是想探索如何用产品把成长目标讲清楚，减少导师带教只依赖个人经验的问题，也帮助 HR 更早发现培养风险。"
+    },
+    features: {
+      en: [
+        "Collects a newcomer profile with role direction, current stage, AI foundation, blockers, target capabilities, and 90-day goals.",
+        "Generates a 30-60-90 day growth path with stage goals, learning tasks, AI tool practice, deliverables, mentor checkpoints, and evaluation criteria.",
+        "Provides a 3-minute review mode that injects complete demo data so judges can experience the main flow without login or AI wait time.",
+        "Includes growth map, growth archive, mentor dashboard, HR dashboard, risk alerts, feedback templates, and training recommendations.",
+        "Supports TokenHub/Hunyuan AI generation, CloudBase persistence, local storage fallback, and mock-first behavior for stable demos."
+      ],
+      zh: [
+        "收集新人画像，包括岗位方向、当前阶段、AI 基础、当前困惑、目标能力和 90 天目标。",
+        "生成 30-60-90 天成长路径，包含阶段目标、学习任务、AI 工具训练、实战任务、交付物、导师检查点和评价标准。",
+        "提供 3 分钟评审模式，一键注入完整 Demo 数据，让评委无需登录、无需等待 AI 即可体验主流程。",
+        "包含成长地图、成长档案、导师看板、HR 看板、风险预警、反馈模板和培训建议。",
+        "支持 TokenHub/混元 AI 生成、CloudBase 持久化、本地存储回退和 Mock-first 演示稳定策略。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Designed the product concept around three stages: 30-day recognition modeling, 60-day human-AI collaboration, and 90-day independent delivery.",
+        "Implemented the Next.js App Router experience across profile intake, growth path, map, mentor view, HR view, archive, and solution explanation pages.",
+        "Built the AI generation and fallback logic so failed, timed-out, empty, or invalid JSON responses still produce role-specific mock paths.",
+        "Used a dual-agent workflow: CodeBuddy for implementation and deployment debugging, Codex for code review, product evaluation, logic checks, and experience optimization."
+      ],
+      zh: [
+        "围绕 30 天认知建模期、60 天人机协同期、90 天独立产出期设计产品方案。",
+        "使用 Next.js App Router 实现新人画像、成长路径、成长地图、导师视图、HR 视图、成长档案和方案说明等页面。",
+        "构建 AI 生成与回退逻辑，在 AI 失败、超时、空内容或 JSON 不合法时仍能生成岗位差异化 Mock 路径。",
+        "采用双 Agent 协作流程：CodeBuddy 负责功能开发和部署调试，Codex 负责代码审查、产品评估、逻辑验证和体验优化。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned how to translate an HR training problem into product surfaces for newcomers, mentors, and HR instead of only generating a single plan.",
+        "Practiced designing AI features with stable demo behavior, explicit fallback paths, cache priority, and no-secret submission rules.",
+        "Explored how AI-native onboarding can emphasize personalized growth paths, human-AI collaboration, and continuous growth management."
+      ],
+      zh: [
+        "学习如何把 HR 培养问题拆成新人、导师和 HR 三个视角的产品界面，而不是只生成一份计划。",
+        "练习为 AI 功能设计稳定演示、明确回退、缓存优先和不提交真实密钥的工程策略。",
+        "探索 AI Native 组织的人才培养方式，重点放在个性化成长路径、人机协同能力和持续成长管理上。"
+      ]
+    }
+  },
+  {
     slug: "ziyangzhou-me-website",
     featured: true,
     title: {

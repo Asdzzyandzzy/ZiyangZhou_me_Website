@@ -1,6 +1,7 @@
 import type { Project } from "@/content/projects";
 
 const projectPriority = [
+  "tencent-ai-hr-growth-quest",
   "machine-learning-projects",
   "fanqie-qwen-writing-pipeline",
   "chatgpt-local-api-creator",
