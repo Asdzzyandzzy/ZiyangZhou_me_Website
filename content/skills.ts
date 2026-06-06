@@ -8,7 +8,7 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     title: { en: "Programming & CS", zh: "编程与计算机基础" },
-    items: ["Python", "TypeScript", "JavaScript", "Java", "C++", "C", "R", "OOP", "Algorithms", "Data Structures"]
+    items: ["Python", "TypeScript", "JavaScript", "Java", "C++", "C", "R", "OOP", "Algorithms", "Data Structures", "Pytest"]
   },
   {
     title: { en: "Data & Visualization", zh: "数据与可视化" },
@@ -33,8 +33,12 @@ export const skillGroups: SkillGroup[] = [
       "Generative AI",
       "Local LLM",
       "ChatGPT",
+      "DeepSeek",
       "Qwen",
       "Ollama",
+      "AI Agents",
+      "Tool Calling",
+      "ReAct",
       "Prompt Engineering",
       "Prompt Orchestration",
       "Context Handoff"
@@ -62,6 +66,6 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: { en: "Security & Systems", zh: "安全与系统" },
-    items: ["Browser Automation", "Multiprocessing", "CPU Optimization", "Cryptography Concepts", "Debugging", "macOS", "Git", "GitHub"]
+    items: ["Browser Automation", "CLI Tooling", "Workspace Safety", "Multiprocessing", "CPU Optimization", "Cryptography Concepts", "Debugging", "macOS", "Git", "GitHub"]
   }
 ];
