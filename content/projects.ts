@@ -21,6 +21,78 @@ const mlRepo = "https://github.com/Asdzzyandzzy/machine-learning-projects";
 
 export const projects: Project[] = [
   {
+    slug: "deepseek-coding-agent",
+    featured: true,
+    title: {
+      en: "Local DeepSeek Coding Agent",
+      zh: "本地 DeepSeek Coding Agent"
+    },
+    subtitle: {
+      en: "A Python coding-agent MVP with a Codex-like CLI, ReAct tool loops, workspace-aware file tools, shell/test execution, git diff output, and safety controls.",
+      zh: "一个基于 Python 和 DeepSeek 的本地 coding agent MVP，包含类似 Codex 的 CLI、ReAct 工具循环、工作区文件工具、Shell/测试执行、git diff 输出和安全控制。"
+    },
+    period: {
+      en: "Jun 2026",
+      zh: "2026 年 6 月"
+    },
+    category: {
+      en: "AI Agent Tooling",
+      zh: "AI Agent 工具"
+    },
+    techStack: ["Python", "DeepSeek", "Typer", "Rich", "ReAct", "Tool Calling", "Pytest"],
+    repo: "https://github.com/Asdzzyandzzy/deepseek-coding-agent",
+    summary: {
+      en: "A local DeepSeek-powered coding agent MVP designed around a Codex-like workflow. It gives the model workspace-aware file tools, a stateful ReAct/tool-calling loop, shell and test execution, git diff inspection, and a Rich terminal UI while keeping file writes and risky commands bounded by local safety rules.",
+      zh: "这是一个基于 DeepSeek 的本地 coding agent MVP，目标是复现类似 Codex 的工作流。项目为模型提供工作区感知的文件工具、带状态的 ReAct/工具调用循环、Shell 与测试执行、git diff 检查和 Rich 终端 UI，同时用本地安全规则约束文件写入和高风险命令。"
+    },
+    motivation: {
+      en: "I built this project to understand how coding agents actually work below the product surface: how tasks become plans, how tools return observations, how workspace context is managed, and how safety policies limit what an autonomous loop can do.",
+      zh: "我做这个项目，是为了理解 coding agent 在产品表面之下如何运作：任务如何变成计划，工具如何返回观察结果，工作区上下文如何管理，以及安全策略如何限制自动循环的行为边界。"
+    },
+    features: {
+      en: [
+        "Implements a stateful ReAct loop where the model plans, calls tools, receives observations, edits files, runs tests, checks diffs, and summarizes results.",
+        "Provides workspace-aware tools for listing, reading, writing, editing, and searching files, plus shell/test execution and git diff output.",
+        "Includes a Rich terminal UI and Typer CLI commands for run, ui, chat, diff, and test workflows.",
+        "Supports configurable intelligence modes such as fast, balanced, smart, max, and custom for different speed and quality tradeoffs.",
+        "Adds safety controls for workspace-restricted writes, sensitive-file refusal, dangerous command blocking, confirmations for destructive commands, timeouts, bounded output, and repeated-tool limits."
+      ],
+      zh: [
+        "实现带状态的 ReAct 循环：模型先规划，再调用工具、读取观察结果、编辑文件、运行测试、检查 diff，并总结结果。",
+        "提供工作区感知工具，支持列文件、读文件、写文件、编辑文件、搜索文本、执行 Shell/测试命令和输出 git diff。",
+        "提供 Rich 终端 UI 和 Typer CLI 命令，覆盖 run、ui、chat、diff、test 等使用方式。",
+        "支持 fast、balanced、smart、max、custom 等智能模式，用于控制速度、质量和循环预算的取舍。",
+        "加入安全控制，包括文件写入限制在工作区内、拒绝敏感文件、阻止危险命令、破坏性命令确认、超时、输出截断和重复工具调用限制。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Designed the agent architecture across CLI dispatch, terminal UI, configuration loading, LLM client/tool schemas, tool execution, patch application, and safety policy.",
+        "Implemented local tools for filesystem operations, strict unified-diff patch application, shell/test execution with risk checks, and git diff inspection.",
+        "Documented the build path in docs/AGENT_BUILD_GUIDE.md so the project can also serve as a learning artifact for coding-agent internals.",
+        "Added tests around agent behavior, configuration, filesystem tools, LLM handling, entry points, patch parsing, safety policy, shell tools, and UI behavior."
+      ],
+      zh: [
+        "设计 agent 架构，覆盖 CLI 分发、终端 UI、配置加载、LLM 客户端与工具 schema、工具执行、patch 应用和安全策略。",
+        "实现本地工具，包括文件系统操作、严格 unified diff patch 应用、带风险检查的 Shell/测试执行和 git diff 检查。",
+        "编写 docs/AGENT_BUILD_GUIDE.md，让项目不仅是工具原型，也能作为理解 coding agent 内部机制的学习材料。",
+        "补充测试，覆盖 agent 行为、配置、文件系统工具、LLM 处理、入口命令、patch 解析、安全策略、Shell 工具和 UI 行为。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned that a usable coding agent is mostly systems design: tool boundaries, observations, context reset, safety checks, and predictable failure behavior matter as much as the model call.",
+        "Practiced designing local automation with explicit workspace boundaries instead of allowing broad file or shell access.",
+        "Built a clearer understanding of the gap between a chat model wrapper and an agent that can inspect, modify, test, and explain a codebase."
+      ],
+      zh: [
+        "理解到可用的 coding agent 本质上是系统设计问题：工具边界、观察结果、上下文重置、安全检查和可预测失败行为，与模型调用本身同样重要。",
+        "练习在明确工作区边界内设计本地自动化，而不是给模型开放过宽的文件或 Shell 权限。",
+        "更清楚地区分普通聊天模型封装和真正能检查、修改、测试并解释代码库的 agent 工作流。"
+      ]
+    }
+  },
+  {
     slug: "tencent-ai-hr-growth-quest",
     featured: true,
     title: {

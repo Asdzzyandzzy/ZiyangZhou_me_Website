@@ -1,6 +1,7 @@
 import type { Project } from "@/content/projects";
 
 const projectPriority = [
+  "deepseek-coding-agent",
   "tencent-ai-hr-growth-quest",
   "fanqie-qwen-writing-pipeline",
   "ziyangzhou-me-website",
