@@ -10,15 +10,15 @@ import { links } from "@/content/links";
 export const metadata: Metadata = {
   metadataBase: new URL(links.domain),
   title: {
-    default: "Ziyang Zhou | Software, Machine Learning & Data",
+    default: "Ziyang Zhou | Statistics, ML & Data Projects",
     template: "%s | Ziyang Zhou"
   },
   description:
-    "Personal portfolio for Ziyang Zhou, a UBC statistics student building software, machine learning projects, data tools, and product ideas.",
+    "Portfolio for Ziyang Zhou, a UBC Statistics student sharing coursework, machine learning projects, data analysis, and AI-assisted prototypes.",
   openGraph: {
-    title: "Ziyang Zhou | Personal Portfolio",
+    title: "Ziyang Zhou | Statistics and ML Portfolio",
     description:
-      "Software, machine learning, data analysis, and product-minded projects by Ziyang Zhou.",
+      "Coursework, personal projects, data analysis, and AI-assisted prototypes by Ziyang Zhou.",
     url: links.domain,
     siteName: "Ziyangzhou.me",
     images: [
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ziyang Zhou | Personal Portfolio",
+    title: "Ziyang Zhou | Statistics and ML Portfolio",
     description:
-      "Software, machine learning, data analysis, and product-minded projects by Ziyang Zhou.",
+      "Coursework, personal projects, data analysis, and AI-assisted prototypes by Ziyang Zhou.",
     images: ["/images/profile.jpg"]
   }
 };

@@ -28,67 +28,67 @@ export const projects: Project[] = [
       zh: "本地 DeepSeek Coding Agent"
     },
     subtitle: {
-      en: "A Python coding-agent MVP with a Codex-like CLI, ReAct tool loops, workspace-aware file tools, shell/test execution, git diff output, and safety controls.",
-      zh: "一个基于 Python 和 DeepSeek 的本地 coding agent MVP，包含类似 Codex 的 CLI、ReAct 工具循环、工作区文件工具、Shell/测试执行、git diff 输出和安全控制。"
+      en: "A Python MVP for learning how coding agents work, with a CLI, tool-calling loop, workspace file tools, shell/test execution, git diff output, and safety checks.",
+      zh: "一个用于学习 coding agent 工作方式的 Python MVP，包含 CLI、工具调用循环、工作区文件工具、Shell/测试执行、git diff 输出和安全检查。"
     },
     period: {
       en: "Jun 2026",
       zh: "2026 年 6 月"
     },
     category: {
-      en: "AI Agent Tooling",
-      zh: "AI Agent 工具"
+      en: "AI Agent Prototype",
+      zh: "AI Agent 原型"
     },
-    techStack: ["Python", "DeepSeek", "Typer", "Rich", "ReAct", "Tool Calling", "Pytest"],
+    techStack: ["Python", "DeepSeek", "Typer", "Rich", "Tool Calling", "Pytest"],
     repo: "https://github.com/Asdzzyandzzy/deepseek-coding-agent",
     summary: {
-      en: "A local DeepSeek-powered coding agent MVP designed around a Codex-like workflow. It gives the model workspace-aware file tools, a stateful ReAct/tool-calling loop, shell and test execution, git diff inspection, and a Rich terminal UI while keeping file writes and risky commands bounded by local safety rules.",
-      zh: "这是一个基于 DeepSeek 的本地 coding agent MVP，目标是复现类似 Codex 的工作流。项目为模型提供工作区感知的文件工具、带状态的 ReAct/工具调用循环、Shell 与测试执行、git diff 检查和 Rich 终端 UI，同时用本地安全规则约束文件写入和高风险命令。"
+      en: "A local DeepSeek-powered coding agent MVP built as a learning project. It connects a CLI, a tool-calling loop, workspace-aware file tools, shell/test execution, git diff inspection, and a Rich terminal UI, with local safety checks around file writes and risky commands.",
+      zh: "这是一个基于 DeepSeek 的本地 coding agent MVP，定位是学习型项目。它把 CLI、工具调用循环、工作区文件工具、Shell/测试执行、git diff 检查和 Rich 终端 UI 串起来，并用本地安全检查限制文件写入和高风险命令。"
     },
     motivation: {
-      en: "I built this project to understand how coding agents actually work below the product surface: how tasks become plans, how tools return observations, how workspace context is managed, and how safety policies limit what an autonomous loop can do.",
-      zh: "我做这个项目，是为了理解 coding agent 在产品表面之下如何运作：任务如何变成计划，工具如何返回观察结果，工作区上下文如何管理，以及安全策略如何限制自动循环的行为边界。"
+      en: "I built this to understand the mechanics behind coding agents: how tasks become tool calls, how observations feed back into the loop, how workspace context is reset, and how local automation can be kept under control.",
+      zh: "我做这个项目是为了理解 coding agent 的内部机制：任务如何变成工具调用，观察结果如何回到循环里，工作区上下文如何重置，以及如何让本地自动化保持可控。"
     },
     features: {
       en: [
-        "Implements a stateful ReAct loop where the model plans, calls tools, receives observations, edits files, runs tests, checks diffs, and summarizes results.",
+        "Implements a basic tool-calling loop where the model can plan, call tools, receive observations, edit files, run tests, check diffs, and summarize results.",
         "Provides workspace-aware tools for listing, reading, writing, editing, and searching files, plus shell/test execution and git diff output.",
         "Includes a Rich terminal UI and Typer CLI commands for run, ui, chat, diff, and test workflows.",
-        "Supports configurable intelligence modes such as fast, balanced, smart, max, and custom for different speed and quality tradeoffs.",
-        "Adds safety controls for workspace-restricted writes, sensitive-file refusal, dangerous command blocking, confirmations for destructive commands, timeouts, bounded output, and repeated-tool limits."
+        "Supports configurable modes such as fast, balanced, smart, max, and custom to experiment with speed and loop-budget tradeoffs.",
+        "Adds practical safety checks for workspace-only writes, sensitive-file refusal, dangerous command blocking, confirmations for destructive commands, timeouts, output limits, and repeated-tool limits."
       ],
       zh: [
-        "实现带状态的 ReAct 循环：模型先规划，再调用工具、读取观察结果、编辑文件、运行测试、检查 diff，并总结结果。",
+        "实现基础工具调用循环：模型先规划，再调用工具、读取观察结果、编辑文件、运行测试、检查 diff，并总结结果。",
         "提供工作区感知工具，支持列文件、读文件、写文件、编辑文件、搜索文本、执行 Shell/测试命令和输出 git diff。",
         "提供 Rich 终端 UI 和 Typer CLI 命令，覆盖 run、ui、chat、diff、test 等使用方式。",
-        "支持 fast、balanced、smart、max、custom 等智能模式，用于控制速度、质量和循环预算的取舍。",
-        "加入安全控制，包括文件写入限制在工作区内、拒绝敏感文件、阻止危险命令、破坏性命令确认、超时、输出截断和重复工具调用限制。"
+        "支持 fast、balanced、smart、max、custom 等模式，用于实验速度和循环预算之间的取舍。",
+        "加入实际安全检查，包括文件写入限制在工作区内、拒绝敏感文件、阻止危险命令、破坏性命令确认、超时、输出截断和重复工具调用限制。"
       ]
     },
     contribution: {
       en: [
-        "Designed the agent architecture across CLI dispatch, terminal UI, configuration loading, LLM client/tool schemas, tool execution, patch application, and safety policy.",
-        "Implemented local tools for filesystem operations, strict unified-diff patch application, shell/test execution with risk checks, and git diff inspection.",
+        "Organized the agent prototype across CLI dispatch, terminal UI, configuration loading, LLM client/tool schemas, tool execution, patch application, and safety policy.",
+        "Implemented local tools for filesystem operations, unified-diff patch application, shell/test execution with command checks, and git diff inspection.",
         "Documented the build path in docs/AGENT_BUILD_GUIDE.md so the project can also serve as a learning artifact for coding-agent internals.",
         "Added tests around agent behavior, configuration, filesystem tools, LLM handling, entry points, patch parsing, safety policy, shell tools, and UI behavior."
       ],
       zh: [
-        "设计 agent 架构，覆盖 CLI 分发、终端 UI、配置加载、LLM 客户端与工具 schema、工具执行、patch 应用和安全策略。",
-        "实现本地工具，包括文件系统操作、严格 unified diff patch 应用、带风险检查的 Shell/测试执行和 git diff 检查。",
+        "组织 agent 原型结构，覆盖 CLI 分发、终端 UI、配置加载、LLM 客户端与工具 schema、工具执行、patch 应用和安全策略。",
+        "实现本地工具，包括文件系统操作、unified diff patch 应用、带命令检查的 Shell/测试执行和 git diff 检查。",
         "编写 docs/AGENT_BUILD_GUIDE.md，让项目不仅是工具原型，也能作为理解 coding agent 内部机制的学习材料。",
         "补充测试，覆盖 agent 行为、配置、文件系统工具、LLM 处理、入口命令、patch 解析、安全策略、Shell 工具和 UI 行为。"
       ]
     },
     learnings: {
       en: [
-        "Learned that a usable coding agent is mostly systems design: tool boundaries, observations, context reset, safety checks, and predictable failure behavior matter as much as the model call.",
-        "Practiced designing local automation with explicit workspace boundaries instead of allowing broad file or shell access.",
-        "Built a clearer understanding of the gap between a chat model wrapper and an agent that can inspect, modify, test, and explain a codebase."
+        "Learned that even a small coding agent depends heavily on clear tool limits, useful observations, context reset, safety checks, and understandable error handling.",
+        "Practiced designing local automation with explicit workspace limits instead of allowing broad file or shell access.",
+        "Built a clearer understanding of the gap between a chat wrapper and a tool-using coding assistant."
       ],
       zh: [
-        "理解到可用的 coding agent 本质上是系统设计问题：工具边界、观察结果、上下文重置、安全检查和可预测失败行为，与模型调用本身同样重要。",
-        "练习在明确工作区边界内设计本地自动化，而不是给模型开放过宽的文件或 Shell 权限。",
-        "更清楚地区分普通聊天模型封装和真正能检查、修改、测试并解释代码库的 agent 工作流。"
+        "理解到即使是小型 coding agent，也很依赖清楚的工具限制、观察结果、上下文重置、安全检查和可理解的错误处理。",
+        "练习在明确工作区限制内设计本地自动化，而不是给模型开放过宽的文件或 Shell 权限。",
+        "更清楚地区分普通聊天模型封装和会使用工具的 coding assistant。"
       ]
     }
   },
@@ -96,11 +96,11 @@ export const projects: Project[] = [
     slug: "tencent-ai-hr-growth-quest",
     featured: true,
     title: {
-      en: "Tencent AI-HR 90-Day Growth System",
-      zh: "腾讯 AI-HR 新人 90 天成长系统"
+      en: "Tencent AI-HR Growth Demo",
+      zh: "腾讯 AI-HR 新人成长 Demo"
     },
     subtitle: {
-      en: "A Tencent AI-HR demo that turns newcomer profiles into growth paths, mentor feedback, HR views, and a stable product walkthrough.",
+      en: "An AI-assisted Tencent AI-HR demo that turns newcomer profiles into 30-60-90 day growth paths, mentor feedback, HR views, and a review-friendly walkthrough.",
       zh: "一个基于腾讯 AI-HR 场景的 demo，将新人画像转化为成长路径、导师反馈、HR 视角和可演示的产品流程。"
     },
     period: {
@@ -111,51 +111,51 @@ export const projects: Project[] = [
       en: "AI-Assisted Product Demo",
       zh: "AI 辅助产品 Demo"
     },
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "CloudBase", "TokenHub", "Recharts"],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "CloudBase", "TokenHub"],
     repo: "https://github.com/Asdzzyandzzy/Tencent_AI-HR_project",
     demo: "https://tencent-ai-hr-project-d0f38a5b27-1438457315.tcloudbaseapp.com/",
     summary: {
-      en: "A Tencent AI-HR project focused on 90-day newcomer growth planning. The main purpose was to practice multi-agent collaboration, AI-assisted deployment, database integration, and turning a product idea into a working demo.",
+      en: "A Tencent AI-HR demo project focused on 90-day newcomer growth planning. I used it to practice multi-agent collaboration, AI-assisted deployment, basic data persistence, and turning a product idea into a reviewable demo.",
       zh: "这是基于腾讯 AI-HR 场景完成的新人 90 天成长系统项目，重点实践 Multi-Agent 协作、AI 辅助网页部署、数据库接入，并将产品想法推进为可演示 demo。"
     },
     motivation: {
-      en: "Project focus: I wanted to explore how an HR training idea can become a concrete product flow for newcomers, mentors, and HR reviewers instead of staying as a slide-level concept.",
+      en: "Project focus: I wanted to explore how an HR training idea can become a concrete product flow for newcomers, mentors, and HR reviewers, while keeping the demo stable enough to present.",
       zh: "项目重点：我想探索如何把 HR 培养想法转化为新人、导师和 HR 都能实际使用的产品流程，而不是停留在概念展示。"
     },
     features: {
       en: [
         "Creates newcomer profiles and 30-60-90 day growth plans.",
-        "Includes mentor feedback, HR review views, growth tasks, archives, and risk reminders.",
+        "Includes mentor feedback, HR review views, growth tasks, archives, and progress reminders.",
         "Provides a demo flow with mock data, AI generation, persistence, and fallback behavior."
       ],
       zh: [
         "支持新人画像录入和 30-60-90 天成长路径生成。",
-        "包含导师反馈、HR 视角、成长任务、成长档案和风险提醒。",
+        "包含导师反馈、HR 视角、成长任务、成长档案和进度提醒。",
         "支持 mock 数据、AI 生成、数据保存和异常回退，便于稳定演示。"
       ]
     },
     contribution: {
       en: [
         "Defined the Tencent AI-HR Project scenario around newcomer growth paths, mentor feedback, HR review, and growth tasks.",
-        "Practiced a Codex + CodeBuddy multi-agent workflow: CodeBuddy handled implementation and deployment debugging, while Codex reviewed logic, wording, product flow, and edge cases.",
-        "Used AI to assist webpage deployment and database integration, then manually checked whether flows were reasonable, data could be saved, errors could recover, and the demo stayed stable."
+        "Practiced a Codex + CodeBuddy multi-agent workflow: CodeBuddy helped with implementation and deployment debugging, while Codex helped review logic, wording, product flow, and edge cases.",
+        "Used AI assistance for deployment and CloudBase integration, then manually checked whether flows were reasonable, data could be saved, errors could recover, and the demo stayed stable."
       ],
       zh: [
         "围绕腾讯 AI-HR Project 设计新人 90 天成长路径、导师反馈、HR 视角和成长任务。",
-        "实践 Codex + CodeBuddy Multi-Agent 协作：CodeBuddy 负责实现和部署调试，Codex 负责审查、逻辑检查、表达校准和体验复盘。",
-        "使用 AI 辅助网页部署和数据库接入，并人工检查 AI 输出，确保流程合理、数据可保存、异常可回退、demo 稳定。"
+        "实践 Codex + CodeBuddy Multi-Agent 协作：CodeBuddy 辅助实现和部署调试，Codex 辅助审查、逻辑检查、表达校准和体验复盘。",
+        "使用 AI 辅助网页部署和 CloudBase 接入，并人工复盘 AI 输出，确认流程合理、数据可保存、异常可回退、demo 稳定。"
       ]
     },
     learnings: {
       en: [
-        "Learned how to split an AI-assisted product idea into verifiable screens, data states, and review points.",
+        "Learned how to split an AI-assisted product idea into screens, data states, and review points that can actually be checked.",
         "Practiced using agents as collaborators while keeping final judgment on product logic and language.",
-        "Built better habits around demo stability, fallback behavior, and manual validation of AI output."
+        "Built better habits around demo stability, fallback behavior, and manually checking AI output."
       ],
       zh: [
-        "学习如何把 AI 辅助产品想法拆成可验证的页面、数据状态和评审点。",
+        "学习如何把 AI 辅助产品想法拆成真正可检查的页面、数据状态和评审点。",
         "练习把 agent 当作协作者使用，同时保留对产品逻辑和文字表达的人工判断。",
-        "强化了 demo 稳定性、异常回退和人工校验 AI 输出的意识。"
+        "强化了 demo 稳定性、异常回退和人工复盘 AI 输出的意识。"
       ]
     }
   },
@@ -179,37 +179,37 @@ export const projects: Project[] = [
       zh: "AI 辅助写作流程"
     },
     techStack: ["Python", "Qwen", "Local LLM", "Prompt Workflow", "Context Management"],
-    repo: "https://github.com/Asdzzyandzzy/Fanqie-novel-generator",
+    repo: "https://github.com/Asdzzyandzzy/Fanqie_novel_with_Qianwen",
     summary: {
-      en: "A local Qwen writing pipeline controlled by Python, built to simulate agent-like writing behavior where the model asks itself questions, answers them, records context, and continues generating fiction.",
+      en: "A local Qwen writing pipeline controlled by Python. It experiments with agent-like writing behavior where the model generates questions, answers them, records context, and uses that context for later fiction segments.",
       zh: "使用本地 Qwen 模型和 Python 流程控制，模拟 Agent 的自驱式写作能力，让模型能够自己提问、回答、记录上下文并持续生成小说。"
     },
     motivation: {
-      en: "Project focus: this was an exploration of prompt workflow, memory design, and long-form generation control with a local model rather than a cloud API.",
+      en: "Project focus: this was an exploration of prompt workflow, lightweight memory design, and long-form generation control with a local model rather than a cloud API.",
       zh: "项目重点：探索在不依赖云 API 的情况下，如何用本地模型完成 prompt 流程、记忆机制和长文本生成控制。"
     },
     features: {
       en: [
         "Runs a local Qwen model through a Python-controlled generation loop.",
         "Builds a fiction workflow for setting, outline, segmented continuation, context review, and draft output.",
-        "Uses a lightweight memory mechanism so previous questions, answers, and story context can guide later writing."
+        "Uses a lightweight memory mechanism so previous questions, answers, and story context can guide later writing, with manual review for coherence."
       ],
       zh: [
         "通过 Python 控制本地 Qwen 模型调用，而不是使用云端 API。",
         "组织小说生成流程：设定、大纲、分段续写、上下文回顾和成稿。",
-        "设计轻量记忆机制，让模型此前的提问、回答和故事上下文影响后续生成。"
+        "设计轻量记忆机制，让模型此前的提问、回答和故事上下文影响后续生成，并人工检查连贯性。"
       ]
     },
     contribution: {
       en: [
         "Designed the self-questioning loop where the model asks, answers, and summarizes its own context before continuing.",
         "Built the Python control flow for prompt sequencing, context recording, and staged generation.",
-        "Manually reviewed generated text to keep the result coherent and to avoid overstating the system as a mature autonomous agent."
+        "Manually reviewed generated text for coherence and kept the project framed as a writing workflow experiment."
       ],
       zh: [
         "设计模型自问、自答、自整理上下文的流程，再进入后续续写。",
         "搭建 Python 控制流程，管理 prompt 顺序、上下文记录和分阶段生成。",
-        "人工检查生成内容的连贯性，并将项目表述为“模拟 Agent 效果”，而不是成熟 Agent 系统。"
+        "人工检查生成内容的连贯性，并将项目表述为写作流程实验，而不是包装成完整 Agent 系统。"
       ]
     },
     learnings: {
@@ -229,11 +229,11 @@ export const projects: Project[] = [
     slug: "ziyangzhou-me-website",
     featured: true,
     title: {
-      en: "ZiyangZhou.com Portfolio Website",
-      zh: "ZiyangZhou.com 个人作品集网站"
+      en: "ZiyangZhou.me Portfolio Website",
+      zh: "ZiyangZhou.me 个人作品集网站"
     },
     subtitle: {
-      en: "A bilingual recruiter-facing portfolio that organizes projects, GitHub links, write-ups, resume content, and personal background.",
+      en: "A bilingual portfolio that organizes projects, GitHub links, short write-ups, resume access, and personal background.",
       zh: "一个面向招聘场景的中英双语作品集入口，集中整理项目、GitHub、项目说明、简历内容和个人经历。"
     },
     period: {
@@ -241,8 +241,8 @@ export const projects: Project[] = [
       zh: "2026 年 5 月 - 至今"
     },
     category: {
-      en: "AI-Assisted Portfolio",
-      zh: "AI 辅助作品集"
+      en: "Personal Website",
+      zh: "个人网站"
     },
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "App Router", "Cloudflare"],
     repo: "https://github.com/Asdzzyandzzy/ZiyangZhou_me_Website",
@@ -270,12 +270,12 @@ export const projects: Project[] = [
       en: [
         "Organized current work into a recruiter-facing information structure.",
         "Used AI assistance to refine the content hierarchy and bilingual wording while checking that the site still matched my actual projects.",
-        "Maintained the site as a project evidence center rather than presenting it as a complex engineering system."
+        "Maintained the site as a project evidence center rather than presenting it as more than a personal website."
       ],
       zh: [
         "整理目前所有作品、GitHub、项目说明、简历内容和个人经历。",
         "使用 AI 辅助梳理信息架构和中英文表达，并人工确认内容与真实项目一致。",
-        "将网站定位为简历项目的证据中心，而不是包装成复杂工程系统。"
+        "将网站定位为简历项目的证据中心，而不是包装成超出实际范围的工程项目。"
       ]
     },
     learnings: {
@@ -299,7 +299,7 @@ export const projects: Project[] = [
       zh: "ChatGPT API 浏览器工具"
     },
     subtitle: {
-      en: "A local API/browser bridge for letting local scripts and agents call stronger model capabilities with better context control.",
+      en: "A local API/browser bridge experiment for connecting local scripts with ChatGPT web workflows and reducing repeated context entry.",
       zh: "一个本地 API/浏览器桥接工具，用于让本地脚本和 Agent 调用更强模型能力并控制上下文。"
     },
     period: {
@@ -313,18 +313,18 @@ export const projects: Project[] = [
     techStack: ["Electron", "Node.js", "HTTP API", "Browser Automation", "Localhost"],
     repo: "https://github.com/Asdzzyandzzy/chatgpt-local-api-creator",
     summary: {
-      en: "A local API/browser bridge that lets local models and agents call stronger model capabilities, especially for long-form generation where token usage and context control matter.",
+      en: "A local API/browser bridge experiment for connecting local scripts with ChatGPT web workflows, especially for long-form generation tasks where repeated context entry becomes inefficient.",
       zh: "让本地模型和 Agent 通过 API/浏览器工具调用更强模型能力，在长文本任务中减少 token 浪费并提升生成质量。"
     },
     motivation: {
-      en: "Project focus: local models can handle task splitting and flow control, while complex generation can be delegated to a stronger model when context length and output quality matter.",
-      zh: "项目重点：让本地模型负责拆任务和控制流程，把复杂生成任务交给更强模型，尤其适合长文本和上下文控制场景。"
+      en: "Project focus: I wanted to test whether a local tool could reduce repeated manual input and help coordinate long-form generation tasks across local scripts and ChatGPT.",
+      zh: "项目重点：测试本地工具能不能减少重复手动输入，并帮助本地脚本和 ChatGPT 协作处理长文本任务。"
     },
     features: {
       en: [
         "Exposes localhost-only endpoints for sending prompts and reading responses.",
         "Supports browser-based access to ChatGPT conversations and project workflows.",
-        "Reduces repeated input by letting local scripts reuse context and call stronger model steps only when needed."
+        "Reduces repeated input by letting local scripts reuse context for multi-step writing and editing tasks."
       ],
       zh: [
         "提供仅 localhost 访问的接口，用于发送 prompt 和读取回复。",
@@ -334,25 +334,25 @@ export const projects: Project[] = [
     },
     contribution: {
       en: [
-        "Defined the tool as a bridge for local model workflows rather than a replacement for model reasoning.",
+        "Defined the tool as a local workflow bridge rather than a replacement for model reasoning.",
         "Designed endpoints for prompt submission, reply reading, project navigation, diagnostics, and recovery.",
-        "Kept the emphasis on token control and long-form generation quality rather than on manual login mechanics."
+        "Kept the emphasis on reducing repeated context and understanding browser-automation limits."
       ],
       zh: [
         "将工具定位为本地模型工作流的桥接层，而不是替代模型推理。",
         "设计 prompt 提交、回复读取、Project 导航、诊断和刷新恢复等端点。",
-        "重点放在 token 节省、上下文控制和长文本质量提升，而不是人工登录。"
+        "重点放在减少重复上下文输入和理解浏览器自动化的限制，而不是包装成成熟 API 产品。"
       ]
     },
     learnings: {
       en: [
         "Learned how local tools can coordinate model calls without overloading every step with large context.",
-        "Practiced designing AI workflow utilities with clear boundaries and local-only access.",
+        "Practiced designing local workflow utilities with clear limits and local-only access.",
         "Improved my understanding of where browser automation is useful and where it becomes brittle."
       ],
       zh: [
         "学习本地工具如何协调模型调用，而不是让每一步都携带大量上下文。",
-        "练习设计边界清晰、仅本地访问的 AI 工作流工具。",
+        "练习设计限制清楚、仅本地访问的 AI 工作流工具。",
         "理解浏览器自动化适合做什么，以及哪些地方容易变得脆弱。"
       ]
     }
@@ -365,8 +365,8 @@ export const projects: Project[] = [
       zh: "Airbnb 房源价格预测建模"
     },
     subtitle: {
-      en: "An end-to-end tabular modeling project for predicting New York City Airbnb listing prices.",
-      zh: "一个基于纽约 Airbnb 房源数据的端到端表格建模项目。"
+      en: "A notebook-based tabular modeling project for predicting New York City Airbnb listing prices.",
+      zh: "一个基于纽约 Airbnb 房源数据的表格建模 notebook 项目。"
     },
     period: {
       en: "May 2026",
@@ -379,7 +379,7 @@ export const projects: Project[] = [
     techStack: ["Python", "Pandas", "Scikit-learn", "Random Forest", "ColumnTransformer", "GridSearchCV"],
     repo: mlRepo,
     summary: {
-      en: "An end-to-end tabular modeling project for predicting New York City Airbnb listing prices, covering task framing, train/test split, EDA, feature engineering, model training, and evaluation.",
+      en: "A notebook-based tabular modeling project for predicting New York City Airbnb listing prices, covering task framing, train/test split, EDA, feature engineering, model training, and evaluation.",
       zh: "基于纽约 Airbnb 房源数据构建价格预测模型，完成任务定义、训练/测试集划分、探索性分析、特征工程、模型训练和评估。"
     },
     motivation: {
@@ -400,14 +400,14 @@ export const projects: Project[] = [
     },
     contribution: {
       en: [
-        "Prepared train/test splits, exploratory analysis, and feature transformations.",
-        "Built a Scikit-learn pipeline with ColumnTransformer and Random Forest modeling.",
-        "Used GridSearchCV to tune model settings and compare evaluation results."
+        "Prepared train/test splits, exploratory analysis, and feature transformations in notebooks.",
+        "Built a Scikit-learn workflow with ColumnTransformer and Random Forest modeling.",
+        "Completed the notebook workflow myself as part of ML practice, including GridSearchCV tuning and result comparison."
       ],
       zh: [
         "完成训练/测试集划分、探索性分析和特征转换。",
         "使用 ColumnTransformer 和 Random Forest 搭建 Scikit-learn pipeline。",
-        "通过 GridSearchCV 调参，并比较模型评估结果。"
+        "作为机器学习练习独立完成 notebook 流程，包括 GridSearchCV 调参和结果比较。"
       ]
     },
     learnings: {
@@ -431,7 +431,7 @@ export const projects: Project[] = [
       zh: "NLP 文本分析与主题建模项目"
     },
     subtitle: {
-      en: "A formal NLP notebook project combining embeddings, similarity analysis, preprocessing, and LDA topic modeling.",
+      en: "A coursework-style NLP notebook project combining embeddings, similarity analysis, preprocessing, and LDA topic modeling.",
       zh: "一个正式 NLP notebook 项目，结合词向量、相似度分析、文本预处理和 LDA 主题建模。"
     },
     period: {
@@ -445,8 +445,8 @@ export const projects: Project[] = [
     techStack: ["Python", "Jupyter Notebook", "Scikit-learn", "spaCy", "Gensim", "GloVe", "LDA"],
     repo: mlRepo,
     summary: {
-      en: "A formal NLP notebook project combining GloVe embeddings, word similarity analysis, representation bias discussion, spaCy preprocessing, and LDA topic modeling.",
-      zh: "这是正式 NLP 项目，不是 vibe coding。内容包括文本预处理、GloVe 词向量、词相似度、embedding bias、LDA 主题模型，以及 word-topic / document-topic 解释。"
+      en: "A coursework-style NLP notebook project combining GloVe embeddings, word similarity analysis, representation bias discussion, spaCy preprocessing, and LDA topic modeling. I completed this notebook work myself as formal ML/NLP practice.",
+      zh: "这是我独立完成的正式 NLP notebook 练习，内容包括文本预处理、GloVe 词向量、词相似度、embedding bias、LDA 主题模型，以及 word-topic / document-topic 解释。"
     },
     motivation: {
       en: "I wanted to connect classic NLP ideas with hands-on notebooks: vector representations, preprocessing choices, topic-word distributions, and document-level interpretation.",
@@ -466,7 +466,7 @@ export const projects: Project[] = [
     },
     contribution: {
       en: [
-        "Prepared notebook workflows for embeddings, similarity checks, preprocessing, and topic modeling.",
+        "Prepared notebook workflows for embeddings, similarity checks, preprocessing, and topic modeling myself.",
         "Discussed representation bias and limitations of embedding-based analysis.",
         "Interpreted topic model outputs rather than only reporting model artifacts."
       ],
@@ -534,12 +534,12 @@ export const projects: Project[] = [
       en: [
         "Prepared text representations and clustering experiments.",
         "Compared algorithm behavior across sparse text features and dense embeddings.",
-        "Reviewed cluster outputs qualitatively instead of assuming labels were correct."
+        "Completed the clustering notebook myself and reviewed outputs qualitatively instead of assuming labels were correct."
       ],
       zh: [
         "准备文本表示并组织聚类实验。",
         "比较稀疏文本特征和 dense embeddings 下的算法表现。",
-        "对聚类结果做人工观察，而不是默认聚类标签正确。"
+        "独立完成聚类 notebook，并对聚类结果做人工观察，而不是默认聚类标签正确。"
       ]
     },
     learnings: {
@@ -551,7 +551,7 @@ export const projects: Project[] = [
       zh: [
         "理解短文本聚类为什么对表示方式很敏感。",
         "练习在没有真实标签时评估无监督学习结果。",
-        "建立了对可视化帮助与误导边界的判断。"
+        "更清楚地理解可视化什么时候有帮助、什么时候可能误导。"
       ]
     }
   },
@@ -581,18 +581,20 @@ export const projects: Project[] = [
       zh: "使用 AI 辅助完成数据分析工具的需求拆解、模块整理和可视化迭代，将个人投研观察转化为可交互 Dashboard。"
     },
     motivation: {
-      en: "Project focus: the dashboard is for observing intraday signals, order flow, large orders, fund-flow estimates, and data patterns. It is not a stable prediction system or trading recommendation engine.",
+      en: "Project focus: the dashboard is for observing intraday signals, order flow, large orders, fund-flow estimates, and data patterns. It is not a trading recommendation tool.",
       zh: "项目重点：用于观察日内行情、逐笔成交、资金流、大单行为和数据模式，不是稳定预测系统，也不是交易建议系统。"
     },
     features: {
       en: [
         "Shows intraday quotes, tick transactions, large-order behavior, fund-flow estimates, and price-level changes.",
-        "Separates observation indicators from trading recommendations.",
+        "Separates observation indicators from trading recommendations and states clearly that the output is for review only.",
+        "Includes related AKShare API checking work for testing endpoint availability and data-report outputs.",
         "Includes experimental anomaly detection, classification, and clustering modules as research examples."
       ],
       zh: [
         "展示 Dashboard、行情、逐笔成交、资金流、大单行为和日内变化。",
-        "明确区分“观察指标”和“交易建议”。",
+        "明确区分“观察指标”和“交易建议”，说明输出只用于复盘观察。",
+        "包含相关 AKShare API 检查工作，用于测试接口可用性和生成数据报告。",
         "异常检测、分类和聚类只是实验模块，不是实盘系统。"
       ]
     },
@@ -600,7 +602,7 @@ export const projects: Project[] = [
       en: [
         "Used AI assistance to split data fetching, cleaning, indicator calculation, chart display, and module structure.",
         "Reviewed AI-generated code and charts manually to keep field handling, empty-data cases, and visual output understandable.",
-        "Kept the project framed as exploratory analysis rather than a mature financial product."
+        "Kept the project framed as exploratory analysis rather than a financial product."
       ],
       zh: [
         "使用 AI 辅助拆分数据获取、清洗、指标计算、图表展示和模块结构。",
@@ -615,9 +617,9 @@ export const projects: Project[] = [
         "Improved awareness of data-source instability, field changes, and visualization edge cases."
       ],
       zh: [
-        "学习金融数据工具中“观察”和“建议”的表达边界。",
+        "学习金融数据工具中“观察”和“建议”的区别。",
         "练习用 AI 辅助拆解数据 dashboard 模块。",
-        "提升了对数据源不稳定、字段变化和可视化边界情况的意识。"
+        "提升了对数据源不稳定、字段变化和可视化异常情况的意识。"
       ]
     }
   },
@@ -666,19 +668,19 @@ export const projects: Project[] = [
       en: [
         "Designed preprocessing steps with ColumnTransformer and Pipeline.",
         "Implemented baseline classification with attention to train/test separation.",
-        "Checked how preprocessing choices affect model evaluation."
+        "Completed the notebook workflow myself and checked how preprocessing choices affect model evaluation."
       ],
       zh: [
         "使用 ColumnTransformer 和 Pipeline 设计预处理流程。",
         "实现基线分类模型，并注意训练/测试分离。",
-        "检查预处理选择如何影响模型评估。"
+        "独立完成 notebook 流程，并检查预处理选择如何影响模型评估。"
       ]
     },
     learnings: {
       en: [
         "Learned why pipelines are safer than ad hoc preprocessing.",
         "Practiced thinking about leakage before model scores.",
-        "Built stronger habits for structured ML experimentation."
+        "Practiced a more organized ML experimentation workflow."
       ],
       zh: [
         "理解为什么 pipeline 比临时预处理更可靠。",
@@ -730,12 +732,12 @@ export const projects: Project[] = [
     },
     contribution: {
       en: [
-        "Completed C++ implementation work inside the provided course scaffolding.",
+        "Completed the C++ implementation myself inside the provided course scaffolding.",
         "Debugged collision handling and iterator behavior under tests.",
         "Kept the project framed as data-structure coursework rather than product development."
       ],
       zh: [
-        "在课程提供的框架中完成 C++ 实现。",
+        "在课程提供的框架中独立完成 C++ 实现。",
         "结合测试调试冲突处理和 iterator 行为。",
         "将项目表述为数据结构课程实践，而不是产品开发。"
       ]
@@ -796,12 +798,12 @@ export const projects: Project[] = [
     },
     contribution: {
       en: [
-        "Implemented the AVL tree behavior in C++ within the course lab files.",
+        "Implemented the AVL tree behavior myself in C++ within the course lab files.",
         "Reasoned through single and double rotation cases.",
         "Used expected outputs and tests to debug tree shape changes."
       ],
       zh: [
-        "在课程 lab 文件中实现 AVL 树行为。",
+        "在课程 lab 文件中独立实现 AVL 树行为。",
         "推理单旋和双旋情况。",
         "使用 expected outputs 和测试调试树形变化。"
       ]
@@ -862,12 +864,12 @@ export const projects: Project[] = [
     },
     contribution: {
       en: [
-        "Completed heap implementation exercises in C++.",
+        "Completed the heap implementation exercises myself in C++.",
         "Debugged parent/child index calculations and heap invariants.",
         "Connected priority-queue behavior to low-level array operations."
       ],
       zh: [
-        "完成 C++ 堆实现练习。",
+        "独立完成 C++ 堆实现练习。",
         "调试父子节点索引计算和堆不变量。",
         "把优先队列行为和底层数组操作联系起来。"
       ]
@@ -928,12 +930,12 @@ export const projects: Project[] = [
     },
     contribution: {
       en: [
-        "Completed graph and disjoint-set implementation work in C++.",
+        "Completed the graph and disjoint-set implementation work myself in C++.",
         "Practiced debugging behavior across multiple supporting files.",
         "Kept the description grounded in algorithms and data structures rather than product features."
       ],
       zh: [
-        "完成 C++ 图和 disjoint-set 相关实现工作。",
+        "独立完成 C++ 图和 disjoint-set 相关实现工作。",
         "练习在多个支撑文件之间调试行为。",
         "保持算法和数据结构课程项目表述，不写成产品功能。"
       ]
@@ -970,7 +972,7 @@ export const projects: Project[] = [
       en: "Application Development",
       zh: "应用开发"
     },
-    techStack: ["Java", "OOP", "Data Modeling", "User Stories"],
+    techStack: ["Java", "Swing", "OOP", "JSON Persistence", "JUnit", "UML"],
     repo: "https://github.com/Asdzzyandzzy/sleep-app",
     summary: {
       en: "A small Java app built around the personal problem of recording sleep consistently, comparing it with goals, and reviewing patterns over time.",
@@ -995,12 +997,14 @@ export const projects: Project[] = [
     contribution: {
       en: [
         "Translated user stories into Java classes and application behavior.",
-        "Designed the data model for logs, goals, and summaries.",
+        "Designed the data model for logs, goals, summaries, and event records.",
+        "Implemented JSON persistence and used JUnit tests for model and persistence behavior.",
         "Kept the scope focused on clear object-oriented practice."
       ],
       zh: [
         "把用户故事转化为 Java 类和具体应用行为。",
-        "设计睡眠记录、目标和统计汇总的数据模型。",
+        "设计睡眠记录、目标、统计汇总和事件日志的数据模型。",
+        "实现 JSON 持久化，并使用 JUnit 测试模型和 persistence 行为。",
         "控制项目范围，重点练习清晰的面向对象设计。"
       ]
     },
@@ -1128,12 +1132,12 @@ export const projects: Project[] = [
       en: [
         "Built baseline and logistic-regression workflows.",
         "Compared tuned parameters and interpreted model coefficients.",
-        "Used evaluation results to decide whether changes improved the classifier."
+        "Completed the text-classification notebook myself and used evaluation results to judge whether changes improved the classifier."
       ],
       zh: [
         "搭建基线模型和 Logistic Regression 工作流。",
         "比较调参结果并解释模型系数。",
-        "根据评估结果判断改动是否真正提升分类器。"
+        "独立完成文本分类 notebook，并根据评估结果判断改动是否真正提升分类器。"
       ]
     },
     learnings: {
@@ -1194,12 +1198,12 @@ export const projects: Project[] = [
       en: [
         "Prepared model inputs and trained decision-tree classifiers.",
         "Compared validation behavior under different tree settings.",
-        "Interpreted the tree structure as part of the modeling result."
+        "Completed the decision-tree notebook myself and interpreted the tree structure as part of the modeling result."
       ],
       zh: [
         "准备模型输入并训练决策树分类器。",
         "比较不同树参数下的验证表现。",
-        "将树结构解释作为建模结果的一部分。"
+        "独立完成决策树 notebook，并将树结构解释作为建模结果的一部分。"
       ]
     },
     learnings: {

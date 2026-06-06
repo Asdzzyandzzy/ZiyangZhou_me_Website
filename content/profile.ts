@@ -4,41 +4,41 @@ export const profile = {
   name: "Ziyang Zhou",
   chineseName: "周梓洋",
   role: {
-    en: "UBC Statistics student interested in machine learning, AI, and applied data research",
-    zh: "UBC 统计学本科生，关注机器学习、AI 与应用数据研究"
+    en: "UBC Statistics student working on ML, data analysis, and AI-assisted project prototypes",
+    zh: "UBC 统计学本科生，主要做机器学习、数据分析和 AI 辅助项目原型"
   } satisfies LocalizedText,
   location: {
     en: "Vancouver, Canada",
     zh: "加拿大温哥华"
   } satisfies LocalizedText,
   summary: {
-    en: "A project portfolio for Ziyang Zhou, focused on machine learning, AI, applied data analysis, and software tools for research-oriented problems.",
-    zh: "周梓洋的项目作品集，重点展示机器学习、AI、应用数据分析，以及面向研究问题的软件工具。"
+    en: "A portfolio of coursework, personal projects, and AI-assisted prototypes in machine learning, data analysis, NLP, financial data tools, and small software applications.",
+    zh: "这里整理了我的课程项目、个人项目和 AI 辅助原型，方向包括机器学习、数据分析、NLP、金融数据工具和小型软件应用。"
   } satisfies LocalizedText,
   about: {
     en: [
-      "I study Statistics at the University of British Columbia and am preparing for graduate study in areas related to machine learning, AI, and applied data science.",
-      "My projects focus on the full path from data to model to interpretation: collecting and cleaning data, building features, comparing models, evaluating limitations, and presenting results clearly.",
-      "The work here includes NLP and computer vision experiments, financial data dashboards, A-share tick analysis, sports analytics, and software systems that support data-driven research."
+      "I study Statistics at the University of British Columbia and use this site to keep a clear record of the projects I can discuss in interviews.",
+      "My strongest work is in hands-on ML coursework and data analysis: cleaning data, building features, comparing baselines, checking model behavior, and explaining results with clear limitations.",
+      "I also build personal and AI-assisted prototypes, including local LLM workflows, coding-agent experiments, financial-data dashboards, and small web tools. For those projects, I focus on design decisions, manual checking, and what I learned from the process."
     ],
     zh: [
-      "我就读于英属哥伦比亚大学统计学专业，正在准备申请机器学习、AI 和应用数据科学相关的研究生项目。",
-      "我的项目通常围绕从数据到模型再到解释的完整过程：收集与清洗数据、构建特征、比较模型、评估局限，并清楚地呈现结果。",
-      "这里的项目包括 NLP 与计算机视觉实验、金融数据 Dashboard、A 股逐笔分析、体育数据分析，以及支持数据研究的软件系统。"
+      "我就读于英属哥伦比亚大学统计学专业，这个网站用来清楚记录我能在面试中解释的项目。",
+      "我比较扎实的部分是机器学习课程项目和数据分析：清洗数据、构建特征、比较基线、检查模型表现，并说明结果的局限。",
+      "我也会做个人项目和 AI 辅助原型，包括本地 LLM 流程、coding agent 实验、金融数据 dashboard 和小型 Web 工具。这类项目更强调设计思路、人工复盘和从迭代中学到的东西。"
     ]
   } satisfies LocalizedList,
   highlights: {
     en: [
       "UBC Statistics BSc, expected 2027",
       "CS GPA: 3.75 / 4.33",
-      "Hands-on projects across ML, AI, NLP, computer vision, financial data, and web products",
-      "Experience with Python, TypeScript, Java, C++, C, and R"
+      "Coursework and self-directed projects across ML, NLP, data analysis, Java/C++ labs, and AI-assisted tools",
+      "Most comfortable with Python notebooks and data workflows; have also used TypeScript, Java, C++, C, and R"
     ],
     zh: [
       "UBC 统计学理学学士，预计 2027 年毕业",
       "CS GPA：3.75 / 4.33",
-      "项目方向覆盖机器学习、AI、NLP、计算机视觉、金融数据和 Web 产品",
-      "使用 Python、TypeScript、Java、C++、C、R 等语言进行开发"
+      "课程项目和个人项目覆盖机器学习、NLP、数据分析、Java/C++ 实验和 AI 辅助工具",
+      "最常使用 Python notebook 和数据分析流程，也使用过 TypeScript、Java、C++、C、R"
     ]
   } satisfies LocalizedList
 };

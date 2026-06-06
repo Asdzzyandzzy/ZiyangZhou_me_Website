@@ -7,65 +7,62 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: { en: "Programming & CS", zh: "编程与计算机基础" },
-    items: ["Python", "TypeScript", "JavaScript", "Java", "C++", "C", "R", "OOP", "Algorithms", "Data Structures", "Pytest"]
+    title: { en: "Comfortable With", zh: "相对熟悉" },
+    items: ["Python", "Pandas", "NumPy", "Jupyter Notebook", "Scikit-learn", "Matplotlib", "Git", "GitHub", "Data Cleaning", "EDA"]
   },
   {
-    title: { en: "Data & Visualization", zh: "数据与可视化" },
-    items: ["Pandas", "NumPy", "AKShare", "Plotly", "Matplotlib", "Jupyter Notebook", "Data Analysis", "Data Cleaning", "EDA"]
+    title: { en: "Coursework Foundations", zh: "课程基础" },
+    items: ["Statistics", "Linear Regression", "Classification", "Clustering", "Data Structures", "Algorithms", "OOP", "Java", "C++", "C", "R"]
   },
   {
-    title: { en: "Machine Learning", zh: "机器学习" },
+    title: { en: "ML / NLP Practice", zh: "机器学习与 NLP 练习" },
     items: [
-      "Scikit-learn",
-      "Regression",
-      "Classification",
       "Random Forest",
-      "IsolationForest",
+      "Decision Tree",
+      "Logistic Regression",
+      "KNN",
+      "XGBoost",
       "K-Means",
+      "DBSCAN",
+      "TF-IDF",
+      "GloVe",
+      "LDA",
       "Feature Engineering",
-      "Model Evaluation"
+      "Cross-validation"
     ]
   },
   {
-    title: { en: "LLM & Generative AI", zh: "大语言模型与生成式 AI" },
+    title: { en: "Have Used In Projects", zh: "项目中使用过" },
+    items: ["TypeScript", "JavaScript", "Next.js", "React", "Tailwind CSS", "Streamlit", "Plotly", "AKShare", "TradingView", "Pine Script", "JUnit", "Pytest"]
+  },
+  {
+    title: { en: "AI-Assisted Workflows", zh: "AI 辅助工作流" },
     items: [
-      "Generative AI",
+      "Vibe Coding",
+      "Multi-Agent Collaboration",
+      "Prompt Engineering",
       "Local LLM",
       "ChatGPT",
       "DeepSeek",
       "Qwen",
       "Ollama",
-      "AI Agents",
       "Tool Calling",
-      "ReAct",
-      "Prompt Engineering",
-      "Prompt Orchestration",
-      "Context Handoff"
+      "Context Management"
     ]
   },
   {
-    title: { en: "NLP & Computer Vision", zh: "NLP 与计算机视觉" },
-    items: ["NLP", "TF-IDF", "LDA", "GloVe", "Topic Modeling", "Computer Vision", "Image Classification"]
-  },
-  {
-    title: { en: "Web & Product", zh: "Web 与产品" },
-    items: ["Next.js", "React", "Node.js", "Electron", "HTTP API", "Tailwind CSS", "Streamlit", "App Router", "Cloudflare", "Data Modeling", "User Stories"]
-  },
-  {
-    title: { en: "Financial Data", zh: "金融数据" },
+    title: { en: "Learning / Exploring", zh: "正在学习和探索" },
     items: [
-      "Intraday Tick Analysis",
-      "Order Flow",
-      "VWAP",
-      "Technical Indicators",
-      "Risk Disclosure",
-      "Sports Analytics",
-      "TradingView"
+      "AI Agents",
+      "Browser Automation",
+      "CLI Tooling",
+      "Workspace Safety",
+      "CloudBase",
+      "TokenHub",
+      "GitHub Actions",
+      "Time Series",
+      "Financial Dashboards",
+      "Financial Data Review"
     ]
-  },
-  {
-    title: { en: "Security & Systems", zh: "安全与系统" },
-    items: ["Browser Automation", "CLI Tooling", "Workspace Safety", "Multiprocessing", "CPU Optimization", "Cryptography Concepts", "Debugging", "macOS", "Git", "GitHub"]
   }
 ];

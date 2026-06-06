@@ -10,26 +10,26 @@ export const translations = {
       contact: "Contact"
     },
     actions: {
-      viewAbout: "View About",
-      viewExperience: "View More Experience",
-      viewProjects: "View More Projects",
+      viewAbout: "About Me",
+      viewExperience: "View Experience",
+      viewProjects: "View Projects",
       viewResume: "View Resume",
       viewWriting: "View Writing",
       contactMe: "Contact Me",
       downloadResume: "Download Resume",
       viewGithub: "View GitHub",
       backProjects: "Back to Projects",
-      readCaseStudy: "Read case study"
+      readCaseStudy: "View project"
     },
     home: {
-      eyebrow: "Ziyang Zhou · Statistics, Machine Learning, and AI",
-      headline: "Exploring machine learning through data, models, and applied research projects.",
+      eyebrow: "Ziyang Zhou · Statistics student and project portfolio",
+      headline: "Machine learning, data analysis, and AI-assisted prototypes.",
       subhead:
-        "I am a Statistics student at the University of British Columbia with a strong interest in machine learning and AI. This site collects my projects in modeling, data analysis, financial data systems, and software tools as part of my preparation for graduate study.",
+        "I am a UBC Statistics student building a portfolio of coursework, personal projects, and AI-assisted experiments. The goal is to show what I have tried, how I think through problems, and what I am learning from each project.",
       aboutTitle: "About",
       experienceTitle: "Experience",
-      projectsTitle: "Featured Projects",
-      skillsTitle: "Core Skills",
+      projectsTitle: "Selected Projects",
+      skillsTitle: "Skills & Tools",
       resumeTitle: "Resume",
       contactTitle: "Contact",
       writingTitle: "Writing"
@@ -47,10 +47,10 @@ export const translations = {
       education: "Education",
       work: "Work",
       projects: "Projects",
-      stack: "Stack",
-      motivation: "Motivation",
-      features: "Core Features",
-      contribution: "My Contribution",
+      stack: "Tools / Tech",
+      motivation: "Why I built it",
+      features: "What it includes",
+      contribution: "What I worked on",
       learning: "What I Learned",
       links: "Links",
       comingSoon: "Coming Soon",
@@ -58,7 +58,7 @@ export const translations = {
     },
     writing: {
       description:
-        "Notes on machine learning, AI, software, data tools, and product thinking will live here soon."
+        "I may add short notes here later on projects, coursework, and lessons learned from building small tools."
     },
     resume: {
       description:
@@ -66,10 +66,10 @@ export const translations = {
     },
     contact: {
       intro:
-        "I am open to machine learning, AI, data, software, and product-oriented opportunities. The best way to reach me is email."
+        "I am open to internship, research, and early-career opportunities related to data, machine learning, AI tools, and software projects. Email is the best way to reach me."
     },
     footer: {
-      line: "Designed and built as a modular personal portfolio for Ziyangzhou.me."
+      line: "Personal portfolio maintained by Ziyang Zhou."
     }
   },
   zh: {
@@ -83,26 +83,26 @@ export const translations = {
       contact: "联系"
     },
     actions: {
-      viewAbout: "查看关于我",
-      viewExperience: "查看更多经历",
-      viewProjects: "查看更多项目",
+      viewAbout: "关于我",
+      viewExperience: "查看经历",
+      viewProjects: "查看项目",
       viewResume: "查看简历",
       viewWriting: "查看文章",
       contactMe: "联系我",
       downloadResume: "下载简历",
       viewGithub: "查看 GitHub",
       backProjects: "返回项目列表",
-      readCaseStudy: "查看项目详情"
+      readCaseStudy: "查看项目"
     },
     home: {
-      eyebrow: "周梓洋 · 统计学、机器学习与 AI",
-      headline: "通过数据、模型和应用研究项目探索机器学习。",
+      eyebrow: "周梓洋 · 统计学本科生与项目作品集",
+      headline: "机器学习、数据分析和 AI 辅助项目原型。",
       subhead:
-        "我是英属哥伦比亚大学统计学本科生，对机器学习和 AI 有持续兴趣。这个网站整理了我在建模、数据分析、金融数据系统和软件工具方面的项目，也是我准备申请研究生项目过程中的作品展示。",
+        "我是 UBC 统计学本科生，这个网站整理了我的课程项目、个人项目和 AI 辅助实验。重点是展示我实际做过什么、如何思考问题，以及每个项目让我学到了什么。",
       aboutTitle: "关于我",
       experienceTitle: "经历",
-      projectsTitle: "精选项目",
-      skillsTitle: "核心技能",
+      projectsTitle: "项目选择",
+      skillsTitle: "技能与工具",
       resumeTitle: "简历",
       contactTitle: "联系",
       writingTitle: "文章"
@@ -120,27 +120,27 @@ export const translations = {
       education: "教育",
       work: "实践经历",
       projects: "项目经历",
-      stack: "技术栈",
-      motivation: "项目动机",
-      features: "核心功能",
-      contribution: "我的贡献",
+      stack: "工具 / 技术",
+      motivation: "为什么做",
+      features: "包含内容",
+      contribution: "我做的部分",
       learning: "收获",
       links: "链接",
       comingSoon: "即将更新",
       highlights: "亮点"
     },
     writing: {
-      description: "这里会逐步整理机器学习、AI、软件开发、数据工具和产品思考相关笔记。"
+      description: "之后可能会整理一些项目、课程和小工具迭代中的短笔记。"
     },
     resume: {
       description: "你可以在线查看或下载中英双语简历。"
     },
     contact: {
       intro:
-        "我对机器学习、AI、数据、软件和产品方向的机会保持开放。最推荐通过邮箱联系我。"
+        "我对数据、机器学习、AI 工具和软件项目相关的实习、研究和早期职业机会保持开放。最推荐通过邮箱联系我。"
     },
     footer: {
-      line: "为 Ziyangzhou.me 设计和搭建的模块化个人作品集网站。"
+      line: "周梓洋维护的个人项目作品集。"
     }
   }
 } as const;
