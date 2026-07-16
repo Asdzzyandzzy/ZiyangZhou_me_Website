@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { links } from "@/content/links";
 import { profile } from "@/content/profile";
@@ -18,7 +19,7 @@ export function Hero() {
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-accent">
             {t("home.eyebrow")}
           </p>
-          <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-ink md:text-7xl">
+          <h1 className="max-w-4xl text-5xl font-semibold text-ink md:text-7xl">
             {t("home.headline")}
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-muted">
@@ -34,11 +35,13 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative z-10 rounded-[2rem] border border-line bg-white p-6 shadow-soft transition duration-500 hover:-translate-y-1">
-          <div className="aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-neutral-100">
-            <img
+        <div className="relative z-10 rounded-lg border border-line bg-white p-6 shadow-soft transition duration-500 hover:-translate-y-1">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-neutral-100">
+            <Image
               src="/images/profile.jpg"
               alt="Ziyang Zhou"
+              fill
+              sizes="(min-width: 768px) 30vw, 90vw"
               className="h-full w-full object-cover"
             />
           </div>

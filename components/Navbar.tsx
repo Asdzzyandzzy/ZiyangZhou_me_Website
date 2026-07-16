@@ -11,7 +11,6 @@ const navItems = [
   { href: "/experience", label: "nav.experience" },
   { href: "/projects", label: "nav.projects" },
   { href: "/resume", label: "nav.resume" },
-  { href: "/writing", label: "nav.writing" },
   { href: "/contact", label: "nav.contact" }
 ];
 
@@ -28,7 +27,7 @@ export function Navbar() {
             <span className="grid h-9 w-9 place-items-center rounded-full bg-ink text-sm font-semibold text-white transition group-hover:bg-accent">
               ZZ
             </span>
-            <span className="hidden text-sm font-semibold tracking-tight text-ink sm:block">
+            <span className="hidden text-sm font-semibold text-ink sm:block">
               Ziyang Zhou
             </span>
           </Link>

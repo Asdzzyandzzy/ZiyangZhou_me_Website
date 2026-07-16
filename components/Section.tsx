@@ -19,7 +19,7 @@ export function Section({ eyebrow, title, description, children, action }: Secti
               {eyebrow}
             </p>
           ) : null}
-          <h2 className="text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+          <h2 className="text-3xl font-semibold text-ink md:text-4xl">
             {title}
           </h2>
           {description ? (

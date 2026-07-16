@@ -20,7 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </span>
         <span className="text-xs text-muted">{pickText(project.period, language)}</span>
       </div>
-      <h3 className="text-xl font-semibold tracking-tight text-ink">
+      <h3 className="text-xl font-semibold text-ink">
         {pickText(project.title, language)}
       </h3>
       <p className="mt-3 flex-1 text-sm leading-6 text-muted">

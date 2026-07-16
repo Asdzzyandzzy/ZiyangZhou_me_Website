@@ -24,6 +24,7 @@ function DetailBlock({ title, items }: { title: string; items: string[] }) {
 // 项目详情页内容组件：把每个项目呈现为 case study。
 export function ProjectDetail({ project }: { project: Project }) {
   const { language, t } = useLanguage();
+  const hasLinks = Boolean(project.repo || project.demo || project.relatedRepos?.length);
 
   return (
     <article className="mx-auto max-w-6xl px-5 py-16 md:py-20">
@@ -35,7 +36,7 @@ export function ProjectDetail({ project }: { project: Project }) {
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
           {pickText(project.category, language)}
         </p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-ink md:text-6xl">
+        <h1 className="mt-4 text-4xl font-semibold text-ink md:text-6xl">
           {pickText(project.title, language)}
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted">
@@ -45,7 +46,9 @@ export function ProjectDetail({ project }: { project: Project }) {
 
       <div className="mt-10 grid gap-4 md:grid-cols-3">
         <div className="rounded-lg border border-line bg-white p-5">
-          <p className="text-xs uppercase tracking-[0.18em] text-muted">Period</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-muted">
+            {t("labels.period")}
+          </p>
           <p className="mt-2 font-medium text-ink">{pickText(project.period, language)}</p>
         </div>
         <div className="rounded-lg border border-line bg-white p-5 md:col-span-2">
@@ -63,27 +66,42 @@ export function ProjectDetail({ project }: { project: Project }) {
       </div>
 
       <div className="mt-8 grid gap-5 lg:grid-cols-2">
-        <section className="rounded-lg border border-line bg-white p-6">
+        <section
+          className={`rounded-lg border border-line bg-white p-6 ${hasLinks ? "" : "lg:col-span-2"}`}
+        >
           <h2 className="text-lg font-semibold text-ink">{t("labels.motivation")}</h2>
           <p className="mt-4 text-sm leading-7 text-muted">
             {pickText(project.motivation, language)}
           </p>
         </section>
-        <section className="rounded-lg border border-line bg-white p-6">
-          <h2 className="text-lg font-semibold text-ink">{t("labels.links")}</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            {project.repo ? (
-              <a className="btn-primary" href={project.repo} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-            ) : null}
-            {project.demo ? (
-              <a className="btn-secondary" href={project.demo} target="_blank" rel="noreferrer">
-                Demo
-              </a>
-            ) : null}
-          </div>
-        </section>
+        {hasLinks ? (
+          <section className="rounded-lg border border-line bg-white p-6">
+            <h2 className="text-lg font-semibold text-ink">{t("labels.links")}</h2>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {project.repo ? (
+                <a className="btn-primary" href={project.repo} target="_blank" rel="noreferrer">
+                  {t("actions.viewGithub")}
+                </a>
+              ) : null}
+              {project.relatedRepos?.map((repository) => (
+                <a
+                  key={repository.url}
+                  className="btn-secondary"
+                  href={repository.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {pickText(repository.label, language)}
+                </a>
+              ))}
+              {project.demo ? (
+                <a className="btn-secondary" href={project.demo} target="_blank" rel="noreferrer">
+                  {t("actions.viewDemo")}
+                </a>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
         <DetailBlock title={t("labels.features")} items={pickList(project.features, language)} />
         <DetailBlock
           title={t("labels.contribution")}

@@ -79,20 +79,6 @@ export default function HomePage() {
         <SkillGrid />
       </Section>
 
-      <Section
-        title={t("home.writingTitle")}
-        description={t("writing.description")}
-        action={
-          <Link className="btn-secondary" href="/writing">
-            {t("actions.viewWriting")}
-          </Link>
-        }
-      >
-        <div className="rounded-lg border border-dashed border-line bg-white p-8 text-muted">
-          {t("labels.comingSoon")}
-        </div>
-      </Section>
-
       <Section title={t("home.resumeTitle")}>
         <ResumePreview />
       </Section>

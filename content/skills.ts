@@ -7,62 +7,107 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: { en: "Comfortable With", zh: "相对熟悉" },
-    items: ["Python", "Pandas", "NumPy", "Jupyter Notebook", "Scikit-learn", "Matplotlib", "Git", "GitHub", "Data Cleaning", "EDA"]
-  },
-  {
-    title: { en: "Coursework Foundations", zh: "课程基础" },
-    items: ["Statistics", "Linear Regression", "Classification", "Clustering", "Data Structures", "Algorithms", "OOP", "Java", "C++", "C", "R"]
-  },
-  {
-    title: { en: "ML / NLP Practice", zh: "机器学习与 NLP 练习" },
+    title: { en: "Use Regularly", zh: "经常使用" },
     items: [
-      "Random Forest",
-      "Decision Tree",
-      "Logistic Regression",
-      "KNN",
-      "XGBoost",
-      "K-Means",
-      "DBSCAN",
-      "TF-IDF",
-      "GloVe",
-      "LDA",
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Jupyter Notebook",
+      "Scikit-learn",
+      "Matplotlib",
+      "Git",
+      "GitHub",
+      "Data Cleaning",
+      "EDA",
       "Feature Engineering",
       "Cross-validation"
     ]
   },
   {
-    title: { en: "Have Used In Projects", zh: "项目中使用过" },
-    items: ["TypeScript", "JavaScript", "Next.js", "React", "Tailwind CSS", "Streamlit", "Plotly", "AKShare", "TradingView", "Pine Script", "JUnit", "Pytest"]
-  },
-  {
-    title: { en: "AI-Assisted Workflows", zh: "AI 辅助工作流" },
+    title: { en: "Coursework Foundations", zh: "课程基础" },
     items: [
-      "Vibe Coding",
-      "Multi-Agent Collaboration",
-      "Prompt Engineering",
-      "Local LLM",
-      "ChatGPT",
-      "DeepSeek",
-      "Qwen",
-      "Ollama",
-      "Tool Calling",
-      "Context Management"
+      "Statistics",
+      "Probability",
+      "Linear Regression",
+      "Classification",
+      "Clustering",
+      "Time Series Basics",
+      "Data Structures",
+      "Algorithms",
+      "OOP",
+      "Java",
+      "C++",
+      "C",
+      "R"
     ]
   },
   {
-    title: { en: "Learning / Exploring", zh: "正在学习和探索" },
+    title: { en: "Used In ML Projects", zh: "机器学习项目中使用过" },
+    items: [
+      "Random Forest",
+      "Logistic Regression",
+      "LightGBM",
+      "XGBoost",
+      "CatBoost",
+      "Optuna",
+      "GroupKFold",
+      "K-Means",
+      "DBSCAN",
+      "TF-IDF",
+      "GloVe",
+      "LDA",
+      "UMAP",
+      "PyTorch",
+      "Torchvision",
+      "RetinaNet"
+    ]
+  },
+  {
+    title: { en: "Data & App Tools", zh: "数据工具与应用开发" },
+    items: [
+      "Streamlit",
+      "Plotly",
+      "AKShare",
+      "Tushare",
+      "TypeScript",
+      "JavaScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Pygame",
+      "TradingView",
+      "Pine Script",
+      "JUnit",
+      "Pytest"
+    ]
+  },
+  {
+    title: { en: "AI-Assisted Development", zh: "AI 辅助开发" },
+    items: [
+      "AI-Assisted Prototyping",
+      "Multi-Agent Collaboration",
+      "Prompt Design",
+      "Local LLMs",
+      "Tool Calling",
+      "Context Management",
+      "ChatGPT",
+      "DeepSeek",
+      "Qwen",
+      "Ollama"
+    ]
+  },
+  {
+    title: { en: "Currently Exploring", zh: "正在继续学习" },
     items: [
       "AI Agents",
+      "Model Unlearning",
+      "Object Detection",
+      "Competition Experiment Design",
       "Browser Automation",
       "CLI Tooling",
-      "Workspace Safety",
       "CloudBase",
-      "TokenHub",
       "GitHub Actions",
-      "Time Series",
-      "Financial Dashboards",
-      "Financial Data Review"
+      "Financial Data Workflows"
     ]
   }
 ];

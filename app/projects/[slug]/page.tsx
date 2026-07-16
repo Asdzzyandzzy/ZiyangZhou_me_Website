@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectDetail } from "@/components/ProjectDetail";
+import { links } from "@/content/links";
 import { getProjectBySlug, projects } from "@/content/projects";
 
 // 动态路由说明：
@@ -9,6 +11,30 @@ export function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug
   }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const project = getProjectBySlug(params.slug);
+
+  if (!project) {
+    return {};
+  }
+
+  const path = `/projects/${project.slug}/`;
+
+  return {
+    title: project.title.en,
+    description: project.subtitle.en,
+    alternates: {
+      canonical: path
+    },
+    openGraph: {
+      title: project.title.en,
+      description: project.subtitle.en,
+      url: new URL(path, links.domain),
+      type: "article"
+    }
+  };
 }
 
 export default function ProjectDetailPage({ params }: { params: { slug: string } }) {

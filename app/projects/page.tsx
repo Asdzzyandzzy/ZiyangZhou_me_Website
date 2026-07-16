@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   const orderedProjects = sortProjectsByPortfolioPriority(projects);
 
   return (
-    <Section title={t("pages.projectsTitle")} description={t("home.subhead")}>
+    <Section title={t("pages.projectsTitle")} description={t("projects.description")}>
       <div className="grid gap-4 md:grid-cols-2">
         {orderedProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} />

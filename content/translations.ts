@@ -18,14 +18,15 @@ export const translations = {
       contactMe: "Contact Me",
       downloadResume: "Download Resume",
       viewGithub: "View GitHub",
+      viewDemo: "Open Demo",
       backProjects: "Back to Projects",
       readCaseStudy: "View project"
     },
     home: {
-      eyebrow: "Ziyang Zhou · Statistics student and project portfolio",
-      headline: "Machine learning, data analysis, and AI-assisted prototypes.",
+      eyebrow: "Ziyang Zhou · UBC Statistics · Project Portfolio",
+      headline: "Applied machine learning, data analysis, and AI-assisted tools.",
       subhead:
-        "I am a UBC Statistics student building a portfolio of coursework, personal projects, and AI-assisted experiments. The goal is to show what I have tried, how I think through problems, and what I am learning from each project.",
+        "I am a UBC Statistics student. This site brings together my self-written coursework, competition research, and AI-assisted projects, with the choices, experiments, and results I can explain in detail.",
       aboutTitle: "About",
       experienceTitle: "Experience",
       projectsTitle: "Selected Projects",
@@ -48,17 +49,23 @@ export const translations = {
       work: "Work",
       projects: "Projects",
       stack: "Tools / Tech",
+      period: "Period",
       motivation: "Why I built it",
       features: "What it includes",
       contribution: "What I worked on",
       learning: "What I Learned",
       links: "Links",
       comingSoon: "Coming Soon",
-      highlights: "Highlights"
+      highlights: "Highlights",
+      email: "Email"
     },
     writing: {
       description:
         "I may add short notes here later on projects, coursework, and lessons learned from building small tools."
+    },
+    projects: {
+      description:
+        "Projects range from self-written coursework to AI-assisted tools and current competition research. Each page explains the problem, the choices I made, and what I learned from the result."
     },
     resume: {
       description:
@@ -91,17 +98,18 @@ export const translations = {
       contactMe: "联系我",
       downloadResume: "下载简历",
       viewGithub: "查看 GitHub",
+      viewDemo: "打开 Demo",
       backProjects: "返回项目列表",
       readCaseStudy: "查看项目"
     },
     home: {
-      eyebrow: "周梓洋 · 统计学本科生与项目作品集",
-      headline: "机器学习、数据分析和 AI 辅助项目原型。",
+      eyebrow: "周梓洋 · UBC 统计学 · 项目作品集",
+      headline: "应用机器学习、数据分析和 AI 辅助工具。",
       subhead:
-        "我是 UBC 统计学本科生，这个网站整理了我的课程项目、个人项目和 AI 辅助实验。重点是展示我实际做过什么、如何思考问题，以及每个项目让我学到了什么。",
+        "我是 UBC 统计学本科生。这里整理了我独立完成的课程作业、比赛研究和 AI 辅助项目，并记录我能具体解释的选择、实验和结果。",
       aboutTitle: "关于我",
       experienceTitle: "经历",
-      projectsTitle: "项目选择",
+      projectsTitle: "精选项目",
       skillsTitle: "技能与工具",
       resumeTitle: "简历",
       contactTitle: "联系",
@@ -121,16 +129,22 @@ export const translations = {
       work: "实践经历",
       projects: "项目经历",
       stack: "工具 / 技术",
+      period: "时间",
       motivation: "为什么做",
       features: "包含内容",
       contribution: "我做的部分",
       learning: "收获",
       links: "链接",
       comingSoon: "即将更新",
-      highlights: "亮点"
+      highlights: "亮点",
+      email: "邮箱"
     },
     writing: {
       description: "之后可能会整理一些项目、课程和小工具迭代中的短笔记。"
+    },
+    projects: {
+      description:
+        "项目包括独立完成的课程作业、AI 辅助工具和正在进行的比赛研究。每个页面都会说明问题、我的选择以及从结果中学到的内容。"
     },
     resume: {
       description: "你可以在线查看或下载中英双语简历。"

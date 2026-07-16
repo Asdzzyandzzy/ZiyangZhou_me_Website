@@ -14,7 +14,7 @@ export function Footer() {
         <p>{t("footer.line")}</p>
         <div className="flex flex-wrap gap-4">
           <Link className="transition hover:text-ink" href="/contact">
-            Contact
+            {t("nav.contact")}
           </Link>
           <a
             className="transition hover:text-ink"
@@ -25,7 +25,7 @@ export function Footer() {
             GitHub
           </a>
           <a className="transition hover:text-ink" href={`mailto:${links.email}`}>
-            Email
+            {t("labels.email")}
           </a>
         </div>
       </div>

@@ -1,15 +1,18 @@
 import type { Project } from "@/content/projects";
 
 const projectPriority = [
+  "neural-debris-removal",
+  "csi300-portfolio-modeling-challenge",
   "deepseek-coding-agent",
   "tencent-ai-hr-growth-quest",
+  "f1-pit-stop-prediction",
+  "airbnb-price-modeling",
+  "text-embeddings-topic-modeling",
+  "astock-analysis-toolkit",
   "fanqie-qwen-writing-pipeline",
   "ziyangzhou-me-website",
   "chatgpt-local-api-creator",
-  "airbnb-price-modeling",
-  "text-embeddings-topic-modeling",
   "recipe-clustering",
-  "astock-analysis-toolkit",
   "adult-census-preprocessing-pipeline",
   "cpsc221-hash-tables",
   "cpsc221-avl-trees",

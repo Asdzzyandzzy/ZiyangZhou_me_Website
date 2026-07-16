@@ -9,6 +9,10 @@ export type Project = {
   category: LocalizedText;
   techStack: string[];
   repo?: string;
+  relatedRepos?: Array<{
+    label: LocalizedText;
+    url: string;
+  }>;
   demo?: string;
   summary: LocalizedText;
   motivation: LocalizedText;
@@ -20,6 +24,212 @@ export type Project = {
 const mlRepo = "https://github.com/Asdzzyandzzy/machine-learning-projects";
 
 export const projects: Project[] = [
+  {
+    slug: "neural-debris-removal",
+    featured: true,
+    title: {
+      en: "Neural Debris Removal Competition",
+      zh: "神经网络有害记忆移除比赛项目"
+    },
+    subtitle: {
+      en: "An active Kaggle computer-vision project studying how to reduce a poisoned RetinaNet detector's unwanted behavior while preserving useful detections.",
+      zh: "一个正在进行的 Kaggle 计算机视觉项目，研究如何减少被污染 RetinaNet 检测器的异常行为，同时尽量保留正常检测能力。"
+    },
+    period: {
+      en: "Jul 2026 - Present",
+      zh: "2026 年 7 月 - 至今"
+    },
+    category: {
+      en: "Kaggle Computer Vision Research",
+      zh: "Kaggle 计算机视觉研究"
+    },
+    techStack: ["Python", "PyTorch", "Torchvision", "RetinaNet", "Scikit-learn", "NumPy", "Pandas", "Pytest"],
+    summary: {
+      en: "A private, in-progress competition workspace for removing learned artifacts from a provided object detector. The project combines model reconstruction, controlled unlearning experiments, held-out evaluation, object-level routing, submission validation, and reproducibility checks. Detailed strategy remains private while the competition is active.",
+      zh: "这是一个私有、进行中的比赛研究项目，目标是从主办方提供的目标检测模型中移除异常学习结果。项目覆盖模型复现、受控 unlearning 实验、留出评估、目标级路由、提交校验和复现检查；比赛进行期间不公开完整策略细节。"
+    },
+    motivation: {
+      en: "I treated the task as an experimental-design problem: first reproduce the supplied model closely enough to trust local comparisons, then test one change at a time and use limited leaderboard feedback only as secondary evidence.",
+      zh: "我把这个任务当作实验设计问题：先尽可能复现主办方模型，确保本地比较可信，再一次只验证一个改动，并把有限的排行榜反馈作为辅助证据，而不是唯一判断标准。"
+    },
+    features: {
+      en: [
+        "Reconstructs a RetinaNet-compatible inference path and checks local predictions against supplied reference outputs before accepting training results.",
+        "Organizes full-model, classification-head, distillation, pseudo-clean, and routing experiments through versioned configurations and held-out comparisons.",
+        "Validates submission schema, freezes selected artifacts with hashes, and records both successful and rejected directions in a decision log.",
+        "Keeps raw competition data unchanged and separates verified competition facts from assumptions that still require evidence."
+      ],
+      zh: [
+        "复现与 RetinaNet 兼容的推理流程，并先将本地预测和主办方参考输出对齐，再接受后续训练结果。",
+        "通过版本化配置组织全模型、分类头、蒸馏、pseudo-clean 和路由实验，并使用留出结果进行比较。",
+        "校验提交格式、用哈希冻结选定产物，并在决策日志中同时记录有效方向和被否决的方案。",
+        "保持原始比赛数据不变，并将已验证的比赛事实与仍需证据支持的假设分开记录。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Defined the experimental gates, retention-versus-removal tradeoffs, comparison criteria, and the order in which candidate ideas were tested.",
+        "Used AI assistance to accelerate implementation and experiment plumbing, while I reviewed the model behavior, chose follow-up experiments, interpreted failures, and decided which candidates were worth submitting.",
+        "Built the workflow around reproducible evidence: cross-fitted checks, deterministic submission generation, automated tests, provenance manifests, and explicit rollback points.",
+        "Tracked a substantial public-leaderboard improvement from the first submitted baseline and kept the project marked as active work."
+      ],
+      zh: [
+        "制定实验门槛、异常移除与正常检测保留之间的取舍、比较标准，以及候选想法的验证顺序。",
+        "使用 AI 辅助加速实现和实验流程搭建，但由我检查模型行为、选择后续实验、解释失败原因，并决定哪些候选值得提交。",
+        "围绕可复现证据组织工作流，包括交叉拟合检查、确定性提交生成、自动测试、产物清单和明确回退点。",
+        "记录了相较第一次提交基线的明显排行榜提升，并将项目保持为进行中的工作。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned why a faithful local baseline is necessary before interpreting small experimental improvements.",
+        "Practiced changing direction when leaderboard evidence contradicted a local proxy instead of defending the original idea.",
+        "Built stronger habits around experiment provenance, hidden-label uncertainty, and communicating incomplete competition results carefully."
+      ],
+      zh: [
+        "理解在解释小幅实验改进之前，为什么必须先建立足够可信的本地基线。",
+        "练习在排行榜证据与本地 proxy 冲突时及时改变方向，而不是为原有想法找理由。",
+        "强化实验溯源、隐藏标签不确定性和谨慎表达未完成比赛结果的习惯。"
+      ]
+    }
+  },
+  {
+    slug: "csi300-portfolio-modeling-challenge",
+    featured: true,
+    title: {
+      en: "CSI 300 Portfolio Modeling Challenge",
+      zh: "沪深 300 股票组合预测比赛项目"
+    },
+    subtitle: {
+      en: "An active competition project for ranking CSI 300 candidates and assigning a five-stock portfolio with point-in-time features and walk-forward validation.",
+      zh: "一个正在进行的比赛项目，使用点时特征和走步验证对沪深 300 候选股进行排序，并构建五股组合。"
+    },
+    period: {
+      en: "Jul 2026 - Present",
+      zh: "2026 年 7 月 - 至今"
+    },
+    category: {
+      en: "Competition ML Research",
+      zh: "机器学习比赛研究"
+    },
+    techStack: ["Python", "Pandas", "NumPy", "Scikit-learn", "LightGBM", "Tushare", "Time Series", "Pytest"],
+    summary: {
+      en: "A private, in-progress machine-learning project that predicts five-trading-day returns, ranks CSI 300 candidates, and produces a constrained five-stock allocation. The work emphasizes point-in-time data handling, expanding-window evaluation, feature comparison, and reproducible model selection rather than a single backtest number.",
+      zh: "这是一个私有、进行中的机器学习比赛项目，用于预测未来五个交易日收益、排序沪深 300 候选股并生成受约束的五股配置。重点是点时数据处理、扩展窗口评估、特征比较和可复现模型选择，而不是只展示一个回测数字。"
+    },
+    motivation: {
+      en: "I wanted the model-selection process to reflect how the strategy would have been evaluated at each historical point, so validation design and information timing came before adding more features or more complex allocation rules.",
+      zh: "我希望模型选择过程尽量接近每个历史时点真实可用的信息，因此先确定验证设计和信息时点，再考虑增加特征或更复杂的权重分配方法。"
+    },
+    features: {
+      en: [
+        "Builds price, volume, volatility, cross-sectional, market, liquidity, and delayed fundamental features using only information available by each decision date.",
+        "Uses expanding-window folds with a time gap between training and validation, while keeping the latest period separate from model and feature selection.",
+        "Compares linear, gradient-boosting, LightGBM, ranking, ensemble, and allocation candidates with return, excess return, ranking, drawdown, and tail-risk measures.",
+        "Keeps a reproducible training, inference, report, verification, and test workflow for the competition submission package."
+      ],
+      zh: [
+        "只使用每个决策日之前可获得的信息，构建价格、成交量、波动率、横截面、市场、流动性和延迟基本面特征。",
+        "使用带时间间隔的扩展窗口折进行验证，并将最新时期与模型和特征选择分开。",
+        "比较线性模型、梯度提升、LightGBM、排序、集成和权重分配候选，并结合收益、超额收益、排序、回撤和尾部风险指标。",
+        "为比赛提交工程保留可复现的训练、推理、报告、校验和测试流程。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Defined the prediction target, point-in-time rules, validation folds, evaluation measures, and promotion criteria before comparing candidates.",
+        "Designed feature groups and ablation experiments, then kept stronger-looking candidates out of the formal result when they did not pass the full comparison criteria.",
+        "Compared fixed and learned portfolio-weighting ideas instead of assuming a more complicated allocator would be better.",
+        "Used AI assistance for implementation and repetitive research tooling while I directed the hypotheses, checked data timing, reviewed results, and made model-selection decisions."
+      ],
+      zh: [
+        "在比较候选之前，先确定预测目标、点时规则、验证折、评估指标和晋级标准。",
+        "设计特征分组和消融实验；即使部分新候选看起来更强，只要没有通过完整比较标准，就不替换正式结果。",
+        "比较固定权重和学习型权重方法，而不是默认更复杂的 allocator 一定更好。",
+        "使用 AI 辅助实现和重复性研究工具搭建，但由我提出假设、检查数据时点、复盘结果并做模型选择。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned how easily financial experiments can look stronger when time boundaries or selection periods are not kept explicit.",
+        "Practiced rejecting complexity when a simpler weighting rule remained more stable under the chosen validation design.",
+        "Improved at separating exploratory findings, formal candidates, and results that should remain private during an active competition."
+      ],
+      zh: [
+        "理解如果时间边界和选择时期不清楚，金融实验很容易显得比实际更强。",
+        "练习在简单权重规则在既定验证下更稳定时，拒绝没有带来足够收益的复杂方案。",
+        "提升了区分探索结果、正式候选和比赛进行期间不应公开内容的能力。"
+      ]
+    }
+  },
+  {
+    slug: "f1-pit-stop-prediction",
+    featured: true,
+    title: {
+      en: "F1 Pit Stop Prediction",
+      zh: "F1 进站预测比赛项目"
+    },
+    subtitle: {
+      en: "A Kaggle tabular-ML project that predicts whether a driver will pit on the next lap, with race-aware validation and repeatable experiments.",
+      zh: "一个 Kaggle 表格机器学习项目，用于预测车手下一圈是否进站，并使用比赛分组验证和可重复实验。"
+    },
+    period: {
+      en: "May 2026",
+      zh: "2026 年 5 月"
+    },
+    category: {
+      en: "Kaggle Tabular ML",
+      zh: "Kaggle 表格机器学习"
+    },
+    techStack: ["Python", "Pandas", "LightGBM", "XGBoost", "CatBoost", "Scikit-learn", "GroupKFold"],
+    repo: "https://github.com/Asdzzyandzzy/Predicting-F1-Pit-Stops",
+    summary: {
+      en: "A Kaggle Playground project for predicting next-lap pit stops. I organized it as a small experiment pipeline with race-aware cross-validation, saved out-of-fold predictions, comparable configurations, and a checked submission-writing step rather than relying on one notebook run.",
+      zh: "这是一个预测车手下一圈是否进站的 Kaggle Playground 项目。我把它组织成小型实验流程，包含按比赛分组的交叉验证、OOF 预测、可比较配置和提交文件检查，而不是只依赖一次 notebook 运行。"
+    },
+    motivation: {
+      en: "Rows from the same race share context, so I focused on whether the validation split represented unseen races instead of choosing the highest score from a random split.",
+      zh: "同一场比赛中的样本共享很多上下文，因此我重点检查验证切分能否代表未见过的比赛，而不是直接采用随机切分下最高的分数。"
+    },
+    features: {
+      en: [
+        "Uses Race and Year together as the grouping key for the main cross-validation setup.",
+        "Builds lap, tyre, race-progress, and categorical-frequency features for tabular models.",
+        "Compares LightGBM, XGBoost, CatBoost, group statistics, and target encoding under the same validation logic.",
+        "Stores experiment notes, out-of-fold outputs, selected configuration, and validated submission files."
+      ],
+      zh: [
+        "在主要交叉验证中使用 Race 和 Year 组合作为分组键。",
+        "构建圈次、轮胎、比赛进度和类别频率等表格特征。",
+        "在同一验证逻辑下比较 LightGBM、XGBoost、CatBoost、分组统计和 target encoding。",
+        "保留实验记录、OOF 输出、选定配置和经过检查的提交文件。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Chose grouped validation after finding that random stratified folds produced a score that looked too optimistic for the race structure.",
+        "Kept a simpler regularized LightGBM setup when additional models and feature ideas did not improve the grouped result.",
+        "Used AI assistance to help organize experiment code and documentation while I selected the validation design, compared outputs, and decided which result was credible enough to keep."
+      ],
+      zh: [
+        "发现随机分层切分对比赛结构来说可能过于乐观后，选择按比赛分组的验证方式。",
+        "当额外模型和特征没有改善分组结果时，保留更简单、正则化更强的 LightGBM 方案。",
+        "使用 AI 辅助整理实验代码和文档，但由我选择验证设计、比较输出，并判断哪些结果足够可信。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Learned that validation design can matter more than adding another model to a structured competition dataset.",
+        "Practiced keeping rejected experiments in the record instead of presenting only the best run.",
+        "Improved at turning a notebook-style competition task into a rerunnable workflow."
+      ],
+      zh: [
+        "理解对结构化比赛数据来说，验证设计有时比再增加一个模型更重要。",
+        "练习保留未提升的实验记录，而不是只展示最好的一次运行。",
+        "提升了把 notebook 风格比赛任务整理成可重复运行流程的能力。"
+      ]
+    }
+  },
   {
     slug: "deepseek-coding-agent",
     featured: true,
@@ -119,8 +329,8 @@ export const projects: Project[] = [
       zh: "这是基于腾讯 AI-HR 场景完成的新人 90 天成长系统项目，重点实践 Multi-Agent 协作、AI 辅助网页部署、数据库接入，并将产品想法推进为可演示 demo。"
     },
     motivation: {
-      en: "Project focus: I wanted to explore how an HR training idea can become a concrete product flow for newcomers, mentors, and HR reviewers, while keeping the demo stable enough to present.",
-      zh: "项目重点：我想探索如何把 HR 培养想法转化为新人、导师和 HR 都能实际使用的产品流程，而不是停留在概念展示。"
+      en: "I wanted to turn an HR training idea into a concrete product flow for newcomers, mentors, and HR reviewers, with enough fallback behavior for a stable demo.",
+      zh: "我想把 HR 培养想法转化为新人、导师和 HR 都能实际体验的产品流程，并通过回退处理让 demo 保持稳定。"
     },
     features: {
       en: [
@@ -171,8 +381,8 @@ export const projects: Project[] = [
       zh: "一个由 Python 控制本地 Qwen 模型的写作流程，用来模拟类似 Agent 的规划、记忆和续写能力。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "May - Jun 2026",
+      zh: "2026 年 5 月 - 6 月"
     },
     category: {
       en: "AI-Assisted Writing Workflow",
@@ -185,8 +395,8 @@ export const projects: Project[] = [
       zh: "使用本地 Qwen 模型和 Python 流程控制，模拟 Agent 的自驱式写作能力，让模型能够自己提问、回答、记录上下文并持续生成小说。"
     },
     motivation: {
-      en: "Project focus: this was an exploration of prompt workflow, lightweight memory design, and long-form generation control with a local model rather than a cloud API.",
-      zh: "项目重点：探索在不依赖云 API 的情况下，如何用本地模型完成 prompt 流程、记忆机制和长文本生成控制。"
+      en: "I used the project to explore prompt sequencing, lightweight memory, and long-form generation control with a local model.",
+      zh: "我用这个项目探索本地模型中的 prompt 顺序、轻量记忆和长文本生成控制。"
     },
     features: {
       en: [
@@ -251,8 +461,8 @@ export const projects: Project[] = [
       zh: "集中展示目前所有项目成果，并将作品集、GitHub 仓库、项目说明和简历内容整理成面向招聘场景的个人展示入口。"
     },
     motivation: {
-      en: "Project focus: the site serves as an evidence center for my resume projects, not just a generic landing page.",
-      zh: "项目重点：这个网站是简历项目的“证据中心”，不是普通 landing page。"
+      en: "I built the site to give recruiters one place to see project context, resume details, and links to the work behind each description.",
+      zh: "我搭建这个网站，是为了让招聘者能在一个入口中查看项目背景、简历信息和每段描述对应的实际作品。"
     },
     features: {
       en: [
@@ -270,24 +480,24 @@ export const projects: Project[] = [
       en: [
         "Organized current work into a recruiter-facing information structure.",
         "Used AI assistance to refine the content hierarchy and bilingual wording while checking that the site still matched my actual projects.",
-        "Maintained the site as a project evidence center rather than presenting it as more than a personal website."
+        "Kept project content in reusable data files so new work and wording corrections can be published consistently."
       ],
       zh: [
         "整理目前所有作品、GitHub、项目说明、简历内容和个人经历。",
         "使用 AI 辅助梳理信息架构和中英文表达，并人工确认内容与真实项目一致。",
-        "将网站定位为简历项目的证据中心，而不是包装成超出实际范围的工程项目。"
+        "将项目内容放在可复用的数据文件中，方便持续发布新项目并统一修正文案。"
       ]
     },
     learnings: {
       en: [
         "Learned how portfolio content needs different levels of detail for cards, detail pages, and resume links.",
         "Practiced bilingual editing that stays concrete and interview-ready.",
-        "Built a habit of treating project pages as maintained evidence instead of one-time decoration."
+        "Learned that a useful portfolio needs regular content review as projects change."
       ],
       zh: [
         "学习作品集内容在卡片、详情页和简历链接中需要不同的信息密度。",
         "练习写真实、克制、能在面试中解释的中英文内容。",
-        "建立了把项目页面当作持续维护证据，而不是一次性装饰的习惯。"
+        "理解作品集需要随着项目变化持续检查和更新，而不是完成一次就不再维护。"
       ]
     }
   },
@@ -303,8 +513,8 @@ export const projects: Project[] = [
       zh: "一个本地 API/浏览器桥接工具，用于让本地脚本和 Agent 调用更强模型能力并控制上下文。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "Feb - May 2026",
+      zh: "2026 年 2 月 - 5 月"
     },
     category: {
       en: "AI-Assisted Tooling",
@@ -314,11 +524,11 @@ export const projects: Project[] = [
     repo: "https://github.com/Asdzzyandzzy/chatgpt-local-api-creator",
     summary: {
       en: "A local API/browser bridge experiment for connecting local scripts with ChatGPT web workflows, especially for long-form generation tasks where repeated context entry becomes inefficient.",
-      zh: "让本地模型和 Agent 通过 API/浏览器工具调用更强模型能力，在长文本任务中减少 token 浪费并提升生成质量。"
+      zh: "一个连接本地脚本与 ChatGPT 网页工作流的 API/浏览器桥接实验，主要用于减少长文本任务中的重复上下文输入。"
     },
     motivation: {
-      en: "Project focus: I wanted to test whether a local tool could reduce repeated manual input and help coordinate long-form generation tasks across local scripts and ChatGPT.",
-      zh: "项目重点：测试本地工具能不能减少重复手动输入，并帮助本地脚本和 ChatGPT 协作处理长文本任务。"
+      en: "I wanted to test whether a local tool could reduce repeated manual input and coordinate multi-step writing tasks across local scripts and ChatGPT.",
+      zh: "我想测试本地工具能否减少重复手动输入，并帮助本地脚本和 ChatGPT 协作处理多步骤写作任务。"
     },
     features: {
       en: [
@@ -336,12 +546,12 @@ export const projects: Project[] = [
       en: [
         "Defined the tool as a local workflow bridge rather than a replacement for model reasoning.",
         "Designed endpoints for prompt submission, reply reading, project navigation, diagnostics, and recovery.",
-        "Kept the emphasis on reducing repeated context and understanding browser-automation limits."
+        "Tested recovery and diagnostics for cases where browser state or page behavior changed."
       ],
       zh: [
         "将工具定位为本地模型工作流的桥接层，而不是替代模型推理。",
         "设计 prompt 提交、回复读取、Project 导航、诊断和刷新恢复等端点。",
-        "重点放在减少重复上下文输入和理解浏览器自动化的限制，而不是包装成成熟 API 产品。"
+        "针对浏览器状态或页面行为变化的情况，测试诊断与恢复流程。"
       ]
     },
     learnings: {
@@ -369,8 +579,8 @@ export const projects: Project[] = [
       zh: "一个基于纽约 Airbnb 房源数据的表格建模 notebook 项目。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "Jan - Apr 2026",
+      zh: "2026 年 1 月 - 4 月"
     },
     category: {
       en: "Machine Learning",
@@ -435,8 +645,8 @@ export const projects: Project[] = [
       zh: "一个正式 NLP notebook 项目，结合词向量、相似度分析、文本预处理和 LDA 主题建模。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "Jan - Apr 2026",
+      zh: "2026 年 1 月 - 4 月"
     },
     category: {
       en: "Natural Language Processing",
@@ -501,8 +711,8 @@ export const projects: Project[] = [
       zh: "一个比较 bag-of-words 和 sentence embeddings 的菜谱短文本无监督聚类项目。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "Jan - Apr 2026",
+      zh: "2026 年 1 月 - 4 月"
     },
     category: {
       en: "Machine Learning",
@@ -559,67 +769,83 @@ export const projects: Project[] = [
     slug: "astock-analysis-toolkit",
     featured: true,
     title: {
-      en: "AI-Assisted Stock Analysis Dashboard",
-      zh: "AI 股票分析与可视化工具"
+      en: "A-Share Data Analysis Tools",
+      zh: "A 股数据分析工具集"
     },
     subtitle: {
-      en: "An AI-assisted dashboard project that turns personal A-share research questions into interactive market-data views.",
-      zh: "一个 AI 辅助的数据分析 dashboard 项目，将个人 A 股投研问题转化为可交互图表。"
+      en: "Three AI-assisted Python tools for exploring A-share market data: an intraday dashboard, a broader research dashboard, and an AKShare API checker.",
+      zh: "三个 AI 辅助的 Python 工具：日内成交分析、综合投研看板和 AKShare 接口巡检。"
     },
     period: {
-      en: "Aug 2025 - Present",
-      zh: "2025 年 8 月 - 至今"
+      en: "Aug 2025 - Jun 2026",
+      zh: "2025 年 8 月 - 2026 年 6 月"
     },
     category: {
-      en: "AI-Assisted Data Dashboard",
-      zh: "AI 辅助数据看板"
+      en: "AI-Assisted Data Tools",
+      zh: "AI 辅助数据工具"
     },
     techStack: ["Python", "Streamlit", "AKShare", "Plotly", "Pandas", "Scikit-learn"],
     repo: "https://github.com/Asdzzyandzzy/AStock_Analysis",
+    relatedRepos: [
+      {
+        label: {
+          en: "A-Share Research Dashboard",
+          zh: "A 股综合投研看板"
+        },
+        url: "https://github.com/Asdzzyandzzy/AStock-Trade-Analysis"
+      },
+      {
+        label: {
+          en: "AKShare API Checker",
+          zh: "AKShare 接口巡检"
+        },
+        url: "https://github.com/Asdzzyandzzy/Akshare_API_function_checking"
+      }
+    ],
     summary: {
-      en: "An AI-assisted data analysis dashboard project that turns personal stock research questions into an interactive dashboard through requirement breakdown, modularization, and visualization iteration.",
-      zh: "使用 AI 辅助完成数据分析工具的需求拆解、模块整理和可视化迭代，将个人投研观察转化为可交互 Dashboard。"
+      en: "A small collection of AI-assisted A-share data tools. The two Streamlit apps organize intraday transactions, technical indicators, basic fundamentals, flow estimates, and risk views; the companion checker parses AKShare's stock documentation and tests endpoints with timeouts, retries, resume support, and structured reports.",
+      zh: "一组 AI 辅助开发的 A 股数据工具。两个 Streamlit 应用整理日内成交、技术指标、基础财务信息、资金流估计和风险视图；配套巡检工具解析 AKShare 股票文档，并通过超时、重试、断点续跑和结构化报告检查接口。"
     },
     motivation: {
-      en: "Project focus: the dashboard is for observing intraday signals, order flow, large orders, fund-flow estimates, and data patterns. It is not a trading recommendation tool.",
-      zh: "项目重点：用于观察日内行情、逐笔成交、资金流、大单行为和数据模式，不是稳定预测系统，也不是交易建议系统。"
+      en: "I used these projects to turn recurring market-data questions into reusable views and to understand how unstable upstream interfaces affect data tools. The outputs are for observation and review, not trading recommendations.",
+      zh: "我用这些项目把反复出现的市场数据问题整理成可复用视图，并理解上游接口变化会怎样影响数据工具。输出用于观察和复盘，不是交易建议。"
     },
     features: {
       en: [
-        "Shows intraday quotes, tick transactions, large-order behavior, fund-flow estimates, and price-level changes.",
-        "Separates observation indicators from trading recommendations and states clearly that the output is for review only.",
-        "Includes related AKShare API checking work for testing endpoint availability and data-report outputs.",
-        "Includes experimental anomaly detection, classification, and clustering modules as research examples."
+        "Presents intraday prices, tick transactions, large-order behavior, technical indicators, basic fundamentals, flow estimates, and risk statistics in Streamlit views.",
+        "Keeps data access, field normalization, analysis, charts, and page logic in separate modules so changing an AKShare field does not require rewriting the whole app.",
+        "Parses documented AKShare stock endpoints and runs each check in a separate process with timeout, retries, rate control, and resume support.",
+        "Writes searchable HTML plus CSV, JSON, and XLSX reports so failed endpoints can be reviewed rather than reduced to one pass/fail count."
       ],
       zh: [
-        "展示 Dashboard、行情、逐笔成交、资金流、大单行为和日内变化。",
-        "明确区分“观察指标”和“交易建议”，说明输出只用于复盘观察。",
-        "包含相关 AKShare API 检查工作，用于测试接口可用性和生成数据报告。",
-        "异常检测、分类和聚类只是实验模块，不是实盘系统。"
+        "在 Streamlit 中展示日内价格、逐笔成交、大单行为、技术指标、基础财务信息、资金流估计和风险统计。",
+        "将数据访问、字段统一、分析、图表和页面逻辑拆开，避免 AKShare 字段变化时重写整个应用。",
+        "解析 AKShare 文档中的股票接口，并让每个检查在独立进程中运行，支持超时、重试、限速和断点续跑。",
+        "生成可搜索 HTML 以及 CSV、JSON、XLSX 报告，便于具体检查失败接口，而不是只留下一个成功率。"
       ]
     },
     contribution: {
       en: [
-        "Used AI assistance to split data fetching, cleaning, indicator calculation, chart display, and module structure.",
-        "Reviewed AI-generated code and charts manually to keep field handling, empty-data cases, and visual output understandable.",
-        "Kept the project framed as exploratory analysis rather than a financial product."
+        "Defined the questions each tool should answer and used AI assistance to implement and reorganize data fetching, cleaning, indicators, charts, and interface-checking workflows.",
+        "Reviewed generated code and reports against real AKShare responses, including alternate field names, empty data, timeouts, upstream failures, and cached results.",
+        "Separated experimental anomaly detection and classification examples from the main dashboards, and kept all financial wording at the level of observation rather than prediction."
       ],
       zh: [
-        "使用 AI 辅助拆分数据获取、清洗、指标计算、图表展示和模块结构。",
-        "人工审查 AI 生成代码和图表，确认字段处理、空数据情况和可视化结果可理解。",
-        "将项目保持为探索性分析工具，而不是包装成成熟金融产品。"
+        "先定义每个工具需要回答的问题，再使用 AI 辅助实现和整理数据获取、清洗、指标、图表及接口巡检流程。",
+        "结合真实 AKShare 返回检查生成代码和报告，覆盖字段别名、空数据、超时、上游失败和缓存结果。",
+        "把实验性的异常检测和分类示例与主要看板分开，并将金融相关表达保持在观察层面，而不是写成预测能力。"
       ]
     },
     learnings: {
       en: [
-        "Learned how financial-data tools need careful wording around observation versus advice.",
-        "Practiced AI-assisted modularization for data dashboards.",
-        "Improved awareness of data-source instability, field changes, and visualization edge cases."
+        "Learned that a data tool needs to preserve error context because an endpoint failure can come from parameters, dates, rate limits, or an upstream provider.",
+        "Practiced reviewing AI-assisted modules as a connected workflow rather than accepting isolated code snippets.",
+        "Improved awareness of how financial-data uncertainty should be reflected in both interface behavior and wording."
       ],
       zh: [
-        "学习金融数据工具中“观察”和“建议”的区别。",
-        "练习用 AI 辅助拆解数据 dashboard 模块。",
-        "提升了对数据源不稳定、字段变化和可视化异常情况的意识。"
+        "理解数据工具需要保留错误上下文，因为接口失败可能来自参数、日期、限流或上游数据源。",
+        "练习把 AI 辅助生成的模块作为完整工作流审查，而不是只接受孤立代码片段。",
+        "进一步理解金融数据的不确定性需要同时反映在界面行为和文字表达中。"
       ]
     }
   },
@@ -635,8 +861,8 @@ export const projects: Project[] = [
       zh: "一个监督学习 pipeline 项目，重点体现预处理、防止数据泄漏和基线模型比较。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "Jan - Apr 2026",
+      zh: "2026 年 1 月 - 4 月"
     },
     category: {
       en: "Machine Learning",
@@ -965,8 +1191,8 @@ export const projects: Project[] = [
       zh: "一个用 Java 编写的睡眠记录应用，用来记录作息、设定目标并回看习惯变化。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "Jan - May 2024",
+      zh: "2024 年 1 月 - 5 月"
     },
     category: {
       en: "Application Development",
@@ -1033,15 +1259,14 @@ export const projects: Project[] = [
       zh: "一个期货策略研究项目，重点分析策略逻辑、回测复盘、回撤、行情阶段和参数稳定性。"
     },
     period: {
-      en: "2025",
-      zh: "2025 年"
+      en: "Sep 2024 - Present",
+      zh: "2024 年 9 月 - 至今"
     },
     category: {
       en: "Quantitative Research",
       zh: "量化研究"
     },
     techStack: ["TradingView", "Pine Script", "Python", "Pandas", "Matplotlib", "Backtesting"],
-    repo: "https://github.com/Asdzzyandzzy/glass-futures-trading-strategy",
     summary: {
       en: "A quantitative research project for China glass futures that reviews strategy logic, backtest behavior, market regimes, drawdown, trade frequency, and parameter stability instead of only highlighting returns.",
       zh: "一个中国玻璃期货量化交易策略项目，重点复盘策略逻辑、回测表现、行情阶段、回撤、交易频率和参数稳定性，而不是只突出收益数字。"
@@ -1099,8 +1324,8 @@ export const projects: Project[] = [
       zh: "一个推文二分类项目，从 Dummy Classifier 基线推进到 bag-of-words 与 Logistic Regression。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "Jan - Apr 2026",
+      zh: "2026 年 1 月 - 4 月"
     },
     category: {
       en: "Machine Learning",
@@ -1165,8 +1390,8 @@ export const projects: Project[] = [
       zh: "一个使用 Spotify 风格歌曲属性进行决策树分类的基础建模练习。"
     },
     period: {
-      en: "May 2026",
-      zh: "2026 年 5 月"
+      en: "Jan - Apr 2026",
+      zh: "2026 年 1 月 - 4 月"
     },
     category: {
       en: "Machine Learning",
@@ -1223,12 +1448,12 @@ export const projects: Project[] = [
     slug: "english-letter-recognition",
     featured: false,
     title: {
-      en: "English Letter Recognition Model",
-      zh: "英文字符识别模型"
+      en: "Handwritten Character Recognition App",
+      zh: "英文手写字符识别应用"
     },
     subtitle: {
-      en: "A Python computer-vision project for recognizing English letters from image data.",
-      zh: "一个 Python 计算机视觉项目，用于从图像数据中识别英文字符。"
+      en: "A student computer-vision app that trains a compact PyTorch CNN on EMNIST and predicts characters drawn in a Pygame window.",
+      zh: "一个学生计算机视觉项目：使用 PyTorch 在 EMNIST 上训练小型 CNN，并识别用户在 Pygame 窗口中手写的字符。"
     },
     period: {
       en: "May 2025",
@@ -1238,50 +1463,52 @@ export const projects: Project[] = [
       en: "Computer Vision",
       zh: "计算机视觉"
     },
-    techStack: ["Python", "Computer Vision", "Machine Learning", "Image Classification"],
+    techStack: ["Python", "PyTorch", "Torchvision", "CNN", "EMNIST", "Pygame", "Pillow"],
     repo: "https://github.com/Asdzzyandzzy/Large-scale-model-for-English-letter-recognition",
     summary: {
-      en: "A letter-recognition project that uses image classification to practice preparing image data, training a model, and checking where recognition succeeds or fails.",
-      zh: "一个英文字符识别项目，通过图像分类练习准备图像数据、训练模型，并观察识别在哪些情况下成功或失败。"
+      en: "A small handwritten-character recognition application built with EMNIST and PyTorch. It separates dataset loading, CNN training, evaluation, prediction, image preprocessing, and the Pygame drawing interface, while keeping compatibility with an earlier saved model.",
+      zh: "一个基于 EMNIST 和 PyTorch 的小型手写字符识别应用。项目将数据加载、CNN 训练、评估、预测、图像预处理和 Pygame 手写界面拆开，同时兼容早期保存的模型。"
     },
     motivation: {
-      en: "Letter recognition is simple to understand but still exposes real computer-vision issues around image quality, model capacity, and evaluation.",
-      zh: "字符识别直观易懂，但仍能暴露图像质量、模型容量和评估方式中的真实问题。"
+      en: "The main practical problem was the gap between clean EMNIST training images and uneven drawings from the app. Improving the input pipeline mattered more than simply making the CNN larger.",
+      zh: "项目中的主要实际问题，是干净的 EMNIST 训练图像与用户随手绘制输入之间存在差异。相比单纯增大 CNN，改进输入处理流程更重要。"
     },
     features: {
       en: [
-        "Works with image data for English letter recognition.",
-        "Focuses on classification workflow and evaluation.",
-        "Provides a concrete computer-vision practice case beyond tabular data."
+        "Supports EMNIST byclass training for digits, uppercase letters, and lowercase letters, with an optional letters-only split.",
+        "Provides separate commands for training, saved-model evaluation, and launching the drawing interface.",
+        "Crops, centers, resizes, and normalizes user drawings to better match the black-background, white-stroke EMNIST format.",
+        "Uses a Pygame grid for drawing, prediction, and clearing the current input."
       ],
       zh: [
-        "处理英文字符识别所需的图像数据。",
-        "重点练习分类流程和模型评估。",
-        "提供一个区别于表格数据的计算机视觉实践案例。"
+        "支持 EMNIST byclass 训练，覆盖数字、大写字母和小写字母，也可使用 letters-only split。",
+        "分别提供训练、保存模型评估和启动手写界面的命令。",
+        "对用户手写内容进行裁剪、居中、缩放和标准化，使其更接近 EMNIST 的黑底白字输入。",
+        "使用 Pygame 网格完成手写、预测和清空操作。"
       ]
     },
     contribution: {
       en: [
-        "Organized the recognition workflow around image classification.",
-        "Connected ML concepts with visual input data.",
-        "Reviewed classification behavior beyond a single accuracy score."
+        "Built the original student project, then used AI assistance to reorganize a single-file version into clearer training, inference, preprocessing, and UI modules.",
+        "Adjusted the drawing-to-image conversion after identifying that background color, centering, and scale did not match the training data.",
+        "Kept a compact legacy CNN path for the saved weights and a separate larger CNN definition for further training experiments."
       ],
       zh: [
-        "围绕图像分类组织字符识别流程。",
-        "把机器学习概念和视觉输入数据联系起来。",
-        "不只用单一准确率理解分类模型表现。"
+        "先完成原始学生项目，之后使用 AI 辅助将单文件版本整理为训练、推理、预处理和 UI 等清晰模块。",
+        "发现背景颜色、字符居中和缩放方式与训练数据不一致后，调整手写网格到模型输入的转换流程。",
+        "为已有权重保留小型 legacy CNN，同时提供独立的较大 CNN 定义用于后续训练实验。"
       ]
     },
     learnings: {
       en: [
-        "Learned how image data changes modeling assumptions.",
-        "Practiced evaluating classification behavior through errors and examples.",
-        "Built a foundation for later computer-vision projects."
+        "Learned how strongly inference-time preprocessing can affect a model that works well on its original dataset.",
+        "Practiced separating model code from UI and image-processing code so prediction errors are easier to trace.",
+        "Built a practical foundation for later PyTorch and object-detection competition work."
       ],
       zh: [
-        "学习图像数据如何改变建模假设。",
-        "练习通过错误和样例评估分类表现。",
-        "为后续计算机视觉项目打基础。"
+        "理解推理阶段的预处理方式会明显影响一个在原始数据集上表现正常的模型。",
+        "练习将模型、UI 和图像处理代码分开，让预测错误更容易定位。",
+        "为后续 PyTorch 和目标检测比赛项目建立实践基础。"
       ]
     }
   }

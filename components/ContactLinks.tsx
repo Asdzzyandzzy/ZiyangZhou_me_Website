@@ -13,7 +13,7 @@ export function ContactLinks() {
         className="rounded-lg border border-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft"
         href={`mailto:${links.email}`}
       >
-        <p className="text-sm text-muted">Email</p>
+        <p className="text-sm text-muted">{t("labels.email")}</p>
         <p className="mt-2 text-lg font-semibold text-ink">{links.email}</p>
       </a>
       <a
