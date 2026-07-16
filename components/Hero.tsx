@@ -41,6 +41,7 @@ export function Hero() {
               src="/images/profile.jpg"
               alt="Ziyang Zhou"
               fill
+              unoptimized
               sizes="(min-width: 768px) 30vw, 90vw"
               className="h-full w-full object-cover"
             />
