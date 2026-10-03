@@ -21,6 +21,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-paper/85 backdrop-blur-xl">
+      <a href="#main-content" className="skip-link">{t("labels.skipToContent")}</a>
       <nav className="mx-auto max-w-6xl px-5 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="group flex items-center gap-3">
@@ -41,6 +42,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  aria-current={isActive ? "page" : undefined}
                   className={`rounded-full px-3 py-2 text-sm transition ${
                     isActive
                       ? "bg-ink text-white"
@@ -54,22 +56,11 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="hidden gap-1 md:flex lg:hidden">
-              {navItems.slice(1, 5).map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-full px-2.5 py-2 text-xs text-muted transition hover:bg-white hover:text-ink"
-                >
-                  {t(item.label)}
-                </Link>
-              ))}
-            </div>
             <LanguageSwitcher />
           </div>
         </div>
 
-        <div className="mt-4 flex gap-2 overflow-x-auto pb-1 md:hidden">
+        <div className="mt-4 flex gap-2 overflow-x-auto pb-1 lg:hidden">
           {navItems.map((item) => {
             const isActive =
               item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -78,6 +69,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={isActive ? "page" : undefined}
                 className={`shrink-0 rounded-full px-3 py-2 text-xs transition ${
                   isActive ? "bg-ink text-white" : "bg-white text-muted hover:text-ink"
                 }`}

@@ -16,12 +16,15 @@ export function Hero() {
       <div className="hero-grid absolute inset-0 opacity-70" />
       <div className="mx-auto grid min-h-[680px] max-w-6xl items-center gap-10 px-5 py-24 md:grid-cols-[1.25fr_0.75fr]">
         <div className="relative z-10">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-accent">
+          <p className="mb-5 text-xs font-semibold uppercase text-accent">
             {t("home.eyebrow")}
           </p>
           <h1 className="max-w-4xl text-5xl font-semibold text-ink md:text-7xl">
             {t("home.headline")}
           </h1>
+          <p className="mt-5 text-2xl font-medium leading-snug text-ink">
+            {t("home.focus")}
+          </p>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-muted">
             {t("home.subhead")}
           </p>
@@ -42,6 +45,7 @@ export function Hero() {
               alt="Ziyang Zhou"
               fill
               unoptimized
+              priority
               sizes="(min-width: 768px) 30vw, 90vw"
               className="h-full w-full object-cover"
             />

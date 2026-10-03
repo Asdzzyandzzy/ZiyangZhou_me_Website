@@ -11,7 +11,7 @@ export default function AboutPage() {
   const { language, t } = useLanguage();
 
   return (
-    <Section title={t("pages.aboutTitle")} description={pickText(profile.role, language)}>
+    <Section title={t("pages.aboutTitle")} description={pickText(profile.role, language)} headingLevel={1}>
       <div className="grid gap-8 lg:grid-cols-[1fr_0.75fr]">
         <div className="space-y-5">
           {pickList(profile.about, language).map((paragraph) => (

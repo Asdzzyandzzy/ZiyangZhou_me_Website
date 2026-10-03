@@ -8,106 +8,26 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     title: { en: "Use Regularly", zh: "经常使用" },
-    items: [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "Jupyter Notebook",
-      "Scikit-learn",
-      "Matplotlib",
-      "Git",
-      "GitHub",
-      "Data Cleaning",
-      "EDA",
-      "Feature Engineering",
-      "Cross-validation"
-    ]
+    items: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Jupyter Notebook", "Git", "Data Cleaning", "EDA"]
+  },
+  {
+    title: { en: "Applied In Internships", zh: "实习中实践过" },
+    items: ["SAS", "GLM", "Feature Selection", "Time-Series Forecasting", "Random Forest", "Weighted Ensembles", "Backtesting", "Data Visualization"]
   },
   {
     title: { en: "Coursework Foundations", zh: "课程基础" },
-    items: [
-      "Statistics",
-      "Probability",
-      "Linear Regression",
-      "Classification",
-      "Clustering",
-      "Time Series Basics",
-      "Data Structures",
-      "Algorithms",
-      "OOP",
-      "Java",
-      "C++",
-      "C",
-      "R"
-    ]
+    items: ["Statistics", "Probability", "Regression", "Cross-validation", "Data Structures", "Algorithms", "OOP", "Java", "C++", "R"]
   },
   {
     title: { en: "Used In ML Projects", zh: "机器学习项目中使用过" },
-    items: [
-      "Random Forest",
-      "Logistic Regression",
-      "LightGBM",
-      "XGBoost",
-      "CatBoost",
-      "Optuna",
-      "GroupKFold",
-      "K-Means",
-      "DBSCAN",
-      "TF-IDF",
-      "GloVe",
-      "LDA",
-      "UMAP",
-      "PyTorch",
-      "Torchvision",
-      "RetinaNet"
-    ]
+    items: ["LightGBM", "XGBoost", "CatBoost", "GridSearchCV", "GroupKFold", "K-Means", "DBSCAN", "GloVe", "LDA", "PyTorch"]
   },
   {
-    title: { en: "Data & App Tools", zh: "数据工具与应用开发" },
-    items: [
-      "Streamlit",
-      "Plotly",
-      "AKShare",
-      "Tushare",
-      "TypeScript",
-      "JavaScript",
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Pygame",
-      "TradingView",
-      "Pine Script",
-      "JUnit",
-      "Pytest"
-    ]
+    title: { en: "Used To Build Tools", zh: "工具项目中使用过" },
+    items: ["Streamlit", "Plotly", "AKShare", "Tushare", "TypeScript", "Next.js", "React", "Tailwind CSS", "Pytest", "JUnit"]
   },
   {
-    title: { en: "AI-Assisted Development", zh: "AI 辅助开发" },
-    items: [
-      "AI-Assisted Prototyping",
-      "Multi-Agent Collaboration",
-      "Prompt Design",
-      "Local LLMs",
-      "Tool Calling",
-      "Context Management",
-      "ChatGPT",
-      "DeepSeek",
-      "Qwen",
-      "Ollama"
-    ]
-  },
-  {
-    title: { en: "Currently Exploring", zh: "正在继续学习" },
-    items: [
-      "AI Agents",
-      "Model Unlearning",
-      "Object Detection",
-      "Competition Experiment Design",
-      "Browser Automation",
-      "CLI Tooling",
-      "CloudBase",
-      "GitHub Actions",
-      "Financial Data Workflows"
-    ]
+    title: { en: "Learning Through Projects", zh: "通过项目继续学习" },
+    items: ["LLM Tool Calling", "Context Management", "Local Qwen / Ollama", "AI-Assisted Development", "Model Unlearning", "Object Detection", "Browser Automation"]
   }
 ];

@@ -9,10 +9,10 @@ export function ExperienceCard({ item }: { item: ExperienceItem }) {
   const { language, t } = useLanguage();
 
   return (
-    <article className="rounded-lg border border-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
-      <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+    <article id={item.id} className="min-w-0 scroll-mt-40 rounded-lg border border-line bg-white p-6">
+      <div className="flex flex-col gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold uppercase text-accent">
             {item.type === "education" ? t("labels.education") : t("labels.work")}
           </p>
           <h3 className="mt-3 text-xl font-semibold text-ink">
@@ -22,7 +22,10 @@ export function ExperienceCard({ item }: { item: ExperienceItem }) {
             {pickText(item.organization, language)}
           </p>
         </div>
-        <p className="text-sm text-muted">{pickText(item.period, language)}</p>
+        <p className="text-sm leading-6 text-muted">
+          {pickText(item.period, language)}
+          {item.location ? <span className="block">{pickText(item.location, language)}</span> : null}
+        </p>
       </div>
       <ul className="mt-5 space-y-3 text-sm leading-6 text-muted">
         {pickList(item.description, language).map((line) => (

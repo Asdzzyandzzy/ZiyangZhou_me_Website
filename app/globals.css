@@ -19,6 +19,27 @@ body {
   margin: 0;
   background: #fafafa;
   color: #111111;
+  overflow-wrap: break-word;
+  letter-spacing: 0;
+}
+
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -6rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  color: #111111;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
 
 ::selection {
@@ -100,5 +121,16 @@ body {
   }
   to {
     transform: translate3d(18px, -18px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

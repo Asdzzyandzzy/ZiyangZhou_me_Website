@@ -33,7 +33,7 @@ export function ProjectDetail({ project }: { project: Project }) {
       </Link>
 
       <header className="reveal mt-10 max-w-4xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+        <p className="text-xs font-semibold uppercase text-accent">
           {pickText(project.category, language)}
         </p>
         <h1 className="mt-4 text-4xl font-semibold text-ink md:text-6xl">
@@ -46,13 +46,13 @@ export function ProjectDetail({ project }: { project: Project }) {
 
       <div className="mt-10 grid gap-4 md:grid-cols-3">
         <div className="rounded-lg border border-line bg-white p-5">
-          <p className="text-xs uppercase tracking-[0.18em] text-muted">
+          <p className="text-xs uppercase text-muted">
             {t("labels.period")}
           </p>
           <p className="mt-2 font-medium text-ink">{pickText(project.period, language)}</p>
         </div>
         <div className="rounded-lg border border-line bg-white p-5 md:col-span-2">
-          <p className="text-xs uppercase tracking-[0.18em] text-muted">
+          <p className="text-xs uppercase text-muted">
             {t("labels.stack")}
           </p>
           <div className="mt-3 flex flex-wrap gap-2">

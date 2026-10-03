@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectDetail } from "@/components/ProjectDetail";
-import { links } from "@/content/links";
 import { getProjectBySlug, projects } from "@/content/projects";
+import { pageMetadata } from "@/lib/metadata";
 
 // 动态路由说明：
 // content/projects.ts 里的每个 slug 都会生成一个 /projects/[slug] 详情页。
@@ -20,21 +20,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {};
   }
 
-  const path = `/projects/${project.slug}/`;
-
-  return {
-    title: project.title.en,
-    description: project.subtitle.en,
-    alternates: {
-      canonical: path
-    },
-    openGraph: {
-      title: project.title.en,
-      description: project.subtitle.en,
-      url: new URL(path, links.domain),
-      type: "article"
-    }
-  };
+  return pageMetadata(project.title.en, project.subtitle.en, `/projects/${project.slug}/`, "article");
 }
 
 export default function ProjectDetailPage({ params }: { params: { slug: string } }) {

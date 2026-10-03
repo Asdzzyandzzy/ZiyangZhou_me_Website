@@ -19,7 +19,7 @@ import { getFeaturedProjects } from "@/lib/projectOrdering";
 export default function HomePage() {
   const { language, t } = useLanguage();
   const featuredProjects = getFeaturedProjects(projects);
-  const previewExperiences = experiences.slice(0, 2);
+  const previewExperiences = experiences.filter((item) => item.type === "work").slice(0, 2);
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function HomePage() {
           {pickList(profile.about, language)
             .slice(0, 2)
             .map((paragraph) => (
-              <p key={paragraph} className="rounded-lg border border-line bg-white p-6 leading-7 text-muted">
+              <p key={paragraph} className="leading-7 text-muted">
                 {paragraph}
               </p>
             ))}
@@ -80,7 +80,7 @@ export default function HomePage() {
       </Section>
 
       <Section title={t("home.resumeTitle")}>
-        <ResumePreview />
+        <ResumePreview compact />
       </Section>
 
       <Section

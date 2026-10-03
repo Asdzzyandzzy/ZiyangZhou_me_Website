@@ -1,8 +1,11 @@
 import type { LocalizedList, LocalizedText } from "@/lib/i18n";
 
+export type ProjectGroup = "coursework" | "competitions" | "ai-tools" | "data-tools";
+
 export type Project = {
   slug: string;
   featured: boolean;
+  group: ProjectGroup;
   title: LocalizedText;
   subtitle: LocalizedText;
   period: LocalizedText;
@@ -26,144 +29,151 @@ const mlRepo = "https://github.com/Asdzzyandzzy/machine-learning-projects";
 export const projects: Project[] = [
   {
     slug: "neural-debris-removal",
+    group: "competitions",
     featured: true,
     title: {
       en: "Neural Debris Removal Competition",
       zh: "神经网络有害记忆移除比赛项目"
     },
     subtitle: {
-      en: "An active Kaggle computer-vision project studying how to reduce a poisoned RetinaNet detector's unwanted behavior while preserving useful detections.",
-      zh: "一个正在进行的 Kaggle 计算机视觉项目，研究如何减少被污染 RetinaNet 检测器的异常行为，同时尽量保留正常检测能力。"
+      en: "A Kaggle project comparing ways to reduce unwanted detections in a supplied RetinaNet model while retaining useful predictions.",
+      zh: "一个 Kaggle 比赛项目，比较如何减少给定 RetinaNet 模型的异常检测，同时保留正常预测。"
     },
     period: {
-      en: "Jul 2026 - Present",
-      zh: "2026 年 7 月 - 至今"
+      en: "Jul 2026",
+      zh: "2026 年 7 月"
     },
     category: {
-      en: "Kaggle Computer Vision Research",
-      zh: "Kaggle 计算机视觉研究"
+      en: "Computer Vision Competition",
+      zh: "计算机视觉比赛"
     },
-    techStack: ["Python", "PyTorch", "Torchvision", "RetinaNet", "Scikit-learn", "NumPy", "Pandas", "Pytest"],
+    techStack: [
+      "Python",
+      "PyTorch",
+      "RetinaNet",
+      "Scikit-learn",
+      "NumPy",
+      "Pytest"
+    ],
+    repo: "https://github.com/Asdzzyandzzy/Neural-Debris-Removal-in-Streak-Detection-Models",
     summary: {
-      en: "A private, in-progress competition workspace for removing learned artifacts from a provided object detector. The project combines model reconstruction, controlled unlearning experiments, held-out evaluation, object-level routing, submission validation, and reproducibility checks. Detailed strategy remains private while the competition is active.",
-      zh: "这是一个私有、进行中的比赛研究项目，目标是从主办方提供的目标检测模型中移除异常学习结果。项目覆盖模型复现、受控 unlearning 实验、留出评估、目标级路由、提交校验和复现检查；比赛进行期间不公开完整策略细节。"
+      en: "A computer-vision competition project using a supplied RetinaNet detector. I compared unlearning and detection-filtering approaches, checked what each change removed, and reviewed how much normal detection behavior it preserved.",
+      zh: "这是一个基于给定 RetinaNet 检测器的计算机视觉比赛项目。我比较了模型遗忘和检测结果筛选等方法，检查每个改动移除了什么，以及保留了多少正常检测能力。"
     },
     motivation: {
-      en: "I treated the task as an experimental-design problem: first reproduce the supplied model closely enough to trust local comparisons, then test one change at a time and use limited leaderboard feedback only as secondary evidence.",
-      zh: "我把这个任务当作实验设计问题：先尽可能复现主办方模型，确保本地比较可信，再一次只验证一个改动，并把有限的排行榜反馈作为辅助证据，而不是唯一判断标准。"
+      en: "Removing an unwanted detection is only half the problem: an aggressive change can also erase useful results. I wanted to compare both effects before choosing a submission.",
+      zh: "去掉异常检测只是问题的一半：改动过大也会影响正常结果。因此我希望同时比较这两方面，再决定提交哪个方案。"
     },
     features: {
       en: [
-        "Reconstructs a RetinaNet-compatible inference path and checks local predictions against supplied reference outputs before accepting training results.",
-        "Organizes full-model, classification-head, distillation, pseudo-clean, and routing experiments through versioned configurations and held-out comparisons.",
-        "Validates submission schema, freezes selected artifacts with hashes, and records both successful and rejected directions in a decision log.",
-        "Keeps raw competition data unchanged and separates verified competition facts from assumptions that still require evidence."
+        "Reproduces the supplied model's inference and compares it with reference predictions.",
+        "Compares training, distillation, and object-level filtering experiments using held-out examples.",
+        "Records experiment settings, validates submission files, and checks that repeated runs produce the same output."
       ],
       zh: [
-        "复现与 RetinaNet 兼容的推理流程，并先将本地预测和主办方参考输出对齐，再接受后续训练结果。",
-        "通过版本化配置组织全模型、分类头、蒸馏、pseudo-clean 和路由实验，并使用留出结果进行比较。",
-        "校验提交格式、用哈希冻结选定产物，并在决策日志中同时记录有效方向和被否决的方案。",
-        "保持原始比赛数据不变，并将已验证的比赛事实与仍需证据支持的假设分开记录。"
+        "复现给定模型的推理过程，并与参考预测对比。",
+        "使用留出样本比较训练、蒸馏和目标级筛选实验。",
+        "记录实验配置、检查提交文件，并核对重复运行的输出是否一致。"
       ]
     },
     contribution: {
       en: [
-        "Defined the experimental gates, retention-versus-removal tradeoffs, comparison criteria, and the order in which candidate ideas were tested.",
-        "Used AI assistance to accelerate implementation and experiment plumbing, while I reviewed the model behavior, chose follow-up experiments, interpreted failures, and decided which candidates were worth submitting.",
-        "Built the workflow around reproducible evidence: cross-fitted checks, deterministic submission generation, automated tests, provenance manifests, and explicit rollback points.",
-        "Tracked a substantial public-leaderboard improvement from the first submitted baseline and kept the project marked as active work."
+        "Chose the experiment order and reviewed the trade-off between removing unwanted detections and preserving normal ones.",
+        "Used AI assistance for implementation, then inspected predictions and failure cases to choose follow-up experiments.",
+        "The July 2026 experiment log records a public-leaderboard score of 222.8139 and rank 41 at the time of submission."
       ],
       zh: [
-        "制定实验门槛、异常移除与正常检测保留之间的取舍、比较标准，以及候选想法的验证顺序。",
-        "使用 AI 辅助加速实现和实验流程搭建，但由我检查模型行为、选择后续实验、解释失败原因，并决定哪些候选值得提交。",
-        "围绕可复现证据组织工作流，包括交叉拟合检查、确定性提交生成、自动测试、产物清单和明确回退点。",
-        "记录了相较第一次提交基线的明显排行榜提升，并将项目保持为进行中的工作。"
+        "安排实验顺序，并检查异常移除与正常检测保留之间的取舍。",
+        "使用 AI 辅助实现，再通过预测结果与失败案例决定下一轮实验。",
+        "2026 年 7 月的实验日志记录了一次公开榜得分 222.8139、提交时排名第 41 的结果。"
       ]
     },
     learnings: {
       en: [
-        "Learned why a faithful local baseline is necessary before interpreting small experimental improvements.",
-        "Practiced changing direction when leaderboard evidence contradicted a local proxy instead of defending the original idea.",
-        "Built stronger habits around experiment provenance, hidden-label uncertainty, and communicating incomplete competition results carefully."
+        "Learned how a local evaluation can miss behavior that appears on new examples.",
+        "Practiced comparing intermediate predictions and keeping experiment records useful for later review."
       ],
       zh: [
-        "理解在解释小幅实验改进之前，为什么必须先建立足够可信的本地基线。",
-        "练习在排行榜证据与本地 proxy 冲突时及时改变方向，而不是为原有想法找理由。",
-        "强化实验溯源、隐藏标签不确定性和谨慎表达未完成比赛结果的习惯。"
+        "理解本地评估可能遗漏新样本上出现的问题。",
+        "练习比较中间预测结果，并保留便于后续复盘的实验记录。"
       ]
     }
   },
   {
     slug: "csi300-portfolio-modeling-challenge",
+    group: "competitions",
     featured: true,
     title: {
       en: "CSI 300 Portfolio Modeling Challenge",
       zh: "沪深 300 股票组合预测比赛项目"
     },
     subtitle: {
-      en: "An active competition project for ranking CSI 300 candidates and assigning a five-stock portfolio with point-in-time features and walk-forward validation.",
-      zh: "一个正在进行的比赛项目，使用点时特征和走步验证对沪深 300 候选股进行排序，并构建五股组合。"
+      en: "A LightGBM competition project that ranks stocks for a five-stock allocation and compares models across historical time periods.",
+      zh: "一个使用 LightGBM 预测股票排序、生成五股配置，并在不同历史时期比较模型的比赛项目。"
     },
     period: {
-      en: "Jul 2026 - Present",
-      zh: "2026 年 7 月 - 至今"
+      en: "Jul 2026",
+      zh: "2026 年 7 月"
     },
     category: {
-      en: "Competition ML Research",
-      zh: "机器学习比赛研究"
+      en: "Machine Learning Competition",
+      zh: "机器学习比赛"
     },
-    techStack: ["Python", "Pandas", "NumPy", "Scikit-learn", "LightGBM", "Tushare", "Time Series", "Pytest"],
+    techStack: [
+      "Python",
+      "Pandas",
+      "LightGBM",
+      "Scikit-learn",
+      "Tushare",
+      "Pytest"
+    ],
+    repo: "https://github.com/Asdzzyandzzy/2026-China-Collegiate-Computing-Contest-Big-Data-Challenge",
     summary: {
-      en: "A private, in-progress machine-learning project that predicts five-trading-day returns, ranks CSI 300 candidates, and produces a constrained five-stock allocation. The work emphasizes point-in-time data handling, expanding-window evaluation, feature comparison, and reproducible model selection rather than a single backtest number.",
-      zh: "这是一个私有、进行中的机器学习比赛项目，用于预测未来五个交易日收益、排序沪深 300 候选股并生成受约束的五股配置。重点是点时数据处理、扩展窗口评估、特征比较和可复现模型选择，而不是只展示一个回测数字。"
+      en: "A project for the 2026 China Collegiate Computing Contest Big Data Challenge. It predicts short-horizon returns for CSI 300 candidates and produces a five-stock allocation. The main work was preparing time-aligned features, comparing validation periods, and deciding whether extra models or features improved the result.",
+      zh: "这是 2026 年中国高校计算机大赛大数据挑战赛项目，预测沪深 300 候选股票的短期收益并生成五股配置。主要工作是按信息可用时间整理特征、比较不同验证时期的表现，以及判断增加模型或特征是否带来实际改善。"
     },
     motivation: {
-      en: "I wanted the model-selection process to reflect how the strategy would have been evaluated at each historical point, so validation design and information timing came before adding more features or more complex allocation rules.",
-      zh: "我希望模型选择过程尽量接近每个历史时点真实可用的信息，因此先确定验证设计和信息时点，再考虑增加特征或更复杂的权重分配方法。"
+      en: "I wanted to see whether a model could rank candidates consistently across different market periods, and whether learned portfolio weights helped more than a simple fixed rule.",
+      zh: "我想了解模型能否在不同市场阶段稳定地排序候选股票，以及学习得到的组合权重是否比简单固定规则更有帮助。"
     },
     features: {
       en: [
-        "Builds price, volume, volatility, cross-sectional, market, liquidity, and delayed fundamental features using only information available by each decision date.",
-        "Uses expanding-window folds with a time gap between training and validation, while keeping the latest period separate from model and feature selection.",
-        "Compares linear, gradient-boosting, LightGBM, ranking, ensemble, and allocation candidates with return, excess return, ranking, drawdown, and tail-risk measures.",
-        "Keeps a reproducible training, inference, report, verification, and test workflow for the competition submission package."
+        "Builds price, volume, volatility, and market features, with additional experiments using Tushare data.",
+        "Compares models with expanding historical training windows and a gap before validation.",
+        "Evaluates feature additions and fixed versus learned weights; retains a LightGBM model with fixed descending weights for the recorded submission."
       ],
       zh: [
-        "只使用每个决策日之前可获得的信息，构建价格、成交量、波动率、横截面、市场、流动性和延迟基本面特征。",
-        "使用带时间间隔的扩展窗口折进行验证，并将最新时期与模型和特征选择分开。",
-        "比较线性模型、梯度提升、LightGBM、排序、集成和权重分配候选，并结合收益、超额收益、排序、回撤和尾部风险指标。",
-        "为比赛提交工程保留可复现的训练、推理、报告、校验和测试流程。"
+        "构建价格、成交量、波动率和市场特征，并使用 Tushare 数据做扩展实验。",
+        "通过逐步扩展历史训练窗口、在验证前留出时间间隔来比较模型。",
+        "比较新增特征、固定权重与学习型权重；仓库记录的正式提交保留 LightGBM 与固定递减权重。"
       ]
     },
     contribution: {
       en: [
-        "Defined the prediction target, point-in-time rules, validation folds, evaluation measures, and promotion criteria before comparing candidates.",
-        "Designed feature groups and ablation experiments, then kept stronger-looking candidates out of the formal result when they did not pass the full comparison criteria.",
-        "Compared fixed and learned portfolio-weighting ideas instead of assuming a more complicated allocator would be better.",
-        "Used AI assistance for implementation and repetitive research tooling while I directed the hypotheses, checked data timing, reviewed results, and made model-selection decisions."
+        "Defined the prediction task and compared models using ranking quality, returns, and drawdown across multiple years.",
+        "Reviewed when each input became available and compared additional feature groups with the original model.",
+        "Used AI-assisted implementation while choosing experiments and reviewing their results; kept later inspected results as diagnostics."
       ],
       zh: [
-        "在比较候选之前，先确定预测目标、点时规则、验证折、评估指标和晋级标准。",
-        "设计特征分组和消融实验；即使部分新候选看起来更强，只要没有通过完整比较标准，就不替换正式结果。",
-        "比较固定权重和学习型权重方法，而不是默认更复杂的 allocator 一定更好。",
-        "使用 AI 辅助实现和重复性研究工具搭建，但由我提出假设、检查数据时点、复盘结果并做模型选择。"
+        "定义预测任务，结合跨年度的排序质量、收益和回撤比较模型。",
+        "检查输入数据何时可用，并比较新增特征组与原模型的表现。",
+        "使用 AI 辅助实现，由我选择实验并复盘结果；对后续已经查看过的时期保留为诊断分析。"
       ]
     },
     learnings: {
       en: [
-        "Learned how easily financial experiments can look stronger when time boundaries or selection periods are not kept explicit.",
-        "Practiced rejecting complexity when a simpler weighting rule remained more stable under the chosen validation design.",
-        "Improved at separating exploratory findings, formal candidates, and results that should remain private during an active competition."
+        "Learned how evaluation periods can change the apparent value of a model or feature.",
+        "Practiced keeping a simpler solution when additional complexity did not improve results consistently."
       ],
       zh: [
-        "理解如果时间边界和选择时期不清楚，金融实验很容易显得比实际更强。",
-        "练习在简单权重规则在既定验证下更稳定时，拒绝没有带来足够收益的复杂方案。",
-        "提升了区分探索结果、正式候选和比赛进行期间不应公开内容的能力。"
+        "理解评估时期的选择会改变一个模型或特征看起来的价值。",
+        "练习在复杂方案没有带来稳定提升时，保留更简单的选择。"
       ]
     }
   },
   {
     slug: "f1-pit-stop-prediction",
+    group: "competitions",
     featured: true,
     title: {
       en: "F1 Pit Stop Prediction",
@@ -232,78 +242,79 @@ export const projects: Project[] = [
   },
   {
     slug: "deepseek-coding-agent",
+    group: "ai-tools",
     featured: true,
     title: {
-      en: "Local DeepSeek Coding Agent",
-      zh: "本地 DeepSeek Coding Agent"
+      en: "ZZYAgent: Local Coding Assistant",
+      zh: "ZZYAgent：本地编程助手"
     },
     subtitle: {
-      en: "A Python MVP for learning how coding agents work, with a CLI, tool-calling loop, workspace file tools, shell/test execution, git diff output, and safety checks.",
-      zh: "一个用于学习 coding agent 工作方式的 Python MVP，包含 CLI、工具调用循环、工作区文件工具、Shell/测试执行、git diff 输出和安全检查。"
+      en: "A Python coding-assistant prototype using DeepSeek, with file tools, test execution, session history, and context management.",
+      zh: "一个使用 DeepSeek 的 Python 编程助手原型，包含文件工具、测试执行、会话记录和上下文管理。"
     },
     period: {
-      en: "Jun 2026",
-      zh: "2026 年 6 月"
+      en: "Jun - Jul 2026",
+      zh: "2026 年 6 月 - 7 月"
     },
     category: {
-      en: "AI Agent Prototype",
-      zh: "AI Agent 原型"
+      en: "AI-Assisted Developer Tool",
+      zh: "AI 辅助开发工具"
     },
-    techStack: ["Python", "DeepSeek", "Typer", "Rich", "Tool Calling", "Pytest"],
+    techStack: [
+      "Python",
+      "DeepSeek",
+      "Typer",
+      "Rich",
+      "Tool Calling",
+      "Pytest"
+    ],
     repo: "https://github.com/Asdzzyandzzy/deepseek-coding-agent",
     summary: {
-      en: "A local DeepSeek-powered coding agent MVP built as a learning project. It connects a CLI, a tool-calling loop, workspace-aware file tools, shell/test execution, git diff inspection, and a Rich terminal UI, with local safety checks around file writes and risky commands.",
-      zh: "这是一个基于 DeepSeek 的本地 coding agent MVP，定位是学习型项目。它把 CLI、工具调用循环、工作区文件工具、Shell/测试执行、git diff 检查和 Rich 终端 UI 串起来，并用本地安全检查限制文件写入和高风险命令。"
+      en: "A personal prototype for learning how a coding assistant connects model responses to actions in a local project. The updated version shares one runtime across its command line and terminal interface, and adds saved sessions, structured plans, context budgeting, and checks before reporting a task as complete.",
+      zh: "一个用于学习编程助手如何把模型回复转化为本地项目操作的个人原型。更新后的版本让命令行与终端界面共用同一运行流程，并加入会话保存、任务计划、上下文预算和完成前检查。"
     },
     motivation: {
-      en: "I built this to understand the mechanics behind coding agents: how tasks become tool calls, how observations feed back into the loop, how workspace context is reset, and how local automation can be kept under control.",
-      zh: "我做这个项目是为了理解 coding agent 的内部机制：任务如何变成工具调用，观察结果如何回到循环里，工作区上下文如何重置，以及如何让本地自动化保持可控。"
+      en: "I wanted to follow the whole loop: how an assistant reads code, chooses a tool, reacts to a failed test, and decides it has enough evidence to stop.",
+      zh: "我希望理解完整过程：助手如何读代码、选择工具、处理测试失败，以及判断什么时候可以结束任务。"
     },
     features: {
       en: [
-        "Implements a basic tool-calling loop where the model can plan, call tools, receive observations, edit files, run tests, check diffs, and summarize results.",
-        "Provides workspace-aware tools for listing, reading, writing, editing, and searching files, plus shell/test execution and git diff output.",
-        "Includes a Rich terminal UI and Typer CLI commands for run, ui, chat, diff, and test workflows.",
-        "Supports configurable modes such as fast, balanced, smart, max, and custom to experiment with speed and loop-budget tradeoffs.",
-        "Adds practical safety checks for workspace-only writes, sensitive-file refusal, dangerous command blocking, confirmations for destructive commands, timeouts, output limits, and repeated-tool limits."
+        "Connects file reading and editing, code search, shell commands, tests, and Git diffs through a tool-calling loop.",
+        "Saves and resumes local sessions, limits long tool outputs, and summarizes older context.",
+        "Tracks a task plan and checks for diff review and validation after edits."
       ],
       zh: [
-        "实现基础工具调用循环：模型先规划，再调用工具、读取观察结果、编辑文件、运行测试、检查 diff，并总结结果。",
-        "提供工作区感知工具，支持列文件、读文件、写文件、编辑文件、搜索文本、执行 Shell/测试命令和输出 git diff。",
-        "提供 Rich 终端 UI 和 Typer CLI 命令，覆盖 run、ui、chat、diff、test 等使用方式。",
-        "支持 fast、balanced、smart、max、custom 等模式，用于实验速度和循环预算之间的取舍。",
-        "加入实际安全检查，包括文件写入限制在工作区内、拒绝敏感文件、阻止危险命令、破坏性命令确认、超时、输出截断和重复工具调用限制。"
+        "通过工具调用循环连接文件读写、代码搜索、Shell 命令、测试和 Git diff。",
+        "支持本地会话保存与恢复，限制过长工具输出，并整理较早的上下文。",
+        "记录任务计划，并在改动后检查是否查看了 diff 和运行了验证。"
       ]
     },
     contribution: {
       en: [
-        "Organized the agent prototype across CLI dispatch, terminal UI, configuration loading, LLM client/tool schemas, tool execution, patch application, and safety policy.",
-        "Implemented local tools for filesystem operations, unified-diff patch application, shell/test execution with command checks, and git diff inspection.",
-        "Documented the build path in docs/AGENT_BUILD_GUIDE.md so the project can also serve as a learning artifact for coding-agent internals.",
-        "Added tests around agent behavior, configuration, filesystem tools, LLM handling, entry points, patch parsing, safety policy, shell tools, and UI behavior."
+        "Defined the prototype's workflow and used AI assistance to organize its runtime, tools, terminal interface, and tests.",
+        "Reviewed repeated calls, interrupted sessions, and failed commands to make the next action easier to understand.",
+        "Kept build notes and small examples that explain how the agent's pieces fit together."
       ],
       zh: [
-        "组织 agent 原型结构，覆盖 CLI 分发、终端 UI、配置加载、LLM 客户端与工具 schema、工具执行、patch 应用和安全策略。",
-        "实现本地工具，包括文件系统操作、unified diff patch 应用、带命令检查的 Shell/测试执行和 git diff 检查。",
-        "编写 docs/AGENT_BUILD_GUIDE.md，让项目不仅是工具原型，也能作为理解 coding agent 内部机制的学习材料。",
-        "补充测试，覆盖 agent 行为、配置、文件系统工具、LLM 处理、入口命令、patch 解析、安全策略、Shell 工具和 UI 行为。"
+        "定义原型的使用流程，并使用 AI 辅助组织运行流程、工具、终端界面和测试。",
+        "检查重复调用、会话中断和命令失败等情况，让后续操作更容易理解。",
+        "整理构建笔记与小示例，解释各部分如何协作。"
       ]
     },
     learnings: {
       en: [
-        "Learned that even a small coding agent depends heavily on clear tool limits, useful observations, context reset, safety checks, and understandable error handling.",
-        "Practiced designing local automation with explicit workspace limits instead of allowing broad file or shell access.",
-        "Built a clearer understanding of the gap between a chat wrapper and a tool-using coding assistant."
+        "Developed a practical understanding of tool calls, context limits, and session state.",
+        "Learned why running a test and inspecting its result are different from asking a model whether a change is correct."
       ],
       zh: [
-        "理解到即使是小型 coding agent，也很依赖清楚的工具限制、观察结果、上下文重置、安全检查和可理解的错误处理。",
-        "练习在明确工作区限制内设计本地自动化，而不是给模型开放过宽的文件或 Shell 权限。",
-        "更清楚地区分普通聊天模型封装和会使用工具的 coding assistant。"
+        "通过实践理解工具调用、上下文长度与会话状态。",
+        "理解实际运行测试并检查结果，与询问模型改动是否正确之间的区别。"
       ]
     }
   },
   {
     slug: "tencent-ai-hr-growth-quest",
+    group: "ai-tools",
     featured: true,
     title: {
       en: "Tencent AI-HR Growth Demo",
@@ -371,6 +382,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fanqie-qwen-writing-pipeline",
+    group: "ai-tools",
     featured: true,
     title: {
       en: "Local Qwen Chinese Fiction Pipeline",
@@ -381,8 +393,8 @@ export const projects: Project[] = [
       zh: "一个由 Python 控制本地 Qwen 模型的写作流程，用来模拟类似 Agent 的规划、记忆和续写能力。"
     },
     period: {
-      en: "May - Jun 2026",
-      zh: "2026 年 5 月 - 6 月"
+      en: "May - Aug 2026",
+      zh: "2026 年 5 月 - 8 月"
     },
     category: {
       en: "AI-Assisted Writing Workflow",
@@ -391,8 +403,8 @@ export const projects: Project[] = [
     techStack: ["Python", "Qwen", "Local LLM", "Prompt Workflow", "Context Management"],
     repo: "https://github.com/Asdzzyandzzy/Fanqie_novel_with_Qianwen",
     summary: {
-      en: "A local Qwen writing pipeline controlled by Python. It experiments with agent-like writing behavior where the model generates questions, answers them, records context, and uses that context for later fiction segments.",
-      zh: "使用本地 Qwen 模型和 Python 流程控制，模拟 Agent 的自驱式写作能力，让模型能够自己提问、回答、记录上下文并持续生成小说。"
+      en: "A Python workflow for Chinese fiction generation with Qwen. It separates planning from drafting and passes character notes, prior events, and recent text into the next segment. Saved progress and lightweight text checks make it easier to review or resume a draft.",
+      zh: "使用 Qwen 和 Python 组织中文小说生成，将规划与写作拆开，把人物信息、已有情节和最近文本传入下一段。通过保存进度和简单文本检查，方便人工复盘或继续生成。"
     },
     motivation: {
       en: "I used the project to explore prompt sequencing, lightweight memory, and long-form generation control with a local model.",
@@ -400,26 +412,26 @@ export const projects: Project[] = [
     },
     features: {
       en: [
-        "Runs a local Qwen model through a Python-controlled generation loop.",
+        "Runs Qwen through a Python-controlled generation loop, usually with local Ollama, with an optional compatible API provider.",
         "Builds a fiction workflow for setting, outline, segmented continuation, context review, and draft output.",
         "Uses a lightweight memory mechanism so previous questions, answers, and story context can guide later writing, with manual review for coherence."
       ],
       zh: [
-        "通过 Python 控制本地 Qwen 模型调用，而不是使用云端 API。",
+        "通过 Python 控制 Qwen 模型调用，主要使用本地 Ollama，也保留兼容 API 的接入方式。",
         "组织小说生成流程：设定、大纲、分段续写、上下文回顾和成稿。",
         "设计轻量记忆机制，让模型此前的提问、回答和故事上下文影响后续生成，并人工检查连贯性。"
       ]
     },
     contribution: {
       en: [
-        "Designed the self-questioning loop where the model asks, answers, and summarizes its own context before continuing.",
-        "Built the Python control flow for prompt sequencing, context recording, and staged generation.",
-        "Manually reviewed generated text for coherence and kept the project framed as a writing workflow experiment."
+        "Designed staged planning and continuation prompts, including self-questioning steps and explicit context handoff.",
+        "Used AI assistance to implement prompt sequencing, saved story state, and pause/resume behavior in Python.",
+        "Reviewed drafts for repeated scenes, inconsistent character details, and abrupt transitions."
       ],
       zh: [
-        "设计模型自问、自答、自整理上下文的流程，再进入后续续写。",
-        "搭建 Python 控制流程，管理 prompt 顺序、上下文记录和分阶段生成。",
-        "人工检查生成内容的连贯性，并将项目表述为写作流程实验，而不是包装成完整 Agent 系统。"
+        "设计分阶段的规划与续写提示，包括自问自答步骤和明确的上下文传递。",
+        "使用 AI 辅助实现 Python 提示调度、故事状态保存和暂停恢复流程。",
+        "人工检查草稿中的重复场景、人物信息不一致和生硬衔接。"
       ]
     },
     learnings: {
@@ -437,6 +449,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ziyangzhou-me-website",
+    group: "data-tools",
     featured: true,
     title: {
       en: "ZiyangZhou.me Portfolio Website",
@@ -491,26 +504,27 @@ export const projects: Project[] = [
     learnings: {
       en: [
         "Learned how portfolio content needs different levels of detail for cards, detail pages, and resume links.",
-        "Practiced bilingual editing that stays concrete and interview-ready.",
+        "Practiced explaining projects clearly in both English and Chinese.",
         "Learned that a useful portfolio needs regular content review as projects change."
       ],
       zh: [
         "学习作品集内容在卡片、详情页和简历链接中需要不同的信息密度。",
-        "练习写真实、克制、能在面试中解释的中英文内容。",
+        "练习用中英文清楚说明项目内容和自己的工作。",
         "理解作品集需要随着项目变化持续检查和更新，而不是完成一次就不再维护。"
       ]
     }
   },
   {
     slug: "chatgpt-local-api-creator",
+    group: "ai-tools",
     featured: true,
     title: {
       en: "ChatGPT API Browser Bridge",
       zh: "ChatGPT API 浏览器工具"
     },
     subtitle: {
-      en: "A local API/browser bridge experiment for connecting local scripts with ChatGPT web workflows and reducing repeated context entry.",
-      zh: "一个本地 API/浏览器桥接工具，用于让本地脚本和 Agent 调用更强模型能力并控制上下文。"
+      en: "A local browser-automation experiment that sends prompts from scripts to ChatGPT web conversations and reads replies.",
+      zh: "一个本地浏览器自动化实验，用脚本向 ChatGPT 网页对话发送提示并读取回复。"
     },
     period: {
       en: "Feb - May 2026",
@@ -545,12 +559,12 @@ export const projects: Project[] = [
     contribution: {
       en: [
         "Defined the tool as a local workflow bridge rather than a replacement for model reasoning.",
-        "Designed endpoints for prompt submission, reply reading, project navigation, diagnostics, and recovery.",
+        "Used AI assistance to build endpoints for prompt submission, reply reading, navigation, and recovery.",
         "Tested recovery and diagnostics for cases where browser state or page behavior changed."
       ],
       zh: [
         "将工具定位为本地模型工作流的桥接层，而不是替代模型推理。",
-        "设计 prompt 提交、回复读取、Project 导航、诊断和刷新恢复等端点。",
+        "使用 AI 辅助实现提示提交、回复读取、导航与恢复等端点。",
         "针对浏览器状态或页面行为变化的情况，测试诊断与恢复流程。"
       ]
     },
@@ -569,6 +583,7 @@ export const projects: Project[] = [
   },
   {
     slug: "airbnb-price-modeling",
+    group: "coursework",
     featured: true,
     title: {
       en: "Airbnb Listing Price Modeling",
@@ -583,11 +598,11 @@ export const projects: Project[] = [
       zh: "2026 年 1 月 - 4 月"
     },
     category: {
-      en: "Machine Learning",
-      zh: "机器学习"
+      en: "Machine Learning Coursework",
+      zh: "机器学习课程"
     },
     techStack: ["Python", "Pandas", "Scikit-learn", "Random Forest", "ColumnTransformer", "GridSearchCV"],
-    repo: mlRepo,
+    repo: `${mlRepo}/tree/main/airbnb-price-modeling`,
     summary: {
       en: "A notebook-based tabular modeling project for predicting New York City Airbnb listing prices, covering task framing, train/test split, EDA, feature engineering, model training, and evaluation.",
       zh: "基于纽约 Airbnb 房源数据构建价格预测模型，完成任务定义、训练/测试集划分、探索性分析、特征工程、模型训练和评估。"
@@ -635,28 +650,29 @@ export const projects: Project[] = [
   },
   {
     slug: "text-embeddings-topic-modeling",
+    group: "coursework",
     featured: true,
     title: {
       en: "NLP Text Analysis and Topic Modeling",
       zh: "NLP 文本分析与主题建模项目"
     },
     subtitle: {
-      en: "A coursework-style NLP notebook project combining embeddings, similarity analysis, preprocessing, and LDA topic modeling.",
-      zh: "一个正式 NLP notebook 项目，结合词向量、相似度分析、文本预处理和 LDA 主题建模。"
+      en: "A self-written CPSC 330 notebook exploring word embeddings, text preprocessing, and LDA topic modeling.",
+      zh: "独立完成的 CPSC 330 notebook，探索词向量、文本预处理和 LDA 主题建模。"
     },
     period: {
       en: "Jan - Apr 2026",
       zh: "2026 年 1 月 - 4 月"
     },
     category: {
-      en: "Natural Language Processing",
-      zh: "自然语言处理"
+      en: "NLP Coursework",
+      zh: "NLP 课程"
     },
     techStack: ["Python", "Jupyter Notebook", "Scikit-learn", "spaCy", "Gensim", "GloVe", "LDA"],
-    repo: mlRepo,
+    repo: `${mlRepo}/tree/main/text-embeddings-topic-modeling`,
     summary: {
-      en: "A coursework-style NLP notebook project combining GloVe embeddings, word similarity analysis, representation bias discussion, spaCy preprocessing, and LDA topic modeling. I completed this notebook work myself as formal ML/NLP practice.",
-      zh: "这是我独立完成的正式 NLP notebook 练习，内容包括文本预处理、GloVe 词向量、词相似度、embedding bias、LDA 主题模型，以及 word-topic / document-topic 解释。"
+      en: "A self-written CPSC 330 project combining GloVe embeddings, word similarity analysis, spaCy preprocessing, and LDA topic modeling. I explored how text representations affect the patterns and topics a model finds.",
+      zh: "这是我独立完成的 CPSC 330 课程项目，结合 GloVe 词向量、词相似度、spaCy 预处理和 LDA 主题建模，探索文本表示方式如何影响模型发现的规律和主题。"
     },
     motivation: {
       en: "I wanted to connect classic NLP ideas with hands-on notebooks: vector representations, preprocessing choices, topic-word distributions, and document-level interpretation.",
@@ -701,6 +717,7 @@ export const projects: Project[] = [
   },
   {
     slug: "recipe-clustering",
+    group: "coursework",
     featured: true,
     title: {
       en: "Recipe Text Clustering",
@@ -715,11 +732,11 @@ export const projects: Project[] = [
       zh: "2026 年 1 月 - 4 月"
     },
     category: {
-      en: "Machine Learning",
-      zh: "机器学习"
+      en: "Machine Learning Coursework",
+      zh: "机器学习课程"
     },
     techStack: ["Python", "Scikit-learn", "K-means", "DBSCAN", "SentenceTransformer", "UMAP"],
-    repo: mlRepo,
+    repo: `${mlRepo}/tree/main/recipe-clustering`,
     summary: {
       en: "An unsupervised text clustering project comparing bag-of-words and sentence embeddings for recipe-name clustering, using K-means, DBSCAN, and UMAP visualization.",
       zh: "基于菜谱名称和文本信息进行无监督聚类，比较 bag-of-words 与 sentence embeddings，使用 K-means、DBSCAN 和 UMAP 分析短文本聚类效果。"
@@ -767,6 +784,7 @@ export const projects: Project[] = [
   },
   {
     slug: "astock-analysis-toolkit",
+    group: "data-tools",
     featured: true,
     title: {
       en: "A-Share Data Analysis Tools",
@@ -777,8 +795,8 @@ export const projects: Project[] = [
       zh: "三个 AI 辅助的 Python 工具：日内成交分析、综合投研看板和 AKShare 接口巡检。"
     },
     period: {
-      en: "Aug 2025 - Jun 2026",
-      zh: "2025 年 8 月 - 2026 年 6 月"
+      en: "Aug 2025 - Aug 2026",
+      zh: "2025 年 8 月 - 2026 年 8 月"
     },
     category: {
       en: "AI-Assisted Data Tools",
@@ -807,8 +825,8 @@ export const projects: Project[] = [
       zh: "一组 AI 辅助开发的 A 股数据工具。两个 Streamlit 应用整理日内成交、技术指标、基础财务信息、资金流估计和风险视图；配套巡检工具解析 AKShare 股票文档，并通过超时、重试、断点续跑和结构化报告检查接口。"
     },
     motivation: {
-      en: "I used these projects to turn recurring market-data questions into reusable views and to understand how unstable upstream interfaces affect data tools. The outputs are for observation and review, not trading recommendations.",
-      zh: "我用这些项目把反复出现的市场数据问题整理成可复用视图，并理解上游接口变化会怎样影响数据工具。输出用于观察和复盘，不是交易建议。"
+      en: "I built these tools for my own market review: bringing scattered data into one view and making upstream API failures easier to identify.",
+      zh: "我为自己的市场复盘整理这些工具，把分散数据放在同一视图里，也让上游接口的失败原因更容易查找。"
     },
     features: {
       en: [
@@ -828,12 +846,12 @@ export const projects: Project[] = [
       en: [
         "Defined the questions each tool should answer and used AI assistance to implement and reorganize data fetching, cleaning, indicators, charts, and interface-checking workflows.",
         "Reviewed generated code and reports against real AKShare responses, including alternate field names, empty data, timeouts, upstream failures, and cached results.",
-        "Separated experimental anomaly detection and classification examples from the main dashboards, and kept all financial wording at the level of observation rather than prediction."
+        "Compared data coverage and chart behavior across the dashboards, and explored anomaly detection and classification in separate experiments."
       ],
       zh: [
         "先定义每个工具需要回答的问题，再使用 AI 辅助实现和整理数据获取、清洗、指标、图表及接口巡检流程。",
         "结合真实 AKShare 返回检查生成代码和报告，覆盖字段别名、空数据、超时、上游失败和缓存结果。",
-        "把实验性的异常检测和分类示例与主要看板分开，并将金融相关表达保持在观察层面，而不是写成预测能力。"
+        "比较各看板的数据覆盖和图表表现，并单独探索异常检测与分类实验。"
       ]
     },
     learnings: {
@@ -851,6 +869,7 @@ export const projects: Project[] = [
   },
   {
     slug: "adult-census-preprocessing-pipeline",
+    group: "coursework",
     featured: true,
     title: {
       en: "Adult Census Preprocessing Pipeline",
@@ -865,11 +884,11 @@ export const projects: Project[] = [
       zh: "2026 年 1 月 - 4 月"
     },
     category: {
-      en: "Machine Learning",
-      zh: "机器学习"
+      en: "Machine Learning Coursework",
+      zh: "机器学习课程"
     },
     techStack: ["Python", "Scikit-learn", "ColumnTransformer", "Pipeline", "Decision Tree", "One-hot Encoding"],
-    repo: mlRepo,
+    repo: `${mlRepo}/tree/main/data-preprocessing-pipeline`,
     summary: {
       en: "A supervised learning pipeline project on the Adult Census dataset, focused on feature type separation, imputation, encoding, scaling, leakage prevention, and baseline comparison.",
       zh: "基于 Adult Census 数据集构建监督学习 pipeline，重点体现特征类型拆分、缺失值填补、编码、标准化、防止数据泄漏和基线模型比较。"
@@ -917,6 +936,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cpsc221-hash-tables",
+    group: "coursework",
     featured: true,
     title: {
       en: "CPSC 221 Hash Tables Lab",
@@ -960,12 +980,12 @@ export const projects: Project[] = [
       en: [
         "Completed the C++ implementation myself inside the provided course scaffolding.",
         "Debugged collision handling and iterator behavior under tests.",
-        "Kept the project framed as data-structure coursework rather than product development."
+        "Used word-count and anagram exercises to check the hash tables on text inputs."
       ],
       zh: [
         "在课程提供的框架中独立完成 C++ 实现。",
         "结合测试调试冲突处理和 iterator 行为。",
-        "将项目表述为数据结构课程实践，而不是产品开发。"
+        "用词频统计和字母重排练习检查哈希表处理文本输入的表现。"
       ]
     },
     learnings: {
@@ -983,6 +1003,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cpsc221-avl-trees",
+    group: "coursework",
     featured: true,
     title: {
       en: "CPSC 221 AVL Trees Lab",
@@ -1049,6 +1070,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cpsc221-heaps",
+    group: "coursework",
     featured: true,
     title: {
       en: "CPSC 221 Heaps Lab",
@@ -1115,6 +1137,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cpsc221-graphs-union-find",
+    group: "coursework",
     featured: true,
     title: {
       en: "CPSC 221 Graphs and Union-Find Lab",
@@ -1158,12 +1181,12 @@ export const projects: Project[] = [
       en: [
         "Completed the graph and disjoint-set implementation work myself in C++.",
         "Practiced debugging behavior across multiple supporting files.",
-        "Kept the description grounded in algorithms and data structures rather than product features."
+        "Checked graph operations and connectivity results against the lab tests."
       ],
       zh: [
         "独立完成 C++ 图和 disjoint-set 相关实现工作。",
         "练习在多个支撑文件之间调试行为。",
-        "保持算法和数据结构课程项目表述，不写成产品功能。"
+        "结合课程测试检查图操作与连通性结果。"
       ]
     },
     learnings: {
@@ -1181,6 +1204,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sleep-app",
+    group: "coursework",
     featured: true,
     title: {
       en: "Sleep Tracking App",
@@ -1249,6 +1273,7 @@ export const projects: Project[] = [
   },
   {
     slug: "glass-futures-trading-strategy",
+    group: "data-tools",
     featured: true,
     title: {
       en: "China Glass Futures Quantitative Strategy",
@@ -1259,8 +1284,8 @@ export const projects: Project[] = [
       zh: "一个期货策略研究项目，重点分析策略逻辑、回测复盘、回撤、行情阶段和参数稳定性。"
     },
     period: {
-      en: "Sep 2024 - Present",
-      zh: "2024 年 9 月 - 至今"
+      en: "Sep 2024 - Mar 2025",
+      zh: "2024 年 9 月 - 2025 年 3 月"
     },
     category: {
       en: "Quantitative Research",
@@ -1291,29 +1316,30 @@ export const projects: Project[] = [
       en: [
         "Built and reviewed the strategy logic with backtest outputs.",
         "Analyzed market-regime behavior rather than treating one return number as the full result.",
-        "Kept the project framed as research and review, not investment advice."
+        "Compared transaction-cost, slippage, and parameter assumptions when reviewing backtests."
       ],
       zh: [
         "搭建策略逻辑并结合回测结果复盘。",
         "分析不同市场状态下的表现，而不是把单一收益数字当成全部结论。",
-        "将项目定位为研究和复盘，不构成投资建议。"
+        "在复盘回测时比较手续费、滑点和参数设定的影响。"
       ]
     },
     learnings: {
       en: [
         "Learned to evaluate trading strategies through risk and stability, not only return.",
         "Practiced documenting assumptions around costs and slippage.",
-        "Built more cautious habits for financial project communication."
+        "Learned to connect changes in strategy performance with the assumptions used in the backtest."
       ],
       zh: [
         "学习从风险和稳定性评估策略，而不只看收益。",
         "练习记录手续费和滑点等假设。",
-        "建立更谨慎的金融项目表达习惯。"
+        "学习把策略表现的变化与回测中的假设联系起来。"
       ]
     }
   },
   {
     slug: "logistic-regression-text-classification",
+    group: "coursework",
     featured: false,
     title: {
       en: "Logistic Regression Text Classification",
@@ -1328,11 +1354,11 @@ export const projects: Project[] = [
       zh: "2026 年 1 月 - 4 月"
     },
     category: {
-      en: "Machine Learning",
-      zh: "机器学习"
+      en: "Machine Learning Coursework",
+      zh: "机器学习课程"
     },
     techStack: ["Python", "Scikit-learn", "Logistic Regression", "CountVectorizer", "GridSearchCV", "Cross-validation"],
-    repo: mlRepo,
+    repo: `${mlRepo}/tree/main/logistic-regression-optimization`,
     summary: {
       en: "A tweet text classification project that moves from a dummy baseline to logistic regression with bag-of-words features, hyperparameter tuning, and coefficient interpretation.",
       zh: "基于推文数据构建二分类文本分类模型，从 Dummy Classifier 基线开始，使用 CountVectorizer 和 Logistic Regression，并调试文本向量化与正则化参数。"
@@ -1380,6 +1406,7 @@ export const projects: Project[] = [
   },
   {
     slug: "spotify-decision-tree-modeling",
+    group: "coursework",
     featured: false,
     title: {
       en: "Spotify Decision Tree Modeling",
@@ -1394,11 +1421,11 @@ export const projects: Project[] = [
       zh: "2026 年 1 月 - 4 月"
     },
     category: {
-      en: "Machine Learning",
-      zh: "机器学习"
+      en: "Machine Learning Coursework",
+      zh: "机器学习课程"
     },
     techStack: ["Python", "Scikit-learn", "DecisionTreeClassifier", "Cross-validation", "Model Visualization"],
-    repo: mlRepo,
+    repo: `${mlRepo}/tree/main/decision-tree-modeling`,
     summary: {
       en: "A compact decision-tree classification exercise focused on model training, cross-validation, and readable tree visualization.",
       zh: "一个小型决策树分类练习，重点是模型训练、交叉验证和可读的树结构可视化。"
@@ -1446,6 +1473,7 @@ export const projects: Project[] = [
   },
   {
     slug: "english-letter-recognition",
+    group: "data-tools",
     featured: false,
     title: {
       en: "Handwritten Character Recognition App",
@@ -1509,6 +1537,73 @@ export const projects: Project[] = [
         "理解推理阶段的预处理方式会明显影响一个在原始数据集上表现正常的模型。",
         "练习将模型、UI 和图像处理代码分开，让预测错误更容易定位。",
         "为后续 PyTorch 和目标检测比赛项目建立实践基础。"
+      ]
+    }
+  },
+  {
+    slug: "avocado-price-forecasting",
+    group: "coursework",
+    featured: false,
+    title: {
+      en: "Weekly Price Forecasting",
+      zh: "周度价格预测"
+    },
+    subtitle: {
+      en: "A self-written CPSC 330 notebook comparing a last-price baseline with Random Forest using lagged avocado prices.",
+      zh: "独立完成的 CPSC 330 notebook，使用牛油果价格滞后特征，比较最近价格基线与随机森林。"
+    },
+    period: {
+      en: "Jan - Apr 2026",
+      zh: "2026 年 1 月 - 4 月"
+    },
+    category: {
+      en: "Machine Learning Coursework",
+      zh: "机器学习课程"
+    },
+    techStack: [
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "Random Forest",
+      "Lag Features"
+    ],
+    repo: "https://github.com/Asdzzyandzzy/machine-learning-projects/tree/main/computer-vision-time-series",
+    summary: {
+      en: "A time-series coursework exercise using weekly avocado prices across regions and product types. I constructed next-week targets and lag features, used a chronological train/test split, and compared Random Forest predictions with a baseline that reuses the current price.",
+      zh: "一个按地区和产品类型分析牛油果周度价格的时间序列课程练习。我构建下一周价格目标和滞后特征，按时间划分训练与测试数据，并比较随机森林与直接沿用当前价格的基线。"
+    },
+    motivation: {
+      en: "I wanted to understand how forecasting differs from a random train/test split, especially when the dataset contains several related time series.",
+      zh: "我想理解预测任务与随机划分训练、测试集的区别，尤其是数据中存在多条相关时间序列时。"
+    },
+    features: {
+      en: [
+        "Groups observations by region and product type before creating lagged prices.",
+        "Adds calendar features and compares train/test R-squared with a persistence baseline."
+      ],
+      zh: [
+        "按地区和产品类型分组后构建价格滞后特征。",
+        "加入日历特征，并通过训练与测试 R² 与最近价格基线进行比较。"
+      ]
+    },
+    contribution: {
+      en: [
+        "Wrote the data exploration, grouped lag construction, and Random Forest experiment myself within the course notebook.",
+        "Checked timestamp spacing and compared the model with a simple forecast before interpreting its score."
+      ],
+      zh: [
+        "在课程 notebook 中独立编写数据探索、分组滞后特征和随机森林实验。",
+        "检查观测时间间隔，并先与简单预测比较，再解释模型分数。"
+      ]
+    },
+    learnings: {
+      en: [
+        "Practiced aligning features and future targets within each series.",
+        "Learned how a strong simple baseline changes the way a forecasting result should be interpreted."
+      ],
+      zh: [
+        "练习在每条时间序列中对齐特征与未来目标。",
+        "理解一个较强的简单基线会怎样影响对预测结果的解释。"
       ]
     }
   }

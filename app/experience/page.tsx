@@ -10,12 +10,17 @@ export default function ExperiencePage() {
   const { t } = useLanguage();
 
   return (
-    <Section title={t("pages.experienceTitle")}>
+    <Section title={t("pages.experienceTitle")} headingLevel={1}>
+      <h2 className="mb-5 text-xl font-semibold text-ink">{t("labels.work")}</h2>
       <div className="space-y-5">
-        {experiences.map((item) => (
+        {experiences.filter((item) => item.type === "work").map((item) => (
           <ExperienceCard key={item.id} item={item} />
         ))}
       </div>
+      <h2 className="mb-5 mt-12 text-xl font-semibold text-ink">{t("labels.education")}</h2>
+      {experiences.filter((item) => item.type === "education").map((item) => (
+        <ExperienceCard key={item.id} item={item} />
+      ))}
     </Section>
   );
 }

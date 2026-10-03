@@ -9,7 +9,7 @@ export default function ContactPage() {
   const { t } = useLanguage();
 
   return (
-    <Section title={t("pages.contactTitle")} description={t("contact.intro")}>
+    <Section title={t("pages.contactTitle")} description={t("contact.intro")} headingLevel={1}>
       <ContactLinks />
     </Section>
   );

@@ -24,10 +24,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("en");
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("language");
-
-    if (saved === "en" || saved === "zh") {
-      setLanguageState(saved);
+    try {
+      const saved = window.localStorage.getItem("language");
+      if (saved === "en" || saved === "zh") {
+        setLanguageState(saved);
+      }
+    } catch {
+      // Language switching still works when browser storage is unavailable.
     }
   }, []);
 
@@ -37,7 +40,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLanguage = (nextLanguage: Language) => {
     setLanguageState(nextLanguage);
-    window.localStorage.setItem("language", nextLanguage);
+    try {
+      window.localStorage.setItem("language", nextLanguage);
+    } catch {
+      // Keep the selection for this visit even when it cannot be persisted.
+    }
   };
 
   const value = useMemo<LanguageContextValue>(

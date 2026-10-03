@@ -10,11 +10,11 @@ export function ContactLinks() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       <a
-        className="rounded-lg border border-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft"
+        className="min-w-0 rounded-lg border border-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft"
         href={`mailto:${links.email}`}
       >
         <p className="text-sm text-muted">{t("labels.email")}</p>
-        <p className="mt-2 text-lg font-semibold text-ink">{links.email}</p>
+        <p className="mt-2 text-lg font-semibold text-ink [overflow-wrap:anywhere]">{links.email}</p>
       </a>
       <a
         className="rounded-lg border border-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft"

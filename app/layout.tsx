@@ -10,26 +10,24 @@ import { links } from "@/content/links";
 export const metadata: Metadata = {
   metadataBase: new URL(links.domain),
   title: {
-    default: "Ziyang Zhou | Statistics & Machine Learning Portfolio",
+    default: "Ziyang Zhou | UBC Statistics, Data Analysis & ML",
     template: "%s | Ziyang Zhou"
   },
   description:
-    "Portfolio of Ziyang Zhou, a UBC Statistics student sharing machine learning coursework, competition research, data analysis, and AI-assisted tools.",
+    "Ziyang Zhou, UBC Statistics student graduating in 2027. Forecasting and actuarial internships, machine learning projects, and AI-assisted tools.",
   alternates: {
     canonical: "/"
   },
   authors: [{ name: "Ziyang Zhou", url: links.domain }],
   openGraph: {
-    title: "Ziyang Zhou | Statistics & Machine Learning Portfolio",
+    title: "Ziyang Zhou | UBC Statistics, Data Analysis & ML",
     description:
-      "Machine learning coursework, competition research, data analysis, and AI-assisted tools by Ziyang Zhou.",
+      "Forecasting and actuarial internships, machine learning coursework, competition projects, and personal tools by Ziyang Zhou.",
     url: links.domain,
     siteName: "ZiyangZhou.me",
     images: [
       {
         url: "/images/profile.jpg",
-        width: 1200,
-        height: 1200,
         alt: "Ziyang Zhou"
       }
     ],
@@ -38,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ziyang Zhou | Statistics & Machine Learning Portfolio",
+    title: "Ziyang Zhou | UBC Statistics, Data Analysis & ML",
     description:
-      "Machine learning coursework, competition research, data analysis, and AI-assisted tools by Ziyang Zhou.",
+      "Forecasting and actuarial internships, machine learning coursework, competition projects, and personal tools by Ziyang Zhou.",
     images: ["/images/profile.jpg"]
   }
 };
@@ -51,7 +49,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="min-h-screen font-sans antialiased">
         <LanguageProvider>
           <Navbar />
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>{children}</main>
           <Footer />
         </LanguageProvider>
       </body>

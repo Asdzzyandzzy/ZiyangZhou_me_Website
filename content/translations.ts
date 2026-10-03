@@ -13,20 +13,21 @@ export const translations = {
       viewAbout: "About Me",
       viewExperience: "View Experience",
       viewProjects: "View Projects",
-      viewResume: "View Resume",
+      viewResume: "Open CV",
       viewWriting: "View Writing",
       contactMe: "Contact Me",
-      downloadResume: "Download Resume",
+      downloadResume: "Download CV",
       viewGithub: "View GitHub",
       viewDemo: "Open Demo",
       backProjects: "Back to Projects",
       readCaseStudy: "View project"
     },
     home: {
-      eyebrow: "Ziyang Zhou · UBC Statistics · Project Portfolio",
-      headline: "Applied machine learning, data analysis, and AI-assisted tools.",
+      eyebrow: "UBC Statistics · Class of 2027",
+      headline: "Ziyang Zhou",
+      focus: "Statistics, applied machine learning, and data analysis.",
       subhead:
-        "I am a UBC Statistics student. This site brings together my self-written coursework, competition research, and AI-assisted projects, with the choices, experiments, and results I can explain in detail.",
+        "I am a Statistics student at UBC with internship experience in electricity forecasting and actuarial analysis. I work with data, compare models, and build tools to explore questions that interest me.",
       aboutTitle: "About",
       experienceTitle: "Experience",
       projectsTitle: "Selected Projects",
@@ -46,7 +47,7 @@ export const translations = {
     labels: {
       selectedWork: "Selected work",
       education: "Education",
-      work: "Work",
+      work: "Work Experience",
       projects: "Projects",
       stack: "Tools / Tech",
       period: "Period",
@@ -57,7 +58,8 @@ export const translations = {
       links: "Links",
       comingSoon: "Coming Soon",
       highlights: "Highlights",
-      email: "Email"
+      email: "Email",
+      skipToContent: "Skip to content"
     },
     writing: {
       description:
@@ -65,15 +67,28 @@ export const translations = {
     },
     projects: {
       description:
-        "Projects range from self-written coursework to AI-assisted tools and current competition research. Each page explains the problem, the choices I made, and what I learned from the result."
+        "Coursework, competition experiments, and personal tools. Each project covers the problem, my approach, and what I learned.",
+      filter: "Project type",
+      search: "Search projects",
+      searchPlaceholder: "Title, topic, or tool",
+      all: "All projects",
+      coursework: "Coursework",
+      competitions: "Competitions",
+      "ai-tools": "AI tools",
+      "data-tools": "Data & applications",
+      count: "{count} projects",
+      empty: "No projects match this search.",
+      reset: "Clear filters"
     },
     resume: {
       description:
-        "View or download the bilingual English and Chinese resume."
+        "My latest CV, including education, internships, and selected projects.",
+      format: "October 2026 · English · PDF",
+      previewTitle: "Ziyang Zhou CV"
     },
     contact: {
       intro:
-        "I am open to internship, research, and early-career opportunities related to data, machine learning, AI tools, and software projects. Email is the best way to reach me."
+        "I am interested in internships and graduate opportunities in data analysis, applied machine learning, forecasting, and actuarial work. I expect to graduate in May 2027. Email is the best way to reach me."
     },
     footer: {
       line: "Personal portfolio maintained by Ziyang Zhou."
@@ -93,7 +108,7 @@ export const translations = {
       viewAbout: "关于我",
       viewExperience: "查看经历",
       viewProjects: "查看项目",
-      viewResume: "查看简历",
+      viewResume: "打开简历",
       viewWriting: "查看文章",
       contactMe: "联系我",
       downloadResume: "下载简历",
@@ -103,10 +118,11 @@ export const translations = {
       readCaseStudy: "查看项目"
     },
     home: {
-      eyebrow: "周梓洋 · UBC 统计学 · 项目作品集",
-      headline: "应用机器学习、数据分析和 AI 辅助工具。",
+      eyebrow: "UBC 统计学 · 预计 2027 年毕业",
+      headline: "周梓洋",
+      focus: "统计学、应用机器学习与数据分析。",
       subhead:
-        "我是 UBC 统计学本科生。这里整理了我独立完成的课程作业、比赛研究和 AI 辅助项目，并记录我能具体解释的选择、实验和结果。",
+        "我是 UBC 统计学本科生，有用电量预测和精算分析的实习经历。我喜欢处理数据、比较模型，也会搭建工具来探索自己感兴趣的问题。",
       aboutTitle: "关于我",
       experienceTitle: "经历",
       projectsTitle: "精选项目",
@@ -137,21 +153,35 @@ export const translations = {
       links: "链接",
       comingSoon: "即将更新",
       highlights: "亮点",
-      email: "邮箱"
+      email: "邮箱",
+      skipToContent: "跳转到正文"
     },
     writing: {
       description: "之后可能会整理一些项目、课程和小工具迭代中的短笔记。"
     },
     projects: {
       description:
-        "项目包括独立完成的课程作业、AI 辅助工具和正在进行的比赛研究。每个页面都会说明问题、我的选择以及从结果中学到的内容。"
+        "这里整理了课程作业、比赛实验和个人工具，每个项目都介绍了问题、我的思路和收获。",
+      filter: "项目类型",
+      search: "搜索项目",
+      searchPlaceholder: "项目名称、方向或工具",
+      all: "全部项目",
+      coursework: "课程实践",
+      competitions: "比赛项目",
+      "ai-tools": "AI 工具",
+      "data-tools": "数据与应用",
+      count: "{count} 个项目",
+      empty: "没有找到符合条件的项目。",
+      reset: "清除筛选"
     },
     resume: {
-      description: "你可以在线查看或下载中英双语简历。"
+      description: "最新版 CV，包含教育背景、实习经历和精选项目。",
+      format: "2026 年 10 月 · 英文 · PDF",
+      previewTitle: "周梓洋 CV"
     },
     contact: {
       intro:
-        "我对数据、机器学习、AI 工具和软件项目相关的实习、研究和早期职业机会保持开放。最推荐通过邮箱联系我。"
+        "我关注数据分析、应用机器学习、预测建模和精算方向的实习与应届机会，预计 2027 年 5 月毕业。欢迎通过邮箱联系我。"
     },
     footer: {
       line: "周梓洋维护的个人项目作品集。"
