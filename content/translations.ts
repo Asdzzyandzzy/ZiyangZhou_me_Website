@@ -76,7 +76,7 @@ export const translations = {
       competitions: "Competitions",
       "ai-tools": "AI tools",
       "data-tools": "Data & applications",
-      count: "{count} projects",
+      count: "Projects: {count}",
       empty: "No projects match this search.",
       reset: "Clear filters"
     },
