@@ -17,7 +17,10 @@ export const metadata: Metadata = {
   description:
     "Ziyang Zhou (周梓洋), UBC Statistics student graduating in 2027. Forecasting and actuarial internships, machine learning projects, and AI-assisted tools.",
   verification: {
-    other: { "msvalidate.01": "8D92E8D2A8DE493783F1B54EAEB53513" }
+    other: {
+      "msvalidate.01": "8D92E8D2A8DE493783F1B54EAEB53513",
+      "baidu-site-verification": "codeva-h6ACGg9OM8"
+    }
   },
   alternates: {
     canonical: "/"
