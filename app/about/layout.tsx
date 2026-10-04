@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
 import { pageMetadata } from "@/lib/metadata";
+import { ProfilePageStructuredData } from "@/components/SiteStructuredData";
 
 export const metadata = pageMetadata(
   "About",
-  "About Ziyang Zhou, a UBC Statistics student with forecasting and actuarial internship experience and projects in applied machine learning.",
+  "About Ziyang Zhou (周梓洋), a Statistics student at the University of British Columbia (UBC), with forecasting and actuarial internship experience.",
   "/about/"
 );
 
 export default function PageLayout({ children }: { children: ReactNode }) {
-  return children;
+  return <><ProfilePageStructuredData />{children}</>;
 }

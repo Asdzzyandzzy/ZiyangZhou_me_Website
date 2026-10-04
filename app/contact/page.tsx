@@ -4,7 +4,7 @@ import { ContactLinks } from "@/components/ContactLinks";
 import { Section } from "@/components/Section";
 import { useLanguage } from "@/components/LanguageProvider";
 
-// 联系页：只展示邮箱和 GitHub，不展示手机号和微信。
+// 联系页：展示邮箱、GitHub 和 LinkedIn，不展示手机号和微信。
 export default function ContactPage() {
   const { t } = useLanguage();
 

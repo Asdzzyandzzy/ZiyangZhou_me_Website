@@ -91,7 +91,7 @@ export const translations = {
         "I am interested in internships and graduate opportunities in data analysis, applied machine learning, forecasting, and actuarial work. I expect to graduate in May 2027. Email is the best way to reach me."
     },
     footer: {
-      line: "Personal portfolio maintained by Ziyang Zhou."
+      line: "Personal portfolio maintained by Ziyang Zhou (周梓洋)."
     }
   },
   zh: {
@@ -184,7 +184,7 @@ export const translations = {
         "我关注数据分析、应用机器学习、预测建模和精算方向的实习与应届机会，预计 2027 年 5 月毕业。欢迎通过邮箱联系我。"
     },
     footer: {
-      line: "周梓洋维护的个人项目作品集。"
+      line: "周梓洋（Ziyang Zhou）维护的个人项目作品集。"
     }
   }
 } as const;

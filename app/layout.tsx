@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(links.domain),
   title: {
     default: "Ziyang Zhou (周梓洋) | UBC Statistics, Data Analysis & ML",
-    template: "%s | Ziyang Zhou"
+    template: "%s | Ziyang Zhou (周梓洋)"
   },
   description:
     "Ziyang Zhou (周梓洋), UBC Statistics student graduating in 2027. Forecasting and actuarial internships, machine learning projects, and AI-assisted tools.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/"
   },
-  authors: [{ name: "Ziyang Zhou", url: links.domain }],
+  authors: [{ name: "Ziyang Zhou (周梓洋)", url: links.domain }],
   openGraph: {
     title: "Ziyang Zhou (周梓洋) | UBC Statistics, Data Analysis & ML",
     description:

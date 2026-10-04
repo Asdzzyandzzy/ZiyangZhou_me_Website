@@ -14,12 +14,12 @@ export const profile = {
   } satisfies LocalizedText,
   about: {
     en: [
-      "I study Statistics at the University of British Columbia and expect to graduate in May 2027. I enjoy working through a data problem from the first messy table to a result that someone else can understand and use.",
+      "I'm Ziyang Zhou (周梓洋), a Statistics student at the University of British Columbia (UBC), expecting to graduate in May 2027. I enjoy working through a data problem from the first messy table to a result that someone else can understand and use.",
       "In 2026, I worked on electricity consumption forecasting at Shusheng Data and insurance pricing support at Guangbo. These internships gave me practice with data preparation, feature selection, model comparison, and explaining results in a business setting.",
       "My personal work includes ML competitions, a local coding assistant, and a Chinese fiction generation workflow. I use AI tools to help implement and iterate on many of these projects, with particular attention to the problem, the workflow, and how to check the output. I wrote my CPSC 330 machine-learning coursework and CPSC 221 data-structure labs myself."
     ],
     zh: [
-      "我就读于英属哥伦比亚大学统计学专业，预计 2027 年 5 月毕业。我喜欢从整理一张杂乱的数据表开始，逐步把问题分析清楚，再把结果解释给需要使用它的人。",
+      "我是周梓洋（Ziyang Zhou），就读于英属哥伦比亚大学（UBC）统计学专业，预计 2027 年 5 月毕业。我喜欢从整理一张杂乱的数据表开始，逐步把问题分析清楚，再把结果解释给需要使用它的人。",
       "2026 年，我在数升数据参与用电量预测，在光博参与保险定价支持工作。这两段实习让我把数据整理、特征筛选和模型比较用到了实际业务中，也练习了如何向他人说明分析结果。",
       "课外项目包括机器学习比赛、本地编程助手和中文小说生成流程。其中不少项目使用 AI 辅助实现和迭代，我重点关注问题定义、使用流程和结果检查。CPSC 330 机器学习课程作业与 CPSC 221 数据结构实验由我独立编写。"
     ]

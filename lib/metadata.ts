@@ -12,16 +12,16 @@ export function pageMetadata(
     description,
     alternates: { canonical: path },
     openGraph: {
-      title: `${title} | Ziyang Zhou`,
+      title: `${title} | Ziyang Zhou (周梓洋)`,
       description,
       url: new URL(path, links.domain),
       siteName: "ZiyangZhou.me",
       type,
-      images: [{ url: "/images/profile.jpg", alt: "Ziyang Zhou" }]
+      images: [{ url: "/images/profile.jpg", alt: "Ziyang Zhou (周梓洋)" }]
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | Ziyang Zhou`,
+      title: `${title} | Ziyang Zhou (周梓洋)`,
       description,
       images: ["/images/profile.jpg"]
     }
