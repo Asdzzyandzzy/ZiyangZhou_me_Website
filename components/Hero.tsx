@@ -22,6 +22,9 @@ export function Hero() {
           <h1 className="max-w-4xl text-5xl font-semibold text-ink md:text-7xl">
             {t("home.headline")}
           </h1>
+          <p className="mt-3 text-lg text-muted" lang={language === "en" ? "zh-CN" : "en"}>
+            {language === "en" ? profile.chineseName : profile.name}
+          </p>
           <p className="mt-5 text-2xl font-medium leading-snug text-ink">
             {t("home.focus")}
           </p>
