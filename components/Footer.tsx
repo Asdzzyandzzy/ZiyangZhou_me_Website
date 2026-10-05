@@ -32,6 +32,14 @@ export function Footer() {
           >
             LinkedIn
           </a>
+          <a
+            className="transition hover:text-ink"
+            href={links.githubPages}
+            target="_blank"
+            rel="me noreferrer"
+          >
+            GitHub Pages
+          </a>
           <a className="transition hover:text-ink" href={`mailto:${links.email}`}>
             {t("labels.email")}
           </a>

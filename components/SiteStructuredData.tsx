@@ -34,7 +34,7 @@ export function SiteStructuredData() {
           alternateName: ["UBC", "英属哥伦比亚大学"],
           url: "https://www.ubc.ca/"
         },
-        sameAs: [links.github, links.linkedin],
+        sameAs: [links.github, links.linkedin, links.githubPages],
         mainEntityOfPage: new URL("/about/", home).toString()
       }
     ]
