@@ -6,16 +6,18 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 // 页脚用于放置版权、域名和常用链接。
 export function Footer() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
-    <footer className="border-t border-line bg-white">
+    <footer lang={language === "zh" ? "zh-CN" : "en"} className="border-t border-line bg-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-muted md:flex-row md:items-center md:justify-between">
         <p>{t("footer.line")}</p>
         <div className="flex flex-wrap gap-4">
           <Link className="transition hover:text-ink" href="/contact">
             {t("nav.contact")}
           </Link>
+          <Link className="transition hover:text-ink" href="/zh/" hrefLang="zh-CN" lang="zh-CN">中文首页</Link>
+          <Link className="transition hover:text-ink" href="/sitemap/">{language === "zh" ? "网站目录" : "Site index"}</Link>
           <a
             className="transition hover:text-ink"
             href={links.github}

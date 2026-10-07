@@ -4,7 +4,7 @@ import { ProfilePageStructuredData } from "@/components/SiteStructuredData";
 
 export const metadata = pageMetadata(
   "About",
-  "About Ziyang Zhou (周梓洋), a Statistics student at the University of British Columbia (UBC), with forecasting and actuarial internship experience.",
+  "Ziyang Zhou (周梓洋), UBC Statistics undergraduate specializing in applied machine learning, predictive modeling and model evaluation, with forecasting and actuarial industry experience.",
   "/about/"
 );
 

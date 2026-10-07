@@ -11,11 +11,12 @@ import { SiteStructuredData } from "@/components/SiteStructuredData";
 export const metadata: Metadata = {
   metadataBase: new URL(links.domain),
   title: {
-    default: "Ziyang Zhou (周梓洋) | UBC Statistics, Data Analysis & ML",
+    default: "Ziyang Zhou (周梓洋) | Machine Learning · UBC Statistics",
     template: "%s | Ziyang Zhou (周梓洋)"
   },
   description:
-    "Ziyang Zhou (周梓洋), UBC Statistics student graduating in 2027. Forecasting and actuarial internships, machine learning projects, and AI-assisted tools.",
+    "Ziyang Zhou (周梓洋), UBC Statistics undergraduate focused on machine learning, feature engineering, predictive modeling and model validation. Explore ML and AI projects.",
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   verification: {
     other: {
       "msvalidate.01": "8D92E8D2A8DE493783F1B54EAEB53513",
@@ -23,13 +24,14 @@ export const metadata: Metadata = {
     }
   },
   alternates: {
-    canonical: "/"
+    canonical: "/",
+    languages: { en: "/", "zh-CN": "/zh/", "x-default": "/" }
   },
   authors: [{ name: "Ziyang Zhou (周梓洋)", url: links.domain }],
   openGraph: {
-    title: "Ziyang Zhou (周梓洋) | UBC Statistics, Data Analysis & ML",
+    title: "Ziyang Zhou (周梓洋) | Machine Learning · UBC Statistics",
     description:
-      "Forecasting and actuarial internships, machine learning coursework, competition projects, and personal tools by Ziyang Zhou.",
+      "Applied machine learning, predictive modeling and AI systems, grounded in UBC Statistics. Explore projects and industry experience by Ziyang Zhou (周梓洋).",
     url: links.domain,
     siteName: "ZiyangZhou.me",
     images: [
@@ -43,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ziyang Zhou (周梓洋) | UBC Statistics, Data Analysis & ML",
+    title: "Ziyang Zhou (周梓洋) | Machine Learning · UBC Statistics",
     description:
-      "Forecasting and actuarial internships, machine learning coursework, competition projects, and personal tools by Ziyang Zhou.",
+      "Applied machine learning, predictive modeling and AI systems, grounded in UBC Statistics. Explore projects and industry experience by Ziyang Zhou (周梓洋).",
     images: ["/images/profile.jpg"]
   }
 };

@@ -15,6 +15,7 @@ export function SiteStructuredData() {
         url: home,
         name: `${profile.name} (${profile.chineseName})`,
         alternateName: ["周梓洋", "ZiyangZhou.me"],
+        inLanguage: ["en", "zh-CN"],
         publisher: { "@id": personId }
       },
       {
@@ -27,7 +28,8 @@ export function SiteStructuredData() {
         url: home,
         image: new URL("/images/profile.jpg", home).toString(),
         description:
-          "Ziyang Zhou (周梓洋), a Statistics student at the University of British Columbia (UBC), expecting to graduate in May 2027.",
+          "Ziyang Zhou (周梓洋), a UBC Statistics undergraduate focused on applied machine learning, feature engineering, predictive modeling and model validation; expected graduation May 2027.",
+        knowsAbout: ["Machine learning", "Statistical modeling", "Feature engineering", "Time-series forecasting", "Model validation", "Gradient boosting", "Applied AI"],
         affiliation: {
           "@type": "CollegeOrUniversity",
           name: "University of British Columbia",
@@ -59,6 +61,7 @@ export function ProfilePageStructuredData() {
     url: about,
     name: `About ${profile.name} (${profile.chineseName})`,
     isPartOf: { "@id": `${home}#website` },
+    inLanguage: "en",
     mainEntity: { "@id": `${home}#person` }
   };
 

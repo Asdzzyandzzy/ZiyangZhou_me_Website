@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "CV",
-  "Read or download Ziyang Zhou's October 2026 CV, including UBC education, data analysis and actuarial internships, and selected projects.",
+  "Read or download Ziyang Zhou's CV: UBC Statistics education, machine learning projects, forecasting and actuarial internship experience.",
   "/resume/"
 );
 

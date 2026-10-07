@@ -10,6 +10,7 @@ import {
 } from "react";
 import { translations } from "@/content/translations";
 import { getNestedValue, type Language } from "@/lib/i18n";
+import { usePathname } from "next/navigation";
 
 type LanguageContextValue = {
   language: Language;
@@ -21,9 +22,24 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 // 全站语言状态放在这里，并用 localStorage 记住用户选择。
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+  const pathname = usePathname();
+  const [preferredLanguage, setLanguageState] = useState<Language>("en");
+  // Home languages have separate static URLs, so both versions exist before hydration.
+  const language: Language = pathname === "/zh" || pathname === "/zh/"
+    ? "zh"
+    : pathname === "/" ? "en" : preferredLanguage;
 
   useEffect(() => {
+    const explicitLanguage = pathname === "/zh" || pathname === "/zh/" ? "zh" : pathname === "/" ? "en" : null;
+    if (explicitLanguage) {
+      setLanguageState(explicitLanguage);
+      try {
+        window.localStorage.setItem("language", explicitLanguage);
+      } catch {
+        // The route still controls the language when storage is unavailable.
+      }
+      return;
+    }
     try {
       const saved = window.localStorage.getItem("language");
       if (saved === "en" || saved === "zh") {
@@ -32,7 +48,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     } catch {
       // Language switching still works when browser storage is unavailable.
     }
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     document.documentElement.lang = language === "zh" ? "zh-CN" : "en";

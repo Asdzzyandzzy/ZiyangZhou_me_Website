@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "Contact",
-  "Contact Ziyang Zhou about internships and graduate opportunities in data analysis, machine learning, forecasting, and actuarial work.",
+  "Contact Ziyang Zhou (周梓洋) about machine learning, predictive modeling and applied AI internships, graduate opportunities or technical collaborations.",
   "/contact/"
 );
 

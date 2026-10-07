@@ -1,11 +1,11 @@
 import type { Project } from "@/content/projects";
 
 const projectPriority = [
-  "airbnb-price-modeling",
   "csi300-portfolio-modeling-challenge",
-  "tencent-ai-hr-growth-quest",
   "neural-debris-removal",
   "deepseek-coding-agent",
+  "tencent-ai-hr-growth-quest",
+  "airbnb-price-modeling",
   "fanqie-qwen-writing-pipeline",
   "f1-pit-stop-prediction",
   "text-embeddings-topic-modeling",

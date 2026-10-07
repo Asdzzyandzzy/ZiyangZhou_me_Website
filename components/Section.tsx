@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 type SectionProps = {
+  id?: string;
   eyebrow?: string;
   title: string;
   description?: string;
@@ -10,10 +11,10 @@ type SectionProps = {
 };
 
 // 通用页面区块组件，统一留白、标题和淡入动画。
-export function Section({ eyebrow, title, description, children, action, headingLevel = 2 }: SectionProps) {
+export function Section({ id, eyebrow, title, description, children, action, headingLevel = 2 }: SectionProps) {
   const Heading = headingLevel === 1 ? "h1" : "h2";
   return (
-    <section className="reveal mx-auto max-w-6xl px-5 py-16 md:py-20">
+    <section id={id} className="reveal mx-auto max-w-6xl scroll-mt-40 px-5 py-16 md:py-20">
       <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
           {eyebrow ? (

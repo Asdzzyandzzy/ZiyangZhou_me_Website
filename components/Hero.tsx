@@ -25,7 +25,7 @@ export function Hero() {
           <p className="mt-3 text-lg text-muted" lang={language === "en" ? "zh-CN" : "en"}>
             {language === "en" ? profile.chineseName : profile.name}
           </p>
-          <p className="mt-5 text-2xl font-medium leading-snug text-ink">
+          <p className="mt-5 text-balance text-2xl font-medium leading-snug text-ink">
             {t("home.focus")}
           </p>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-muted">
@@ -45,7 +45,7 @@ export function Hero() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-neutral-100">
             <Image
               src="/images/profile.jpg"
-              alt="Ziyang Zhou"
+              alt="Ziyang Zhou (周梓洋), UBC Statistics and applied machine learning"
               fill
               unoptimized
               priority
